@@ -71,13 +71,15 @@ if (driveMatch && driveMatch[1]) {
             ⛶ Full Screen
           </button>
           <a href={downloadUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.5rem 1rem;">
-            Download Original
+            Download
           </a>
         </div>
       </div>
     </div>
 
-    <div class="glass-panel" style="padding: 0.5rem; height: 75vh; border-radius: 12px; overflow: hidden;">
+    <div class="glass-panel" style="padding: 0.5rem; height: 75vh; border-radius: 12px; overflow: hidden; position: relative;">
+      <!-- Masking Div to block the Google Drive Pop-out button -->
+      <div style="position: absolute; top: 0.5rem; right: 0.5rem; width: 60px; height: 60px; background: transparent; z-index: 10;"></div>
       <iframe 
         id="pdf-frame"
         src={embedUrl}
