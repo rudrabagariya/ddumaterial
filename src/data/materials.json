@@ -2,41 +2,447 @@
   "semesters": [
     {
       "id": "sem-1",
-      "name": "Semester 1",
-      "description": "Foundation courses including Mathematics I, Physics, and Basic Electrical Engineering.",
+      "name": "Sem-5",
+      "description": "Resources for Sem-5",
       "subjects": [
         {
-          "id": "sub-math1",
-          "name": "Engineering Mathematics I",
-          "code": "MAT101",
+          "id": "sub-1-1",
+          "name": "AE",
+          "code": "AE",
           "resources": [
             {
-              "id": "res-math-notes-unit1",
-              "title": "Unit 1: Differential Calculus",
+              "id": "res-1-1-1",
+              "title": "step_480234083280.zip",
               "type": "notes",
-              "url": "https://drive.google.com/file/d/1vN_YOUR_FILE_ID_HERE/view?usp=sharing",
-              "size": "2.4 MB"
-            },
-            {
-              "id": "res-math-pyq-2023",
-              "title": "PYQ 2023 - Solved",
-              "type": "pyq",
-              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-              "size": "1.1 MB"
+              "url": "https://drive.google.com/file/d/1ltIbh82dZ4Os_VQ_Emoq5d2wM4sb93Il/view?usp=drivesdk",
+              "size": "333.2 MB"
             }
           ]
         },
         {
-          "id": "sub-phy",
-          "name": "Engineering Physics",
-          "code": "PHY101",
+          "id": "sub-1-2",
+          "name": "External Paper 2022",
+          "code": "EXTERN",
           "resources": [
             {
-              "id": "res-phy-lab",
-              "title": "Physics Lab Manual",
-              "type": "lab",
-              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-              "size": "5.2 MB"
+              "id": "res-1-2-1",
+              "title": "BRdSFFQYGQAu4PaqM2cN6XRpcAi5Yi0YcyIIU2AWdHQ=_plaintext_638344792137489428.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ntjZe856-KQyckvJFtGz8fy74xASXWw4/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-1-2-2",
+              "title": "au13HzoNhRyXzaPapgOcXHehF2GrC8zFTMY_rN_kP3k=_plaintext_638344792138292189.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/16AsQD-BoTSsooF0yUZCcuYJ2yPA36dzh/view?usp=drivesdk",
+              "size": "0.7 MB"
+            },
+            {
+              "id": "res-1-2-3",
+              "title": "sBMYddYWGU15DFU67cnpleEI9aX7eY1TKZxfrmzrIlA=_plaintext_638344792138292189.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Ap1TGFJLM7ILsm_N6l6qQJy_qIJorQnQ/view?usp=drivesdk",
+              "size": "0.6 MB"
+            },
+            {
+              "id": "res-1-2-4",
+              "title": "EGFzuSIEHf6odChfoq_tpccu35hyUxTULQQjNvtpe7Q=_plaintext_638344792137730068.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1EHXbgvHQF-Kw4GdyAIT5nBmpzX26dBGq/view?usp=drivesdk",
+              "size": "0.6 MB"
+            },
+            {
+              "id": "res-1-2-5",
+              "title": "IMG-20231102-WA0010.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1GL6DK7Sqztd97vD_aALdElDMaYLhnmWu/view?usp=drivesdk",
+              "size": "0.8 MB"
+            },
+            {
+              "id": "res-1-2-6",
+              "title": "0rlQWtk5rNebLNa0FDj6v3odGc5O9C8mkI8_9d-sSCU=_plaintext_638344792138448553.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Tn49JV9N9p2_V4096ET_q2hiavgEQ7B8/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-1-2-7",
+              "title": "KiulXBsBBU7O9HtSUG_skKDsry0RL0yCCFE04nFN1Xo=_plaintext_638344792138761090.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1v668kkPZto6bnQCRzYB_WEy-4xyTky1m/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-1-2-8",
+              "title": "tUX90MMHVcrNwBQv-XYUh1USjieY7004SfMJ5w7vZ08=_plaintext_638344792138604780.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1w2bv2tX2tLipHUXLBmwk0lZEeqOVizYG/view?usp=drivesdk",
+              "size": "0.6 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-1-3",
+          "name": "Externals 2024",
+          "code": "EXTERN",
+          "resources": [
+            {
+              "id": "res-1-3-1",
+              "title": "Externals_Sem_V",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1c_rlilhSj6ZCAKVZr9crWky6jT90O4t7/view?usp=drivesdk",
+              "size": "17.7 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-1-4",
+          "name": "EMF",
+          "code": "EMF",
+          "resources": [
+            {
+              "id": "res-1-4-1",
+              "title": "EMF_Second_Sess_Solution_2023-24 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/14N3oMbR2WVn0Ii9IUZALlB5_AGW5_4VI/view?usp=drivesdk",
+              "size": "0.9 MB"
+            },
+            {
+              "id": "res-1-4-2",
+              "title": "EMF_Second_Sess_Solution_2023-24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1X5tkA6FvZuaVeD4Ieg12f5BlMymlTtu0/view?usp=drivesdk",
+              "size": "0.9 MB"
+            },
+            {
+              "id": "res-1-4-3",
+              "title": "emf rizwan",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1e9VzkNZTG7yFiTrV8WjOoq-UwRKTsDSH/view?usp=drivesdk",
+              "size": "23.3 MB"
+            },
+            {
+              "id": "res-1-4-4",
+              "title": "em-waves-r-s-shevgaonkar-pdf-free",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18wF0ZvHy_ub6d6qWvxqOWbpS6pkdII6E/view?usp=drivesdk",
+              "size": "26.5 MB"
+            },
+            {
+              "id": "res-1-4-5",
+              "title": "tutorial 9 and 11",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1-8ZHM4fektwjloriuh98x7IaNujZ4EZ8/view?usp=drivesdk",
+              "size": "5.4 MB"
+            },
+            {
+              "id": "res-1-4-6",
+              "title": "Archana tutorial 8 10",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1V5D2KJfcsKQJ7rAHqwvGKmeb-rF92DNZ/view?usp=drivesdk",
+              "size": "3.3 MB"
+            },
+            {
+              "id": "res-1-4-7",
+              "title": "EMF TUTORIAL ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18vArVRCSM7HO4g4axvtdeaTDmXoWMKLw/view?usp=drivesdk",
+              "size": "21.3 MB"
+            },
+            {
+              "id": "res-1-4-8",
+              "title": "emf rha phase 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1LrwtOMlDo_k3hfFu7a38enTHKs2pqc9W/view?usp=drivesdk",
+              "size": "25.2 MB"
+            },
+            {
+              "id": "res-1-4-9",
+              "title": "emf_phase3_rha",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Mgzc-_ldWfceqS9w2YqSrvCrVkyaNx6B/view?usp=drivesdk",
+              "size": "1.6 MB"
+            },
+            {
+              "id": "res-1-4-10",
+              "title": "emf_phase3_kmp",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1T7uhcwfnfBaKXQIDAX_-hDUnb65KHCtU/view?usp=drivesdk",
+              "size": "0.6 MB"
+            },
+            {
+              "id": "res-1-4-11",
+              "title": "kmp phase 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1QAsCp35iR3aH4Zq2q5cgIzqXBqzIg63I/view?usp=drivesdk",
+              "size": "12.0 MB"
+            },
+            {
+              "id": "res-1-4-12",
+              "title": "t-10,11",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Y9SsI8bNYiEUQ3MdpU7eBmcicEWUqK5T/view?usp=drivesdk",
+              "size": "3.8 MB"
+            },
+            {
+              "id": "res-1-4-13",
+              "title": "EMF SADIKU SOLUTION",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1BP2PPK3UsimgUeO8r8mnktE5Es8g04lu/view?usp=drivesdk",
+              "size": "19.5 MB"
+            },
+            {
+              "id": "res-1-4-14",
+              "title": "EMF SADIKU",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1jrbtUPS6FqZmJY9PtKx_S0crQfev1I-e/view?usp=drivesdk",
+              "size": "38.1 MB"
+            },
+            {
+              "id": "res-1-4-15",
+              "title": "Assignment - 6_EMF",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1UMJL7_mM-EWIAwfEyn-O2T9_sRvdOCOf/view?usp=drivesdk",
+              "size": "3.0 MB"
+            },
+            {
+              "id": "res-1-4-16",
+              "title": "SemV_EMF_TeachingPlane_Doc2_2023_24 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/17PsdIlkKIUAa2DfZcIy8I3WpSSLxEJt8/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-1-4-17",
+              "title": "Electromagnetics_William_Hayt",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1K8fk2HECtwUFirrVG7PE3htqiAzueRFq/view?usp=drivesdk",
+              "size": "14.1 MB"
+            },
+            {
+              "id": "res-1-4-18",
+              "title": "Solution_Engineering_Electromagnetics_7th_Edition",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1TuvpzP51IvuKcqt2uy8mKEcDft0PqPHb/view?usp=drivesdk",
+              "size": "2.8 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-1-5",
+          "name": "sem 5 notes",
+          "code": "SEM 5 ",
+          "resources": [
+            {
+              "id": "res-1-5-1",
+              "title": "EC060_AlafiyaBekhushi_EMF_Report.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1SRbLTq7zvmgCTp9iKNjIMGKrOTw5lI6t/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.6 MB"
+            },
+            {
+              "id": "res-1-5-2",
+              "title": "EMF_Report.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1M0oRDqBkZJAKkKVwL3dl56t0xfggqeqj/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-1-5-3",
+              "title": "EC009_EMF_REPORT(3)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1eK1LATK9ZAfY6H_dsCk91pBAluuMbcOO/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-1-5-4",
+              "title": "EMF KMP",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1RqduIHz5NrYDfhVsfotueMYDAS3PQY9W/view?usp=drivesdk",
+              "size": "8.3 MB"
+            },
+            {
+              "id": "res-1-5-5",
+              "title": "P.S BIMBHRA",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ReJLmYDmoi1fEg_MMsJzwgzbTcRjnUhF/view?usp=drivesdk",
+              "size": "12.4 MB"
+            },
+            {
+              "id": "res-1-5-6",
+              "title": "EC106_PE_Assignment_9",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10uPJR5tS16yc4JWji3_W-c7YYsXpwh8j/view?usp=drivesdk",
+              "size": "1.8 MB"
+            },
+            {
+              "id": "res-1-5-7",
+              "title": "EC106_PE_Assignment_8",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1qUmz-Tl0d1iHskRrR00O9IhbyITQ7bSb/view?usp=drivesdk",
+              "size": "2.4 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-1-6",
+          "name": "MCA",
+          "code": "MCA",
+          "resources": [
+            {
+              "id": "res-1-6-1",
+              "title": "MCA_Sessional1_2023_24.pptx",
+              "type": "notes",
+              "url": "https://docs.google.com/presentation/d/1C9Ad0Byl4MIen24606M8_fZbNffj6pQ9/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "1.6 MB"
+            },
+            {
+              "id": "res-1-6-2",
+              "title": "Ref_The 8051 Microcontroller Architecture, Programming And Applications",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1iT_ycuFD-XxWDNwDo51c5sJRuWHX60Yo/view?usp=drivesdk",
+              "size": "6.6 MB"
+            },
+            {
+              "id": "res-1-6-3",
+              "title": "MCA SEM V Teaching Plan.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1hH0SMEBE0aBlSeEm0O3nrHq79j1tQ2K9/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-1-6-4",
+              "title": "MCA_VAV_S1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1CjWiPey-CoDigP1apEmBH7BFqSvdD4lg/view?usp=drivesdk",
+              "size": "11.6 MB"
+            },
+            {
+              "id": "res-1-6-5",
+              "title": "MKP",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1mSobfF1s_nRqqB_cxDOeRmyA51Nqdz_S/view?usp=drivesdk",
+              "size": "3.2 MB"
+            },
+            {
+              "id": "res-1-6-6",
+              "title": "dokumen.tips_question-paper-with-solution-the-8051-microcontroller-based-embedded-systemsjune",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18-tF2nCZrKLaw1d-saHlAj4GaMPmsVIG/view?usp=drivesdk",
+              "size": "0.7 MB"
+            },
+            {
+              "id": "res-1-6-7",
+              "title": "vdoc.pub_the-8051-microcontroller-based-embedded-systems",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1-MF7VKoI_5pD0VrA10NWwc3xSYiAgDWH/view?usp=drivesdk",
+              "size": "20.7 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-1-7",
+          "name": "PE",
+          "code": "PE",
+          "resources": [
+            {
+              "id": "res-1-7-1",
+              "title": "P.S BIMBHRA",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1F1YQJak-jYYKcIhuoWlxGyhOyxRpbEFP/view?usp=drivesdk",
+              "size": "12.4 MB"
+            },
+            {
+              "id": "res-1-7-2",
+              "title": "PE-YKM_full",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1P4deBgdGKmC13IhgnqJTnl7d0n2llZqX/view?usp=drivesdk",
+              "size": "24.9 MB"
+            },
+            {
+              "id": "res-1-7-3",
+              "title": "PE-HBP_full",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1w1Ikfu5pUdubR8ZZOWbTaYQ-Q8djAfeD/view?usp=drivesdk",
+              "size": "19.6 MB"
+            },
+            {
+              "id": "res-1-7-4",
+              "title": "dokumen.pub_power-electronics-2nbsped-0070583897 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1S13rhI0NmuaearXQ89o-djF2-gpp6e6Y/view?usp=drivesdk",
+              "size": "73.6 MB"
+            },
+            {
+              "id": "res-1-7-5",
+              "title": "pdfcoffee.com_muhammad-h-rashid-power-electronics-devices-circuits-and-applications-pearson-2014-1pdf-pdf-free",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1LXkFr00rtcbSlIgZW1Wk2ZKZ8u8BjzG4/view?usp=drivesdk",
+              "size": "48.7 MB"
+            },
+            {
+              "id": "res-1-7-6",
+              "title": "LessonPlan_BTECH_V_PE_2023-24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1hUlvgvZ1blJVa5gkjIcdfV8Pdray9dHX/view?usp=drivesdk",
+              "size": "0.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-1-8",
+          "name": "ECOM",
+          "code": "ECOM",
+          "resources": [
+            {
+              "id": "res-1-8-1",
+              "title": "assignment sst_ph3_",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1gXMsWud_PfpMddzkSrGD9kHdgHKOk5kY/view?usp=drivesdk",
+              "size": "7.8 MB"
+            },
+            {
+              "id": "res-1-8-2",
+              "title": "assignment sst_ph3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1mNA_BZpeA6mEQ4pIHuHjL9gJF1TgOHOu/view?usp=drivesdk",
+              "size": "5.9 MB"
+            },
+            {
+              "id": "res-1-8-3",
+              "title": "ECOM-SST_complete",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1A1IhrZ0I3SqLoZN_WA2mz2QDl-CUqazy/view?usp=drivesdk",
+              "size": "15.8 MB"
+            },
+            {
+              "id": "res-1-8-4",
+              "title": "ECOM-HBS_complete",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Jdvx82xDVb5LD5cH309c9MDaoZfWXPIu/view?usp=drivesdk",
+              "size": "19.9 MB"
+            },
+            {
+              "id": "res-1-8-5",
+              "title": "ecom sst _phase1pdf",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Z6Td8ou199nzChYjtlfahEwK7oBCiPsp/view?usp=drivesdk",
+              "size": "5.5 MB"
+            },
+            {
+              "id": "res-1-8-6",
+              "title": "ECOM BOOK",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ef6jQlALX6cThYnaymy2gl7eWjTZqzh3/view?usp=drivesdk",
+              "size": "4.8 MB"
+            },
+            {
+              "id": "res-1-8-7",
+              "title": "TeachingPlan_V_Ecom_2023",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1rtC5f-OcBq8yqJcGqEmjo_UPsfqnpRe3/view?usp=drivesdk",
+              "size": "0.1 MB"
             }
           ]
         }
@@ -44,20 +450,124 @@
     },
     {
       "id": "sem-2",
-      "name": "Semester 2",
-      "description": "Core foundation covering Mathematics II, Chemistry, and Programming in C.",
+      "name": "SEM-7",
+      "description": "Resources for SEM-7",
       "subjects": [
         {
-          "id": "sub-prog-c",
-          "name": "Programming in C",
-          "code": "CS101",
+          "id": "sub-2-1",
+          "name": "Sem7.rt",
+          "code": "SEM7.R",
           "resources": [
             {
-              "id": "res-c-notes",
-              "title": "Complete C Programming Notes",
+              "id": "res-2-1-1",
+              "title": "SEM_7.zip",
               "type": "notes",
-              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-              "size": "8.5 MB"
+              "url": "https://drive.google.com/file/d/1AB5qY4C7gAjIJbGxpcKIOaQ_IT6LyvfW/view?usp=drivesdk",
+              "size": "670.7 MB"
+            },
+            {
+              "id": "res-2-1-2",
+              "title": "Externals-SemVII-2023",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1N6VHF3_bX74qH8DjjcaDReG6UG7_KECK/view?usp=drivesdk",
+              "size": "7.3 MB"
+            },
+            {
+              "id": "res-2-1-3",
+              "title": "SIP SEM_7 Report[1]",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1qoTdqOXj0_iFmIakQWiqd2dJySJ-pKqf/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-2-1-4",
+              "title": "CVML_Teaching Plan_2024-25",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1z86x12X3FuqzDeoG_z_DuCwFiz8oYBYR/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-2-1-5",
+              "title": "Sessionals-SemVII-2023",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1zcnwetPb-NrBuuWHFd-PkY_V7C0JFMZB/view?usp=drivesdk",
+              "size": "15.9 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-2-2",
+          "name": "SEM7.rm",
+          "code": "SEM7.R",
+          "resources": []
+        },
+        {
+          "id": "sub-2-3",
+          "name": "Sem7.af",
+          "code": "SEM7.A",
+          "resources": [
+            {
+              "id": "res-2-3-1",
+              "title": "2024-25-Ent_IP-PDD.pptx",
+              "type": "notes",
+              "url": "https://docs.google.com/presentation/d/12RuocRCMWPA3nPTgsdOhfsTXUli27tyE/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-2-3-2",
+              "title": "2024-25-IP Patent-PDD.pptx",
+              "type": "notes",
+              "url": "https://docs.google.com/presentation/d/1aC2q1ZY-jJvtRFmDTiSKu1i7Hm5xYA5L/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "3.8 MB"
+            },
+            {
+              "id": "res-2-3-3",
+              "title": "Entrepreneurship.pptx",
+              "type": "notes",
+              "url": "https://docs.google.com/presentation/d/1g7LbWuMlFhvMC0v77Gppl0WCo5kgu4wA/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-2-3-4",
+              "title": "emb sess 2025",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ozgJZmR68PvGMRlXf_0Na7jpIllNjVcI/view?usp=drivesdk",
+              "size": "5.5 MB"
+            },
+            {
+              "id": "res-2-3-5",
+              "title": "cvml sessionals 2025",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1wwmYDvFvokN53bqWWgP5QRxmonmhkNc2/view?usp=drivesdk",
+              "size": "2.5 MB"
+            },
+            {
+              "id": "res-2-3-6",
+              "title": "EC052.uvgui.alafi",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1BlI8sds0A9BEg6Z4s4puoZa0K9CSQ96w/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-2-3-7",
+              "title": "EC052.uvopt",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1PRdbf6dAhYy4WjM1NQ7A28NwGb0Z7uah/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-2-3-8",
+              "title": "Sem-7 Prev Yr Papers",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1-NG0OV2iYZKnpCGOesZyhKVpe3oxPwk-/view?usp=drivesdk",
+              "size": "23.2 MB"
+            },
+            {
+              "id": "res-2-3-9",
+              "title": "EC052.uvproj",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1soeUSqtvcC0Inl_wAiYj-JCFFDPEsZjM/view?usp=drivesdk",
+              "size": "0.0 MB"
             }
           ]
         }
@@ -65,20 +575,3016 @@
     },
     {
       "id": "sem-3",
-      "name": "Semester 3",
-      "description": "Introduction to branch-specific core subjects. Data Structures, Digital Logic.",
+      "name": "SEM-6",
+      "description": "Resources for SEM-6",
       "subjects": [
         {
-          "id": "sub-dsa",
-          "name": "Data Structures & Algorithms",
-          "code": "CS201",
+          "id": "sub-3-1",
+          "name": "RM-IPR",
+          "code": "RM-IPR",
           "resources": [
             {
-              "id": "res-dsa-trees",
-              "title": "Trees and Graphs Lecture Slides",
-              "type": "presentation",
-              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+              "id": "res-3-1-1",
+              "title": "2024-25-IP Patent-PDD (1).pptx",
+              "type": "notes",
+              "url": "https://docs.google.com/presentation/d/1WVRoqx2P8Tqgss9k5jWqLwHUcC9sEvi2/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "3.8 MB"
+            },
+            {
+              "id": "res-3-1-2",
+              "title": "week10-12 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/100tgbb9_UBxSKH5gGH665sVVskpYfJWn/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-3-1-3",
+              "title": "week9 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1dWgd_G74sxn8WbbxTrmYpNXBpvZSIy_V/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-3-1-4",
+              "title": "week7-8 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1JO75GCAGkjsH8YTEfWKRS1lWiOpAEQO6/view?usp=drivesdk",
+              "size": "1.2 MB"
+            },
+            {
+              "id": "res-3-1-5",
+              "title": "week6 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1XD4s40txO5I7UaqXlWmfGYgMcvJzXNjc/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-3-1-6",
+              "title": "week5 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1os5wJH8hQoDmvEwCONyguZWI--exENct/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-3-1-7",
+              "title": "week4 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Y-DDDAECn3IZ5muJSMSqwHjVmfehGOtd/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-3-1-8",
+              "title": "week3 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1YxlOD0HuL5g0shVoEdAOoxZLZ2SalnaW/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-3-1-9",
+              "title": "week2 (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1zD6rJOIjrs5hk3Dl68d2S17aOS4Y0p3_/view?usp=drivesdk",
+              "size": "0.8 MB"
+            },
+            {
+              "id": "res-3-1-10",
+              "title": "week1-RM-IPR (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ZkOcuGMlLkOsvPEGWRNPPgRSFupMMApx/view?usp=drivesdk",
+              "size": "0.9 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-2",
+          "name": "EXTERNAL 2024-25",
+          "code": "EXTERN",
+          "resources": [
+            {
+              "id": "res-3-2-1",
+              "title": "EC VI 2024",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1RYtbhx3q4yP2Kjv9677xg_p7_EhE5OIb/view?usp=drivesdk",
+              "size": "6.2 MB"
+            },
+            {
+              "id": "res-3-2-2",
+              "title": "SEM 6 Externals 2025",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1IUEQzpE6QZEjf1J_sGl9-TW9tVz2RovO/view?usp=drivesdk",
+              "size": "4.6 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-3",
+          "name": "EXTERNAL 2026",
+          "code": "EXTERN",
+          "resources": [
+            {
+              "id": "res-3-3-1",
+              "title": "SEM_VI_EXTERNALS_PYQ_2026",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1yhM8Kfr-ZtPZV-MFUC-87dPlLatdjv6K/view?usp=drivesdk",
+              "size": "4.5 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-4",
+          "name": "Sessionals 2026",
+          "code": "SESSIO",
+          "resources": [
+            {
+              "id": "res-3-4-1",
+              "title": "SEMVI_sessionalpapers2026",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1tMcgcgtqMBCa3fwOca3eLLo5vWJfuKPB/view?usp=drivesdk",
+              "size": "11.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-5",
+          "name": "SEM6_PPT's",
+          "code": "SEM6_P",
+          "resources": [
+            {
+              "id": "res-3-5-1",
+              "title": "CS.zip",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1j_TzzDuVOu7LVJPDGhq5gI9eYqcIvFeC/view?usp=drivesdk",
+              "size": "15.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-6",
+          "name": "SWI",
+          "code": "SWI",
+          "resources": [
+            {
+              "id": "res-3-6-1",
+              "title": "SWI.ASM",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1vf0kLYwvCyP-_AJX2mfi3-3gH4EoDV64/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-6-2",
+              "title": "SWI.uvgui.Vasim",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1pzdsi04oLjmYESJH7JmlR6hbaa0vnFOb/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-3-6-3",
+              "title": "SWI.uvopt",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/13cMg6GAKu5f4ydEpQBGnUtGN3S51azs9/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-6-4",
+              "title": "EventRecorderStub.scvd",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1QpQPcZhLPyygXSqBtzDRYwdrXsf0jSdL/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-6-5",
+              "title": "SWI.uvproj",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1vglw2qDQ8oyYr6AqjJ3GgybpZypoVgRo/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-6-6",
+              "title": "SWI_HANDLER.s",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ZL95vkHBNqH5qZedNqW4RaP-1SKIRFH_/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-6-7",
+              "title": "LPC2300.s",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1kGzeR7Udigwz8BoJhE2CerNXZptMJDJD/view?usp=drivesdk",
+              "size": "0.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-7",
+          "name": "Project",
+          "code": "PROJEC",
+          "resources": [
+            {
+              "id": "res-3-7-1",
+              "title": "IOT_Certificate.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1Mm3YzJvm8dyxd4r54KTd_EjepBfr2Mwb/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-7-2",
+              "title": "title.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1vRt2KTTuqZ90dd9w9Jf3YDnekw7biWQP/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-7-3",
+              "title": "INDEX.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/16B0z_nZ7fw70b1q71tULMpTdy1LOlOCO/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-7-4",
+              "title": "Project Report.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1Cl9q9lveU8EBOdBBzff4rkouV2MwPa0V/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "3.2 MB"
+            },
+            {
+              "id": "res-3-7-5",
+              "title": "User Manual.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1K9Rat93wrgSvMsLOIksWgWI_Qzuc0B_1/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-7-6",
+              "title": "Automatic Pill Dispenser Specs.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1svc9pZWhKSfHixFtMPyhRAZHRFlpti-U/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-8",
+          "name": "CS",
+          "code": "CS",
+          "resources": [
+            {
+              "id": "res-3-8-1",
+              "title": "Communication systems (Hayk_ (z-library.sk, 1lib.sk, z-lib.sk)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/16TdPbdXVDJYt9DO5Z4nwTA9OHglTXr57/view?usp=drivesdk",
+              "size": "41.5 MB"
+            },
+            {
+              "id": "res-3-8-2",
+              "title": "CS_ASSIGNMENT_9_SSB_DSB_ERROR-INTERFERENCE_PHASE3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1DIdhKUEnUFzywiL3JoHKmJ2jddQkO7BL/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-3-8-3",
+              "title": "s3_sst_Syllabus from second edition b p lathi",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Oq-rRFcHh9GbZr1Y3leU-wGoe0OVOxXN/view?usp=drivesdk",
+              "size": "16.7 MB"
+            },
+            {
+              "id": "res-3-8-4",
+              "title": "CS_ASSIGNMENT 9_SSB_DSB_HT",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1oP4DpKuz1sy43laqeOCyMBxjNJJaP50o/view?usp=drivesdk",
+              "size": "3.9 MB"
+            },
+            {
+              "id": "res-3-8-5",
+              "title": "CS-ASS9_sst_s3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1rtFTOeJ6g62x-NmzYgjnouyL1J-kRWbU/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-3-8-6",
+              "title": "HBS_S3_LAST_LEC_LEFT",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1seMdwd14j7hZIxafnogtDNzGIlaP_WhR/view?usp=drivesdk",
+              "size": "8.6 MB"
+            },
+            {
+              "id": "res-3-8-7",
+              "title": "communication-systems--Haykin-4ed--- (By Yogi)-By www.LearnEngineering.in.rar",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1SiwNC_DrbOE7s3BImB5Dp3DlC2-Z9TcI/view?usp=drivesdk",
+              "size": "12.4 MB"
+            },
+            {
+              "id": "res-3-8-8",
+              "title": "S3_hbs_8_10_to_8_18",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1e_uQEGoVMO0w8AzIs0Ib6Lz_1vg3zTI7/view?usp=drivesdk",
+              "size": "18.2 MB"
+            },
+            {
+              "id": "res-3-8-9",
+              "title": "prev yr_sst_ph2_but_s3prevpaper",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1dJlfn471sMuzhFbsNWt5NNRqaw0bs0TN/view?usp=drivesdk",
+              "size": "0.7 MB"
+            },
+            {
+              "id": "res-3-8-10",
+              "title": "2nd Phase CS (HBS)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/13FkuwZNnDhsckYfAYyF041ArcCKST-lp/view?usp=drivesdk",
+              "size": "6.0 MB"
+            },
+            {
+              "id": "res-3-8-11",
+              "title": "CS-LabManual",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1zyAXNzE_uwHZKm7sAtGvTDJHjyDr35pz/view?usp=drivesdk",
+              "size": "3.0 MB"
+            },
+            {
+              "id": "res-3-8-12",
+              "title": "SOLUTION_FIRST_CS_PARTB_SST_HBR_2022_23",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1jms2FO1kv-DXNg5j3tuH2lRWK-rgm0mE/view?usp=drivesdk",
+              "size": "7.9 MB"
+            },
+            {
+              "id": "res-3-8-13",
+              "title": "solution_Sessional_I",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1UJqRdWxJXWkATinrZERqLs71eoCyipcW/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-3-8-14",
+              "title": "CS (HBS) 1st Phase",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1iJtqaf1rmelJyM4ViJWIq5jNHfHQw4L9/view?usp=drivesdk",
+              "size": "6.6 MB"
+            },
+            {
+              "id": "res-3-8-15",
+              "title": "CS (HBR) 1st Phase",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1jqHoP3f3u-A0uet-fpfW_cWRGBPbwxFl/view?usp=drivesdk",
+              "size": "6.8 MB"
+            },
+            {
+              "id": "res-3-8-16",
+              "title": "cs sst phase 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1eUcBbWHeg4lICiljypD2wisUVcbiakTa/view?usp=drivesdk",
+              "size": "5.5 MB"
+            },
+            {
+              "id": "res-3-8-17",
+              "title": "cs vmt phase 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1e-20TbVHLBaamjleICYu0vbI1aKetjBF/view?usp=drivesdk",
+              "size": "4.3 MB"
+            },
+            {
+              "id": "res-3-8-18",
+              "title": "cs sst phase 1 ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10x7E5if4mau5-O-UffHKqR5RdqRZFi51/view?usp=drivesdk",
               "size": "4.2 MB"
+            },
+            {
+              "id": "res-3-8-19",
+              "title": "Teaching_Lesson_Plan_VI_CS_2023_24.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1UnEcaPiPbtp02bi-DJeUSguwhgBHIDAI/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-8-20",
+              "title": "solution_mannual_modern_digital_and_anal",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1wW-IUARcT5gyjhxPfmp_v9yJhSQtXliO/view?usp=drivesdk",
+              "size": "3.9 MB"
+            },
+            {
+              "id": "res-3-8-21",
+              "title": "Modern_Digital_And_Analog_Communications ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1q5BiJ9X7sShmreZEr5dNtLOzjfGGR683/view?usp=drivesdk",
+              "size": "49.5 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-9",
+          "name": "AMP",
+          "code": "AMP",
+          "resources": [
+            {
+              "id": "res-3-9-1",
+              "title": "AMP_Journal_EC054.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1HB5FHS2Cdc9sdUJzkRy0ZlhHFN1PryuM/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "21.0 MB"
+            },
+            {
+              "id": "res-3-9-2",
+              "title": "Book_Chapter-1-4",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1YcCfgPXIMZF1_ePntVBcIDm-RoepMu4o/view?usp=drivesdk",
+              "size": "93.7 MB"
+            },
+            {
+              "id": "res-3-9-3",
+              "title": "chap7_s3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/111XDNXv3cpwIvOmcipvvLcx1-7xBa-hL/view?usp=drivesdk",
+              "size": "1.3 MB"
+            },
+            {
+              "id": "res-3-9-4",
+              "title": "njk phase 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/11P9mHUUbb00gHK4p6OJGAdBZFKr4G1RR/view?usp=drivesdk",
+              "size": "18.5 MB"
+            },
+            {
+              "id": "res-3-9-5",
+              "title": "vav 3rd phase",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1_ZObNZq8kfEXR442FsY7cY6eW0CehxlH/view?usp=drivesdk",
+              "size": "14.1 MB"
+            },
+            {
+              "id": "res-3-9-6",
+              "title": "EC104_B3_AMP_JOURNAL",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/164dKBvFao4jFkuWGhRh3QVLsk8ecFoQX/view?usp=drivesdk",
+              "size": "7.1 MB"
+            },
+            {
+              "id": "res-3-9-7",
+              "title": "chap3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1X-92FzloTvrxv1b31s7jGmSbIq0J40ok/view?usp=drivesdk",
+              "size": "1.4 MB"
+            },
+            {
+              "id": "res-3-9-8",
+              "title": "LEC.zip",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1UI0jE7RbgrUthdUKRkNx5pmP-o6Y8yye/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-3-9-9",
+              "title": "Furber S.ARM system-on-chip architecture.2000",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Wp186nJV6ZM0N-50hC51G67E44mPJW2h/view?usp=drivesdk",
+              "size": "17.5 MB"
+            },
+            {
+              "id": "res-3-9-10",
+              "title": "AMP tutorials ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1_MY7_go2M7HbIh7Bs_zbcH2aSt-dsnFe/view?usp=drivesdk",
+              "size": "1.6 MB"
+            },
+            {
+              "id": "res-3-9-11",
+              "title": "INTEL 8086 All Notes",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1piVOooWM-WfRDQZfOF4FeRjB7fvG5csl/view?usp=drivesdk",
+              "size": "2.7 MB"
+            },
+            {
+              "id": "res-3-9-12",
+              "title": "AMP (VAV) 1st Sessional",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1N2djY89ivrqfnREYvn5cZVyte7gSw3xy/view?usp=drivesdk",
+              "size": "8.7 MB"
+            },
+            {
+              "id": "res-3-9-13",
+              "title": "Ref_book_microprocessors-douglas-v-hall-pdf-free",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1tg5FyDt9-XqAwC_CP8w-GKgYuaqTerCj/view?usp=drivesdk",
+              "size": "12.3 MB"
+            },
+            {
+              "id": "res-3-9-14",
+              "title": "Solution intel-microprocessors-8th-edition-barry-brey-solutions-manual",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1EIgxa-DOLNhpA4Qe-gzQMDr2t1g5DBF5/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-3-9-15",
+              "title": "intel_book",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Puqk836T8UuOMIoKGpvhiL6rRniX-obd/view?usp=drivesdk",
+              "size": "8.8 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-10",
+          "name": "DSP_Journal",
+          "code": "DSP_JO",
+          "resources": [
+            {
+              "id": "res-3-10-1",
+              "title": "modf2.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1rVwP9Z-GCuCsqdgvaUzJ5cym65ZkRoqr/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-10-2",
+              "title": "modf_1.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1tmXn0gcP1OrJyY25Ez7uHd5YiqyOzffX/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-10-3",
+              "title": "1_sp3.sci",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1R0SuM8aHPjNxMvxNvHhdcWuuuif4rAF8/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-10-4",
+              "title": "exp1_Sp.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1hwJ0ZpW-9peIRnJm2iBGO0wQV5lu3hDV/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-10-5",
+              "title": "ex2.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/12Axd3UF1tZdduF5Sd5zvbyOg5iJ4ltbc/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-10-6",
+              "title": "ex1.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1uHzLoqxCNumOV5KWR81YvlK9lroCv6Tc/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-10-7",
+              "title": "1_sp4.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10KUdQ1b-23hIUr7jnpEiBxt-x4nxoiBB/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-10-8",
+              "title": "1_sp2.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/12GQIfDIp9mmF0ieJjXhiZF5Ymg9pvMvc/view?usp=drivesdk",
+              "size": "0.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-11",
+          "name": "DSP",
+          "code": "DSP",
+          "resources": [
+            {
+              "id": "res-3-11-1",
+              "title": "chapter 9 hks sess 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/12fEo6ur_h-vf9BzSsG7MOBYBShsWUzX_/view?usp=drivesdk",
+              "size": "12.5 MB"
+            },
+            {
+              "id": "res-3-11-2",
+              "title": "Analog-and-Digital-Signal-Processing-by-Ambardar",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ysabsvYOnvUc0EKvrKilAAl7Mhh9K73_/view?usp=drivesdk",
+              "size": "17.1 MB"
+            },
+            {
+              "id": "res-3-11-3",
+              "title": "SPT 1st & 2nd Phase",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1llmnZ6EYS3b-SiGXOjIoaRjvUfN5-NXM/view?usp=drivesdk",
+              "size": "22.0 MB"
+            },
+            {
+              "id": "res-3-11-4",
+              "title": "HKS DSP S3 USE THIS",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1-96dURjbahLO7_r5H-lTA21NVWGiDzTs/view?usp=drivesdk",
+              "size": "3.6 MB"
+            },
+            {
+              "id": "res-3-11-5",
+              "title": "Sol_DSP_3_2022-23",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KUMCUtPucIpiMxKBzXS-BhTCacWsrWlI/view?usp=drivesdk",
+              "size": "1.7 MB"
+            },
+            {
+              "id": "res-3-11-6",
+              "title": "SOL_DSP_HKS_S3.jpg",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1OPtZ5RerquLOZHpcVDDy4jTcg0s4Xt_z/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-3-11-7",
+              "title": "Sir Notes_phase 3 DSP(HKS)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1CzJeGkHUQmRDVi3DOWg0B--rAkzpwwds/view?usp=drivesdk",
+              "size": "2.0 MB"
+            },
+            {
+              "id": "res-3-11-8",
+              "title": "S3_DSP-SPT",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Mv47VWqhm3wT6BVEbCcYUULA9FfVd21Z/view?usp=drivesdk",
+              "size": "4.8 MB"
+            },
+            {
+              "id": "res-3-11-9",
+              "title": "s3_DSP-HKS",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1hXnHp0LxtdMWVUFKudI7UqqEVz0wkTYD/view?usp=drivesdk",
+              "size": "3.5 MB"
+            },
+            {
+              "id": "res-3-11-10",
+              "title": "T2_Digital_Signal_Processing___Proakis_and_Manolakis",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1BQe4sm6FiI9xa6jVPSyKAfyvTCaL925x/view?usp=drivesdk",
+              "size": "55.3 MB"
+            },
+            {
+              "id": "res-3-11-11",
+              "title": "sessionalSOLUTION_FIRST_CS_PARTB_SST_HBR_2022_23",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Tf6-E7MwSD9Pkv1LDJL5eR4OBObJeZIS/view?usp=drivesdk",
+              "size": "7.9 MB"
+            },
+            {
+              "id": "res-3-11-12",
+              "title": "DSP assignment _Phase1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ei-8WbzWkc3pbpZaJJntptNKsyQRR8Bu/view?usp=drivesdk",
+              "size": "3.4 MB"
+            },
+            {
+              "id": "res-3-11-13",
+              "title": "DSP (HKS) 1st Sessional",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1tsogdSq5t6eRR7xa2dviqCSnsm-ourid/view?usp=drivesdk",
+              "size": "5.0 MB"
+            },
+            {
+              "id": "res-3-11-14",
+              "title": "DSP_HKS_S1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1emtdnXe4yhDO8md9SZ5LQhLZonlDy0wZ/view?usp=drivesdk",
+              "size": "12.3 MB"
+            },
+            {
+              "id": "res-3-11-15",
+              "title": "DIGITAL_SIGNAL_PROCESSING_A_MODERN_INTRO",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1SLpZNOLNPD0jUV6gcha2DfyQGyWYPiVC/view?usp=drivesdk",
+              "size": "3.2 MB"
+            },
+            {
+              "id": "res-3-11-16",
+              "title": "hks dsp phase 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/11aslqmKjF_JdNIk0zB6r72Vw0WDssS5s/view?usp=drivesdk",
+              "size": "2.8 MB"
+            },
+            {
+              "id": "res-3-11-17",
+              "title": "DSP (SPT) 1st Phase",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/11bC9bJVmnpVLMGXfMl2mIBmeuRpPCqq9/view?usp=drivesdk",
+              "size": "9.2 MB"
+            },
+            {
+              "id": "res-3-11-18",
+              "title": "DSP_SPT_S1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1AnE3x6R0RzW8DNiAriXr7e-yZWngDXFH/view?usp=drivesdk",
+              "size": "11.5 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-12",
+          "name": "MWA",
+          "code": "MWA",
+          "resources": [
+            {
+              "id": "res-3-12-1",
+              "title": "mwa_exp3.sci",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1O9VrFxOKZJDAOJF_lry5VoBbsUaRn5Ty/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-12-2",
+              "title": "mwa_exp3.sci~",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Z_aA5tVv8Yd-iYXBMlP0dc07L0BaM2qz/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-12-3",
+              "title": "alafiyaexp3.sci~",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/103UxHzSEurY0l2illNREemXYW_V0gf6S/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-12-4",
+              "title": "alafiyaexp3.sci",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1lSYYP9CYGz8Fi5O2LUWFaa3aLRsn1tkI/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-12-5",
+              "title": "practicepractical.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1hP4v793ait6Qlavjg1_YX3Ko4GqfJC0I/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-12-6",
+              "title": "exp3.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1HaJMts3BZbpgGJ2XD1t7BQUwnF7gUX9I/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-12-7",
+              "title": "array factor.sce",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/12uUP51YJqYapFJPqb17IlPAhjh917yaW/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-12-8",
+              "title": "Phase-1_ Transmission Line-2023.pptx",
+              "type": "notes",
+              "url": "https://docs.google.com/presentation/d/1CaxD9kGcKZbVJ9zpLxSc3yPNh3TZx9c_/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "7.3 MB"
+            },
+            {
+              "id": "res-3-12-9",
+              "title": "EXP9_11.zip",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1SYstXcT5x9BPekI9BSbFhdJSJOGoBvmW/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-3-12-10",
+              "title": "RHA p3 tvs",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Bipv1xhneE8pkaLdjfhR9g76UuFSKM5R/view?usp=drivesdk",
+              "size": "17.0 MB"
+            },
+            {
+              "id": "res-3-12-11",
+              "title": "s3_priya rha mwa",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Blqph1lEQto7BeSLv7W32pw3KjPd0Xgv/view?usp=drivesdk",
+              "size": "9.2 MB"
+            },
+            {
+              "id": "res-3-12-12",
+              "title": "priya mwa kmp_s3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1hKhZKtQOFl9xYjayQYrvS3QJEHvuPgOM/view?usp=drivesdk",
+              "size": "9.0 MB"
+            },
+            {
+              "id": "res-3-12-13",
+              "title": "T3_electronics-communication-system-by-george-kennedypdf-pdf-free",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/13172fL7baB3jWcd5tK4pdYGHS6okH3Bm/view?usp=drivesdk",
+              "size": "14.8 MB"
+            },
+            {
+              "id": "res-3-12-14",
+              "title": "internet_Lecture_Notes_Antenna_and_Wave_Propagati",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1J545Nif821yL9_LUCxIzk54peIUulHjS/view?usp=drivesdk",
+              "size": "2.8 MB"
+            },
+            {
+              "id": "res-3-12-15",
+              "title": "ABP_MWA_P2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1DazNR_eh5_v4dLEAcqVIrjTZD23kcdbn/view?usp=drivesdk",
+              "size": "18.3 MB"
+            },
+            {
+              "id": "res-3-12-16",
+              "title": "kmp(2nd sessional)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1TQkRJjH3cWReVpLcQwq_6lDka7j6jcaF/view?usp=drivesdk",
+              "size": "4.8 MB"
+            },
+            {
+              "id": "res-3-12-17",
+              "title": "B.Tech_Sem_VI_MWA_Labmanual",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/11XCqHgxjiQ8u7vAT7CKKxx18cplOBYBm/view?usp=drivesdk",
+              "size": "1.8 MB"
+            },
+            {
+              "id": "res-3-12-18",
+              "title": "em-waves-r-s-shevgaonkar-pdf-free",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1cGJ5X09PNjvSdiBjJ6PeZxCH9dG85GtH/view?usp=drivesdk",
+              "size": "26.5 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-13",
+          "name": "AE",
+          "code": "AE",
+          "resources": [
+            {
+              "id": "res-3-13-1",
+              "title": "AE_Journal_EC070",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/136oKOyv1yPqg5qw9MyF_79LFjkyC2KwN/view?usp=drivesdk",
+              "size": "9.4 MB"
+            },
+            {
+              "id": "res-3-13-2",
+              "title": "AE_RK_4.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1yo2rWYeeuZdLVsmf37F6jBphSCyP4ok-/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "9.3 MB"
+            },
+            {
+              "id": "res-3-13-3",
+              "title": "RK_AE",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1bC6v6FFNMj-wK5FjwevxhiT_f2IqPVV1/view?usp=drivesdk",
+              "size": "5.2 MB"
+            },
+            {
+              "id": "res-3-13-4",
+              "title": "RK_AE_FINAL_PRINT",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/129qGzqNE8K2GiLoB6wgtmPWl5eANbk5-/view?usp=drivesdk",
+              "size": "5.2 MB"
+            },
+            {
+              "id": "res-3-13-5",
+              "title": "misbah_AE_word_FINAL.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1ndyKKSSqIL7LuH004vSCbqv7Ub4mjX9B/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "4.6 MB"
+            },
+            {
+              "id": "res-3-13-6",
+              "title": "AE_Word_Manual.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1Ao8eZ3pngw5n32UTjya0jM54t_f4eEno/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "5.0 MB"
+            },
+            {
+              "id": "res-3-13-7",
+              "title": "B.Tech. Sem_VI_AE",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1yHjFMDB-YOCJ-H5Uw0Q9TJyc9IelJJw_/view?usp=drivesdk",
+              "size": "5.4 MB"
+            },
+            {
+              "id": "res-3-13-8",
+              "title": "Rachit.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1HdQ91crvE2A8kY5maleuoG04KVMj--C6/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "3.8 MB"
+            },
+            {
+              "id": "res-3-13-9",
+              "title": "AE EXP1.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/11Zgu5znlFFRAnXe46KI9uNCFyq3ZZR1c/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.8 MB"
+            },
+            {
+              "id": "res-3-13-10",
+              "title": "AE EXP-6.zip",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18CkJfe6gcWXTkD0e4kszmjozIPkzu-v0/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-11",
+              "title": "AE - EXP - 9.rar",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1izXqJv9sVGbj-8k_6B3nrHBXfA2jIqmh/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-12",
+              "title": "AE_EX_10.zip",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KkpvqyUgdcy2SHGtv_drGvzaRPF79xJ2/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-13",
+              "title": "AE EXP2.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1M0G8dOVt5c5vhMl8e4gwmdCAnHUTy6Rn/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-3-13-14",
+              "title": "EXP7.rar",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1hVji-49sODjZgvnQVpucGu0jJvUfP1k0/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-15",
+              "title": "AE_EXP5_.zip",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1W-duW_584aaq2m3XDkArA_LQifzvOP-4/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-3-13-16",
+              "title": "5_DIV.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/14-fwZchRSTBbBENAEDpgK-hCKUN7psh1/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-17",
+              "title": "5_MUL.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1-EgRsvtxSbpdE5RyYGyZpGqUVZIBTNoa/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-18",
+              "title": "5_SUB.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1B1gHmqRmwCBvbQg4rIc_aNMpxNbeS2kp/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-19",
+              "title": "5_ADD.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/14I7HxmHV3Y737KJeIvOBy8_6s4eawRk1/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-20",
+              "title": "5_GEQ.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1XlX8SaiRqNt0gbXgkA0CrS11UOgQyvVL/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-21",
+              "title": "5_GRT.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1TzuPj6du-OF2SpX0m0sl2_YYt3HQcGw7/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-22",
+              "title": "5_LEQ.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1BYpq4sOh6BilXPxsKriz2V4nQuKNVDeu/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-23",
+              "title": "5_NEQ.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ljhFBp1ZDFcG9kO6O_PVF-8APuzI74DM/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-24",
+              "title": "Exp-4.zip",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/13v-8aZMCMDaoI0p04tjEVgXN1cX0WYAu/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-3-13-25",
+              "title": "5_LES.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1OYhmiFVBlwOlfdyOIxlJ3Nnbenv_bthq/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-26",
+              "title": "5_EQU.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1qVbMXqP6G2K7gCGon17de0TbWyfvm9EE/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-3-13-27",
+              "title": "AE_EXP8.zip",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1xm185i4mbvFO3grHkunGC1LiEkNZwf_6/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-3-13-28",
+              "title": "EXP4_GATES.awl",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1MMplYmw3f2ijy66h_kBy1AIlXhcVD52l/view?usp=drivesdk",
+              "size": "0.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-14",
+          "name": "Sessional 2025",
+          "code": "SESSIO",
+          "resources": [
+            {
+              "id": "res-3-14-1",
+              "title": "Sem_6_sessional",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1dL0YsloP35GPkl6IF5U_zUggZaOSI9Z7/view?usp=drivesdk",
+              "size": "27.3 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-3-15",
+          "name": "Manuals ",
+          "code": "MANUAL",
+          "resources": [
+            {
+              "id": "res-3-15-1",
+              "title": "B.Tech_Sem_VI_MWA_Labmanual_2024-25",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KdijI7VRK439eDHgITC_tTaQBAEx3kLQ/view?usp=drivesdk",
+              "size": "1.8 MB"
+            },
+            {
+              "id": "res-3-15-2",
+              "title": "DSP_Lab manual_2024-25",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1GoyC0MpNJTxjBDCX-vSyPOUSz1t3zU8q/view?usp=drivesdk",
+              "size": "3.2 MB"
+            },
+            {
+              "id": "res-3-15-3",
+              "title": "AMP_LAB MANUAL",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1QlfRbPkAf5EQhbTpkvVjL-Cnd2kLnkvS/view?usp=drivesdk",
+              "size": "2.9 MB"
+            },
+            {
+              "id": "res-3-15-4",
+              "title": "CS_Lab_Manual.docx",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1QUiW-iF95xiP5DXAe-hmMzy8L-xcG2a0/view?usp=drivesdk",
+              "size": "8.4 MB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sem-4",
+      "name": "SEM-4",
+      "description": "Resources for SEM-4",
+      "subjects": [
+        {
+          "id": "sub-4-1",
+          "name": "notes",
+          "code": "NOTES",
+          "resources": [
+            {
+              "id": "res-4-1-1",
+              "title": "LE2-HBR session 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1dPCT3UCGceh5owGpofi_ROBywimAhodV/view?usp=drivesdk",
+              "size": "17.4 MB"
+            },
+            {
+              "id": "res-4-1-2",
+              "title": "CT-HMP session 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/14645D6Y0MemUKqNuwzDYgfGd6quQMiIB/view?usp=drivesdk",
+              "size": "19.5 MB"
+            },
+            {
+              "id": "res-4-1-3",
+              "title": "CMOS-MJL session 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1EaCRKYa5HtkAgeorR54Noo6r1Baywbmp/view?usp=drivesdk",
+              "size": "13.2 MB"
+            },
+            {
+              "id": "res-4-1-4",
+              "title": "LE2-YKM session 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1vWghEohTeKF4yc09iwj7y0iQWOHbXeNu/view?usp=drivesdk",
+              "size": "13.6 MB"
+            },
+            {
+              "id": "res-4-1-5",
+              "title": "CMOS session 3 PDD",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1zEbYFhHGiMS1H_OVuSI7ep3koAe6UfZX/view?usp=drivesdk",
+              "size": "4.8 MB"
+            },
+            {
+              "id": "res-4-1-6",
+              "title": "SS-HBS session 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1HUH2c2YPRYF1tnspd06kJnxDkQZObrjm/view?usp=drivesdk",
+              "size": "18.1 MB"
+            },
+            {
+              "id": "res-4-1-7",
+              "title": "SS-HKS session 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1He6cgwYmHu9YU13Tvv2AGnoYvvGnbtc1/view?usp=drivesdk",
+              "size": "5.9 MB"
+            },
+            {
+              "id": "res-4-1-8",
+              "title": "SS Hbs dharmik Sessional 2 27-Jan-2024 17-44-57",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1cvcSKz0sb8XcoNJq6eXvqD5tbIiycCKa/view?usp=drivesdk",
+              "size": "8.7 MB"
+            },
+            {
+              "id": "res-4-1-9",
+              "title": "ykm phase 2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18cS7SBdVSYLN5sT8Et3D09p2Q71Rh-YI/view?usp=drivesdk",
+              "size": "21.1 MB"
+            },
+            {
+              "id": "res-4-1-10",
+              "title": "SIGNAL SYSTEM HBS TB",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1R947rf9Da-F2dO380f5QazYcT5j64ZMU/view?usp=drivesdk",
+              "size": "11.8 MB"
+            },
+            {
+              "id": "res-4-1-11",
+              "title": "cmos",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/169dQKV_pHTmnnhnuli8OXLJLMxnjhRAL/view?usp=drivesdk",
+              "size": "25.2 MB"
+            },
+            {
+              "id": "res-4-1-12",
+              "title": "CMOS session 3 MJL",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1XQHxbQ1v-3tYTHIJ8bYQnKtRqM4NtOtd/view?usp=drivesdk",
+              "size": "9.2 MB"
+            },
+            {
+              "id": "res-4-1-13",
+              "title": "LE-2(sess-2)(pgd)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1feljeEtWcDTYQvW-5MKVzAM6lzgVQAc_/view?usp=drivesdk",
+              "size": "6.3 MB"
+            },
+            {
+              "id": "res-4-1-14",
+              "title": "PGD phase 2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1BFRqt_GGSslyUFCUIfeya2c6mCLQ7JV1/view?usp=drivesdk",
+              "size": "4.4 MB"
+            },
+            {
+              "id": "res-4-1-15",
+              "title": "ss phase 2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1P09y9ORnHA4lCTG2-V0f5Pw3WwlVJr_j/view?usp=drivesdk",
+              "size": "7.7 MB"
+            },
+            {
+              "id": "res-4-1-16",
+              "title": "CT-ABP session 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Xnz0DYmF0zYzJbxDJrSb8iBtCHZDDs6p/view?usp=drivesdk",
+              "size": "10.8 MB"
+            },
+            {
+              "id": "res-4-1-17",
+              "title": "le2 hbr s2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1sJ6oHejoe31M5ozd13TDgLTXKdUBUsO5/view?usp=drivesdk",
+              "size": "23.0 MB"
+            },
+            {
+              "id": "res-4-1-18",
+              "title": "Pgd dharmik Sessional 2 27-Jan-2024 17-38-32",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1O6TWXwtg42oM_ufM8-Sx-kHuMBWs89UW/view?usp=drivesdk",
+              "size": "11.3 MB"
+            },
+            {
+              "id": "res-4-1-19",
+              "title": "CMOS-PDD session 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1TTD05wEa3qmQEfQ_qlUvOlzwwIpK27fo/view?usp=drivesdk",
+              "size": "10.1 MB"
+            },
+            {
+              "id": "res-4-1-20",
+              "title": "hbr 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1aOmV_dPnupiacTHTAUbZx_eQH9GtLC79/view?usp=drivesdk",
+              "size": "38.6 MB"
+            },
+            {
+              "id": "res-4-1-21",
+              "title": "ct phase 2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1R233r1KCn3Zfi133n8HQ3QQylOxe58GP/view?usp=drivesdk",
+              "size": "35.0 MB"
+            },
+            {
+              "id": "res-4-1-22",
+              "title": "HMP-CT-S-3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1WmHgdg1pyeKA7IrBZpvpQsXLMXLqETy1/view?usp=drivesdk",
+              "size": "13.1 MB"
+            },
+            {
+              "id": "res-4-1-23",
+              "title": "LE2 PGD session 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/122YLISXX2VAH5Ft_S8P3Bj14DAugFK5E/view?usp=drivesdk",
+              "size": "3.2 MB"
+            },
+            {
+              "id": "res-4-1-24",
+              "title": "le2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1FhAX_knGN_6hwk-LGjS4OtTb4pI44gut/view?usp=drivesdk",
+              "size": "1.9 MB"
+            },
+            {
+              "id": "res-4-1-25",
+              "title": "JMS phase 1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1aiUG6p9NQ1ZH2iigvwyAPTAePZtBFLBn/view?usp=drivesdk",
+              "size": "7.7 MB"
+            },
+            {
+              "id": "res-4-1-26",
+              "title": "LE2 YKM session 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1t20uaTeBt-vSEf0GJzadGPwpXDkzKU52/view?usp=drivesdk",
+              "size": "6.9 MB"
+            },
+            {
+              "id": "res-4-1-27",
+              "title": "ABP 3rd sessional ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/106iFwTQWmNrgE5N2MGsglOHWwCk-Osde/view?usp=drivesdk",
+              "size": "11.4 MB"
+            },
+            {
+              "id": "res-4-1-28",
+              "title": "YKM-1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/12r-e2L20X_KuVHVooHOgmnSZbZ5Do5ZN/view?usp=drivesdk",
+              "size": "8.3 MB"
+            },
+            {
+              "id": "res-4-1-29",
+              "title": "YKM-2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/19SFFxOS49IsuJw5st7jEFBFvALJ0qIuA/view?usp=drivesdk",
+              "size": "2.7 MB"
+            },
+            {
+              "id": "res-4-1-30",
+              "title": "EMP session 3 JMS",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1HWLcF7mHeDb833zqR3DdghCbYPMjhH94/view?usp=drivesdk",
+              "size": "5.5 MB"
+            },
+            {
+              "id": "res-4-1-31",
+              "title": "EMP session 3 HUP",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1dhMkF0IJO7jEu67GGtVRp6RPypdQYDO9/view?usp=drivesdk",
+              "size": "3.8 MB"
+            },
+            {
+              "id": "res-4-1-32",
+              "title": "SS session 3 hks",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1g0_L8shRD7AvOv8zqmReVki8YvT1lpqt/view?usp=drivesdk",
+              "size": "4.5 MB"
+            },
+            {
+              "id": "res-4-1-33",
+              "title": "TUT2_EC087_CMOS-VLSI",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/111Jf6EUryjB5G8K0k_5exMV6M1JO1Xg-/view?usp=drivesdk",
+              "size": "0.8 MB"
+            },
+            {
+              "id": "res-4-1-34",
+              "title": "TUT2_EC087_EMP",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/17y0Hfir45TAQLXIwvj3YOiqQK28abUqT/view?usp=drivesdk",
+              "size": "0.9 MB"
+            },
+            {
+              "id": "res-4-1-35",
+              "title": "TUT1_EC087_EMP",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1CPCL-O-sajbG_XCkjQlDguwwMe98B95B/view?usp=drivesdk",
+              "size": "0.9 MB"
+            },
+            {
+              "id": "res-4-1-36",
+              "title": "jms s2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1I7cgotSOg6mgryAqBPr_KwtyShiHhuea/view?usp=drivesdk",
+              "size": "13.2 MB"
+            },
+            {
+              "id": "res-4-1-37",
+              "title": "SS session 3 hbs",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1LvOmd2ACrSZYt-VCPL8tbTUbpiuLeaQx/view?usp=drivesdk",
+              "size": "4.6 MB"
+            },
+            {
+              "id": "res-4-1-38",
+              "title": "emp phase 2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1zJ2gndgUYTyGAnz3RNMBo7XnwW2pCDAb/view?usp=drivesdk",
+              "size": "1.7 MB"
+            },
+            {
+              "id": "res-4-1-39",
+              "title": "le-II_PGD_phase3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1bzX1TuS2gfznYNI9vSrw2rJkvKS9CjqL/view?usp=drivesdk",
+              "size": "6.2 MB"
+            },
+            {
+              "id": "res-4-1-40",
+              "title": "EMP _lab manual",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1BEKoTrC8wWHRUXqv93dISTiP4FjYVMx_/view?usp=drivesdk",
+              "size": "5.0 MB"
+            },
+            {
+              "id": "res-4-1-41",
+              "title": "EMP_Final_lab manual HUP",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KABNy5esTedqurPoy7AtGyoffTeu_GwA/view?usp=drivesdk",
+              "size": "2.2 MB"
+            },
+            {
+              "id": "res-4-1-42",
+              "title": "LE hbr phase 2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1WWr4Fxjz_8tWHMPJTrkLR2hxcxjC4zzC/view?usp=drivesdk",
+              "size": "4.7 MB"
+            },
+            {
+              "id": "res-4-1-43",
+              "title": "MJL_Chapter07-2022.ppt",
+              "type": "notes",
+              "url": "https://docs.google.com/presentation/d/1lqKMOV5xSMWDSAoZusVKeZCJMhoKzdDX/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "3.2 MB"
+            },
+            {
+              "id": "res-4-1-44",
+              "title": "LE2_MAS_TP2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1uz46lhDHM8aQpV6oJWyzxCYP4rDK-bpY/view?usp=drivesdk",
+              "size": "5.7 MB"
+            },
+            {
+              "id": "res-4-1-45",
+              "title": "LE2 Phase3 notes tb",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/11hG2WhO_I-RndYB3QreVpTTeX2SWZyL7/view?usp=drivesdk",
+              "size": "3.3 MB"
+            },
+            {
+              "id": "res-4-1-46",
+              "title": "CT-1-------80_",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/13WIlqY8HDBhdyxOH9tDgntQ14ntVLZ8i/view?usp=drivesdk",
+              "size": "1.1 MB"
+            },
+            {
+              "id": "res-4-1-47",
+              "title": "pdd 1 ses2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/16e8MVu8eWDnc5auCvRCG3N22zMwXvZtW/view?usp=drivesdk",
+              "size": "2.2 MB"
+            },
+            {
+              "id": "res-4-1-48",
+              "title": "LE_integrated-electronicspdf-pdf-free",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1H5HQxHX7_G3ZpsU5zNdef5-kLX08Bwfh/view?usp=drivesdk",
+              "size": "14.0 MB"
+            },
+            {
+              "id": "res-4-1-49",
+              "title": "LE-II_Lab_Manual (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1sfTaIdWSG7-dfiZG2QIKlD_R2btb-_z8/view?usp=drivesdk",
+              "size": "2.0 MB"
+            },
+            {
+              "id": "res-4-1-50",
+              "title": "CMOS VLSI Design - PDD_phase1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1y9BMC8Dj6JNldBIYqa5rx4-ASUUaVHGu/view?usp=drivesdk",
+              "size": "1.9 MB"
+            },
+            {
+              "id": "res-4-1-51",
+              "title": "pdd2 ses2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1FS_KfgFFGvu5qQz12U7oXYZuZWoNTjH6/view?usp=drivesdk",
+              "size": "3.5 MB"
+            },
+            {
+              "id": "res-4-1-52",
+              "title": "DTFT_quesrions",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1lYKCtdJlAXMaYnMoSvkr3yM0r3BIfQxn/view?usp=drivesdk",
+              "size": "0.6 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-4-2",
+          "name": "UHV",
+          "code": "UHV",
+          "resources": [
+            {
+              "id": "res-4-2-1",
+              "title": "UHV_Bhramhastra",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/15x1MZxhhlxfYSmKYFf_PrJSubYEvSz-h/view?usp=drivesdk",
+              "size": "16.1 MB"
+            },
+            {
+              "id": "res-4-2-2",
+              "title": "UHV_Bhramastra_part_2_DEV",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/15xuqTkQYA9oEypUMUdxRQnZRodtxjydg/view?usp=drivesdk",
+              "size": "4.6 MB"
+            },
+            {
+              "id": "res-4-2-3",
+              "title": "UHV Notes",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/160vyppOrnECcSzc_3AH6FLT2nPyGW_8m/view?usp=drivesdk",
+              "size": "11.4 MB"
+            },
+            {
+              "id": "res-4-2-4",
+              "title": "UHV MATERIAL ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/162xs_vxl3UU9Mk-pkL7FYUnfSVuNTGOU/view?usp=drivesdk",
+              "size": "4.8 MB"
+            },
+            {
+              "id": "res-4-2-5",
+              "title": "UHV ans 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/16FNAn8nf_QF27xNRNhNQYmlPbcPCgt0p/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-4-2-6",
+              "title": "uhv ans 2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/15tyhqbhpTsT58Yr2irP6r-mHTDuGA5At/view?usp=drivesdk",
+              "size": "0.2 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-4-3",
+          "name": "PYQs",
+          "code": "PYQS",
+          "resources": []
+        },
+        {
+          "id": "sub-4-4",
+          "name": "Lab_Manuals",
+          "code": "LAB_MA",
+          "resources": [
+            {
+              "id": "res-4-4-1",
+              "title": "SS_Manual_Main_Content_Students",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1QAZR0JeEYmy4rba4rkKnKzP1N26fQoTM/view?usp=drivesdk",
+              "size": "1.8 MB"
+            },
+            {
+              "id": "res-4-4-2",
+              "title": "EMP-LabManual",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1QAWuKRXJzdgEUxSH2GeISE7rhiGMXkOO/view?usp=drivesdk",
+              "size": "2.7 MB"
+            },
+            {
+              "id": "res-4-4-3",
+              "title": "cmos_latest_lab_Mnaual-Latest",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1QAQGeZvkWJgQiJivksM-BBg5_Guigmz-/view?usp=drivesdk",
+              "size": "1.8 MB"
+            },
+            {
+              "id": "res-4-4-4",
+              "title": "LEII Labmanual 2023",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Q4f2z79JWYcUO-6J-BFqL7fYQscxdMCj/view?usp=drivesdk",
+              "size": "2.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-4-5",
+          "name": "CMOS VLSI DESIGN",
+          "code": "CMOS V",
+          "resources": [
+            {
+              "id": "res-4-5-1",
+              "title": "cmos_latest_lab_Mnaual-converted",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1z_WlyfNYq03OcQPjnvyr6TwDnYPZuO2Q/view?usp=drivesdk",
+              "size": "1.8 MB"
+            },
+            {
+              "id": "res-4-5-2",
+              "title": "Introduction to VLSI Circuit",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1PGNXq18PH7Qokto-FQ71VLpxrvvNvE3w/view?usp=drivesdk",
+              "size": "244.0 MB"
+            },
+            {
+              "id": "res-4-5-3",
+              "title": "CMOS Logic Circuit Design",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1OoQ-mBmIgepLSu0eGptDQCojJV2nIo96/view?usp=drivesdk",
+              "size": "31.2 MB"
+            },
+            {
+              "id": "res-4-5-4",
+              "title": "CMOS Sem4 Sessional Papers ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1908bpoMpvLAwg-kZyBZthpxKiRR6juod/view?usp=drivesdk",
+              "size": "2.4 MB"
+            },
+            {
+              "id": "res-4-5-5",
+              "title": "CMOS Tutorial_II_2024.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1PiSyKgwxNzCRkcnjobWgv2OhmGUPs56Q/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.8 MB"
+            },
+            {
+              "id": "res-4-5-6",
+              "title": "CMOS_ Tutorial1_Part2_2023",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1UHilNjlmkcLL4BnM9-wQaWZYcfy_JB_a/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-5-7",
+              "title": "CMOS Assignment_III_2024.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1f5jT9qsCKgJi08HKykovSBc95fpVN0v_/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-5-8",
+              "title": "Sutherland_Ch1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1bpDZNAn8aZBpM3DKFncoO6kVkAY3ssa2/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-5-9",
+              "title": "BIVCMOS32122",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/19joJOH1rUHZVlWGufFVTvrKw0RqK_KYC/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-5-10",
+              "title": "BIVCMOS3D2D2021",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1DjgEIPUwMRAD-F_AUDzeVXIITaSl9Fbl/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-5-11",
+              "title": "BIVCMOS32021.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1VpC2FyBjM0LnIx964HzTfpf0cYfjmvGo/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-5-12",
+              "title": "BIVCMOS12122",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1WcY0DZST28uBB7r-5NK55jU-CaffsBGH/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-5-13",
+              "title": "BIVCMOS22021.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1fEvAylKDi63aadi0Zb43l99AFMi0_I6M/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-5-14",
+              "title": "BIVCMOS1D2D2021",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1jejd7UEpmClpAV0Dp91iyL2OB0p9RQFB/view?usp=drivesdk",
+              "size": "1.1 MB"
+            },
+            {
+              "id": "res-4-5-15",
+              "title": "BIVCMOS2D2D2021",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1wZTBltmLp3MUXKa9BAjAKzYlyh2ZN6u4/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-5-16",
+              "title": "BIVCMOS22122",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1xoyeBzdjJa-FORKTIvpSXOIBA-hd4scr/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-5-17",
+              "title": "BIVCMOS12021.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1yKJGzGANgyoG_4ir87jRKVM88hhZt9io/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-5-18",
+              "title": "BIVCMO32223.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/19B16feu95QC3P2o9eboFCy0R8qVsF72d/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-5-19",
+              "title": "BIVCMO22223.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1rn6KS9QXHNQDbJUhBpoUA2Tg3WedR__2/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-5-20",
+              "title": "BIVCMO12223.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1vjJZklGg29W6P1YyweMRzFj9UHOGfPda/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.4 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-4-6",
+          "name": "EMP",
+          "code": "EMP",
+          "resources": [
+            {
+              "id": "res-4-6-1",
+              "title": "EMP Sem4 Sessional Papers ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1DnP6WdomiF9Bfeq4dy_eytrhLP7KNtxO/view?usp=drivesdk",
+              "size": "1.5 MB"
+            },
+            {
+              "id": "res-4-6-2",
+              "title": "EMP ASSIGNMENT 6.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1ocHFIHr3MHx6gpgSvXoh51WHMDh3U7Jl/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-6-3",
+              "title": "EMP ASSIGNMENT_5_2024",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1oS3HsAGXyVAofTBLRSZWq4Nf-j5L3z6P/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-6-4",
+              "title": "EMP ASSIGNMENT 3_FEB 2024.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1FWFT9Z1BMGtqEIBUOtAODIlfpDZpg3-m/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-6-5",
+              "title": "EMP ASSIGNMENT 4.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1BmjSkDWuCbnggfih4E2_fUrqI0jFBL1s/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-6-6",
+              "title": "EMP ASSIGNMENT 1_DEC 2024",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1opiAlPrvjrKA1JGs0qIVNUEHM20nM_a6/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-6-7",
+              "title": "EMP ASSIGNMENT 26_DEC 2023",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1G0iFprao_8EtrRbUOb4TVdBvQH4hHRqa/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-6-8",
+              "title": "EMP Third internal Question Paper (1)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/16kmIun2V93OXo7PHzg2CJU3Paqi44M2y/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-6-9",
+              "title": "FIRST_SESSIONAL_EMP_HUP.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1GqaQU_NmjYhGXuGsa0u9tgoAlta1IfQ4/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-6-10",
+              "title": "SECOND_SESSIONAL_EMP_HUP_FEB2023.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1XmmVSfJlY2ivyqd3m0wZqCsJC38qHvha/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-6-11",
+              "title": "BIVEMP22122",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/11jtCnXqaAbqTqlqL8RC0aqIFKrkUoWLT/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-6-12",
+              "title": "BIVEMP12122",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/14spRDYxFlwzgFCKDzlCc-CErxdslZLoE/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-6-13",
+              "title": "BIVEMP12021",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Ax883XpJ1I0J9iHSOOHAf3YrLEL8AqfX/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-6-14",
+              "title": "BIVEMPBL2021",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1FsE4WPuLxq2fVly2hJaM0evLRYExPA1v/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-6-15",
+              "title": "BIVEMP32021",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Pb8ynBd8xPQ_x3gny9cPTbZXSsHzL9om/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-6-16",
+              "title": "BIVEMP32122",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1QK3QSJrlpmueIsvaR8ckvnAeKqGL8A78/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-6-17",
+              "title": "BIVEMP22021",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Up3vWs5_P_HIfzVIKQWNLS0oTipdxMPH/view?usp=drivesdk",
+              "size": "0.4 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-4-7",
+          "name": "LE-II",
+          "code": "LE-II",
+          "resources": [
+            {
+              "id": "res-4-7-1",
+              "title": "planner",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Y2yRpvJGKN08C8E6MzJOitmOvUoPpkAR/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-7-2",
+              "title": "Op-amps and linear integrat",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1OnNB9cEIU6KzxBB_5pnsr_zR5bK5tmNW/view?usp=drivesdk",
+              "size": "92.6 MB"
+            },
+            {
+              "id": "res-4-7-3",
+              "title": "Integrated Electronics Analog and Digital Circuits and Systems by Jacob Millman, Christos C. Halkias",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/11i7Gu5ElsEj7Ah_mUIVhMfNhKfkoRGk5/view?usp=drivesdk",
+              "size": "14.0 MB"
+            },
+            {
+              "id": "res-4-7-4",
+              "title": "LEII_Thirdsessional solution 2024",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1H2jz4uJQLmajrZSC9dOECCWVq1M3rKv1/view?usp=drivesdk",
+              "size": "0.8 MB"
+            },
+            {
+              "id": "res-4-7-5",
+              "title": "LE ll Sem4 Sessional Papers",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1OK7N_nvnfZOV7QG5kanr7BZkF6NPdGDM/view?usp=drivesdk",
+              "size": "2.3 MB"
+            },
+            {
+              "id": "res-4-7-6",
+              "title": "Assignment4_LEII_Linear_App1_2023-24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KRMJglzNyUqD2fr660uLbo1ZQojOyMjF/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-7",
+              "title": "Solution feedback amplifier",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1e--hrA5QjTmtD--jzsJdjwgBePwKxAa8/view?usp=drivesdk",
+              "size": "1.6 MB"
+            },
+            {
+              "id": "res-4-7-8",
+              "title": "2024-LE-II-Assignment_Oscillator_TC555.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1wYVQDKw8HFseRHpX6Cvg3h20-OI6wBEm/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-9",
+              "title": "Assignment5_LEII_Linear_App1_2023-24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1z0MUN6ZSc-I7Pt7Ss-gD6z-08wIjth_s/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-7-10",
+              "title": "OPAMP_second sessional SOLUTION",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1iqgyowA6L1Htj1BlSWADhWANgeYJlOFP/view?usp=drivesdk",
+              "size": "3.9 MB"
+            },
+            {
+              "id": "res-4-7-11",
+              "title": "PA second sessional solution",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18yKp6tjF-WsJRHeWTK3iYdeLirQptJaB/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-7-12",
+              "title": "Solution_LEII_First sessional 2024_opamp",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1AKpA_A9AMD7MgMG2ZEeNGGh9kOZHy4us/view?usp=drivesdk",
+              "size": "3.1 MB"
+            },
+            {
+              "id": "res-4-7-13",
+              "title": "Solution_LEII_First sessional 2024_Feedback",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1xDjZIFxHwbN8K6AUqJD2QKpAqDaT4ZKS/view?usp=drivesdk",
+              "size": "1.2 MB"
+            },
+            {
+              "id": "res-4-7-14",
+              "title": "Solution 2nd sessional_opamp",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1SWkMp57HUBwmC6Hj-JyM8lef752fPhZH/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-7-15",
+              "title": "II_sess_pgd_soln",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1iZfYszNPmS-JJYDqXW-DJ8LpVeDyHxsN/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-7-16",
+              "title": "2023-LE-II-Assgnment6.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/13sK8yzrfR5mkLBBlsAsHFbJDDtcrt0F2/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-17",
+              "title": "Assignment2_LEII_Linear_App1_2023-24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1wekGlQrw30f0BKxgC3qvX_PenRs1HIRh/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-7-18",
+              "title": "Assignment3_LEII_Linear_App1_2023-24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1LaxkV5S0r9f_GEyj__8LLWVdPtd4-HC2/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-7-19",
+              "title": "First sessional solution_op amp",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1sjGbeh2iS_8RNMdKwtddY-2iufM_ruc1/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-7-20",
+              "title": "Assignment1_LEII_diff_amp_2023-24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1cEE1bZmwknZSJjeO9IdiUeflSCI-auSO/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-21",
+              "title": "enc=encoded=V4TgzqOa7-4kWvdyXOZnPdFgKYaYMKQ62b0W3dyvSIRaC2EzmdOgeMeW.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/18mjGk9doHjxhXszjExUtpLzWvRV0lBiq/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-22",
+              "title": "enc=encoded=ePWcJt-juLNXb1kCZg_SZPP56p7DmbQ1lYAb-0zayqcWHk-YJqlYRWqq.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1HTBrw7ZS_JC8OKfYDNIqUVpWHP7GitOB/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-7-23",
+              "title": "enc=encoded=nwij8ENYSXjCBlHXK2Xor38NSczb-rzp_-PDj4u_iDFjpOCp12hwkir2.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1kHswAXHR7qHwhhDzur4FAMzcFy3nWBJP/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-7-24",
+              "title": "III_Sess23",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18adItN8RHIu_eV5NuKLfVOSQjvevIANk/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-25",
+              "title": "II_Sess23",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1n_zPqbrB11qvQInoYzrphsY5WbsQfSoQ/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-26",
+              "title": "I_Sess23",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1qhbueQto-11tZnhHiIk-wcd20pnyWQ4x/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-27",
+              "title": "Block",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1wJ1tAmDgCKuyk6OJZ6cSyzy4SO_oxtTC/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-28",
+              "title": "Block21",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1PXilKThgnCB7MCPxvgODhHY4Al_XQZNr/view?usp=drivesdk",
+              "size": "1.4 MB"
+            },
+            {
+              "id": "res-4-7-29",
+              "title": "III_Sess22",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1PqnlYSAr_M6zbTKjveqd1sTDq3HNaExq/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-30",
+              "title": "Block_rererm21",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Q5v6Lx06jK-mNGMYFEV5BLuvgNFk0fmQ/view?usp=drivesdk",
+              "size": "1.9 MB"
+            },
+            {
+              "id": "res-4-7-31",
+              "title": "I_Sess21",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1VCAp0HZIZma9n27w0vSLt-x_4E1-dq5s/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-7-32",
+              "title": "II_Sess22",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ZDMZTew5Nptou-b2eWkKL39QRUWvM17x/view?usp=drivesdk",
+              "size": "1.1 MB"
+            },
+            {
+              "id": "res-4-7-33",
+              "title": "III_Sess21",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1lT_jkwtW_XH1pv2IjWCkO6HBaZDjYjDR/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-7-34",
+              "title": "I_Sess22",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1lUkl-C1pSVKOPAT49v3uyMPTCiVW80FW/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-7-35",
+              "title": "II_Sess21",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1yGoPVqxOu0XvOl5riHjp98Fg4G-VSvBF/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-7-36",
+              "title": "BIIILE212122",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1D8PQZv9BY2Cq0TSGFp4KgAn8x5M5mU-M/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-7-37",
+              "title": "L_-_2_EFFECT_OF_NEGATIVE_FEEDBACK_ON_AMPLIFIER_PERFORMANCE",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1oDJWhV_lz7fvxga0vfMxwL6fDWj3azPF/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-7-38",
+              "title": "LEII-Assignment6_Feedback amplifier.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1mAmPTAfhD_isyUDKas33lgHFVlBChAde/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.2 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-4-8",
+          "name": "Control-Theory",
+          "code": "CONTRO",
+          "resources": [
+            {
+              "id": "res-4-8-1",
+              "title": "planner",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1_L0Rpl23QiDAYVAHnsUynH_E5_ocSSuK/view?usp=drivesdk",
+              "size": "1.1 MB"
+            },
+            {
+              "id": "res-4-8-2",
+              "title": "ABP_1&2_SESSIONAL",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/15cGf9KAx4A8QU50KL4i5-KskVwGDjspg/view?usp=drivesdk",
+              "size": "21.0 MB"
+            },
+            {
+              "id": "res-4-8-3",
+              "title": "ct hmp 3rd",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1clHLtimFlzor0frGggXKfcQYjAjXCflv/view?usp=drivesdk",
+              "size": "7.2 MB"
+            },
+            {
+              "id": "res-4-8-4",
+              "title": "Hmp 3rd phase graph",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1jmRiufqtqR1ybFu0VEJLBj8arcDhTaU-/view?usp=drivesdk",
+              "size": "4.3 MB"
+            },
+            {
+              "id": "res-4-8-5",
+              "title": "CT_Second_Part2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1sCtImddzQJKBVpjgL9ZJL5oPRm2MC_51/view?usp=drivesdk",
+              "size": "3.1 MB"
+            },
+            {
+              "id": "res-4-8-6",
+              "title": "feedback characteristics",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1x0waUGFWykHlOW-mAi33gFtO0vk9tyGD/view?usp=drivesdk",
+              "size": "1.7 MB"
+            },
+            {
+              "id": "res-4-8-7",
+              "title": "Assignment-8_Polar",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1C0wVLhD53HiIk6e6iSquWwZFknz2il6_/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-4-8-8",
+              "title": "Assignment-9_Nyquist",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1lTqRm4yqbmsLQ6XAYdVBs-zuTi85akEL/view?usp=drivesdk",
+              "size": "0.6 MB"
+            },
+            {
+              "id": "res-4-8-9",
+              "title": "CT_Second_Part1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1tTOgUCF_NqM4vMSUcZ9YF3R5tl3E5sqs/view?usp=drivesdk",
+              "size": "0.7 MB"
+            },
+            {
+              "id": "res-4-8-10",
+              "title": "Assignment-5_Root locus_Feedback System",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1FVCuRRwmykAxHeUihph3OygJDgqQqW9N/view?usp=drivesdk",
+              "size": "0.6 MB"
+            },
+            {
+              "id": "res-4-8-11",
+              "title": "CT Sem4 Sessional Papers ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1vtzVxPe2hrc86AC56bjrNDDXZQTjmFr5/view?usp=drivesdk",
+              "size": "2.3 MB"
+            },
+            {
+              "id": "res-4-8-12",
+              "title": "ABP 3rd sessional ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1_fOATXVzU2XWx1OenSM7Ef4UI-cUr6RD/view?usp=drivesdk",
+              "size": "11.4 MB"
+            },
+            {
+              "id": "res-4-8-13",
+              "title": "CT RHA P-3 KD",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Ab6s3Y4f9sEsYBE4fw_tX3YybmdxasAx/view?usp=drivesdk",
+              "size": "9.5 MB"
+            },
+            {
+              "id": "res-4-8-14",
+              "title": "ABP 2rd sessional Graph ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1sBchd4A5hQDdegw64YbDJgdOkaAqlWMP/view?usp=drivesdk",
+              "size": "2.3 MB"
+            },
+            {
+              "id": "res-4-8-15",
+              "title": "ABP Sessional 2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1u-n-KmsIl4ngD1ePk3nWXmRtKkINiwvV/view?usp=drivesdk",
+              "size": "6.9 MB"
+            },
+            {
+              "id": "res-4-8-16",
+              "title": "Assignment-8_Time responce analysis",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1R-cH0ZUqr3A24Y5Sec8yhmVBHh_FPfNz/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-8-17",
+              "title": "Assignment-7_BodePlot_2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1CkxYdJlULJiRb8B91uH-qAQ9GJUMAlKq/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-8-18",
+              "title": "Assignment-6_BodePlot_1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1fQlVOaK74X0UA5FQj3X7uTDWSZGbjtxq/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-8-19",
+              "title": "CT_FirstSessional_Part2_Solution",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1xM-_EeavuKKlk19wP3yqLsWYdqj3sAQf/view?usp=drivesdk",
+              "size": "1.2 MB"
+            },
+            {
+              "id": "res-4-8-20",
+              "title": "CT_FirstSessional_Part1_Solution",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ZSBAWpr0YIXs8pCMRCN-SckGfv13Qqmf/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-4-8-21",
+              "title": "Assignment-5_Signal Flow Graph",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1e09U-jpMApl5-Mr65RGNX1N7azVdOL2F/view?usp=drivesdk",
+              "size": "0.6 MB"
+            },
+            {
+              "id": "res-4-8-22",
+              "title": "Assignment-4_Block Diagram Reduction",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1rFXJImu4M5q9Ou0TVa2cc0qsy1NbnDpF/view?usp=drivesdk",
+              "size": "0.7 MB"
+            },
+            {
+              "id": "res-4-8-23",
+              "title": "Assignment-3_Mathematical Modeling_Transfer function",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KiCHllbUrlQBSp85-VbKs_bYmbBfx5oN/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-4-8-24",
+              "title": "ASSIGNEMNT_2_ROUTH_HURTZWIZdocx.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1FIpkMVXXjUbijRVhuFRDUfAK2QcGLZyI/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-8-25",
+              "title": "ASSIGNEMNT_1_ROUTH_HURTZWIZdocx.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1KlTH6TRZ7RrH1G_QXv23h8n9KA_Kd09K/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-8-26",
+              "title": "3rd_SESSIONAL_3_2023",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1oVUR0y7PnxPxkP3bxEHC5wmzWshWFuSz/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-4-8-27",
+              "title": "CT_SemIV_1st_sessional_2022-23_F",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1p4xyblG5q6NJ0QnCzA4aQlq7Q9OMYTK2/view?usp=drivesdk",
+              "size": "0.4 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-4-9",
+          "name": "SS",
+          "code": "SS",
+          "resources": [
+            {
+              "id": "res-4-9-1",
+              "title": "planner",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/19HzCQrHVk-v_4-0qOeLEdqBrAX7BuUGL/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-4-9-2",
+              "title": "Linear Systems and Signals_B.P.LATHI",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Q4IhViKt6tM3X1ZRFV6HwCywFeanM_Kd/view?usp=drivesdk",
+              "size": "23.9 MB"
+            },
+            {
+              "id": "res-4-9-3",
+              "title": "Ashok_Ambardar_Analog and digital signal",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1OjxxQwxsGwkok2MtGET_m845CWg7drkO/view?usp=drivesdk",
+              "size": "17.2 MB"
+            },
+            {
+              "id": "res-4-9-4",
+              "title": "Solution Manual of Analog and digital signal",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1OgWnZ-4fqrzXj1vr3CdpHlsV41_34B5R/view?usp=drivesdk",
+              "size": "9.9 MB"
+            },
+            {
+              "id": "res-4-9-5",
+              "title": "SS Sem4 Sessional Papers ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1CYmJcCzuERV5YTODzQPxJwuyUIq34pwq/view?usp=drivesdk",
+              "size": "1.3 MB"
+            },
+            {
+              "id": "res-4-9-6",
+              "title": "2023-SS-Assgnment6",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1FR1X7xWyH-Fk5cYSo8rLIfGDPkw0jca3/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-4-9-7",
+              "title": "SS_SOL_II_2024_Part2",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1U0yREx3OagC40DCwwDWrGX2TVWRoKkEV/view?usp=drivesdk",
+              "size": "1.4 MB"
+            },
+            {
+              "id": "res-4-9-8",
+              "title": "SS solution II 2024",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1AGxPg-tEmVWfcqYCeyh9rjiqRfQnZpLF/view?usp=drivesdk",
+              "size": "1.1 MB"
+            },
+            {
+              "id": "res-4-9-9",
+              "title": "solution sessional II",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1twVGbNTZ-HGfA_2Ld9IQcsyK8oEd1JT5/view?usp=drivesdk",
+              "size": "0.8 MB"
+            },
+            {
+              "id": "res-4-9-10",
+              "title": "2023-SS-Assgnment4",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1f5XaKsI81DxLEt49Ex75jjNMzZhfTPLg/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-9-11",
+              "title": "2023-SS-Assgnment3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18VE7azX5kZQjWaoaav515EeBL5_Tmon5/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-4-9-12",
+              "title": "Assignment_Session2_2024.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1Iy3M5ezeKDuBYNqVRhI_v_WJ6TkwIEX-/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-9-13",
+              "title": "2023-SS-Assgnment1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ZFuFF9ARfHj98Ow1KVnrxvx71tCrem1P/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-9-14",
+              "title": "Assignment_Session1_2023.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1GNwallhYpmpBvsAJxp2JEPTyHeFr2uLy/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-9-15",
+              "title": "BIVSS12223.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1LyCP5z5GvswYnrp5Vt1QGoLrMJkOMMr_/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-4-9-16",
+              "title": "BIVSSIII2223_F.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1rX8KiP4U1q10Rfb0DFopQCKrRcOfYhb6/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-4-9-17",
+              "title": "BIVSSII2223.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1zdm-5kHV8nc3_AVkR6hdqx-RNjczhceR/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sem-5",
+      "name": "SEM-1",
+      "description": "Resources for SEM-1",
+      "subjects": [
+        {
+          "id": "sub-5-1",
+          "name": "PPTS",
+          "code": "PPTS",
+          "resources": [
+            {
+              "id": "res-5-1-1",
+              "title": "DC Machines",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1zZsyJ6nFRkyzkBqh_DsjOF6j5zm8yF-e/view?usp=drivesdk",
+              "size": "9.7 MB"
+            },
+            {
+              "id": "res-5-1-2",
+              "title": "Hardware interfacing",
+              "type": "notes",
+              "url": "https://docs.google.com/presentation/d/191a-yTXgZg6vzsPFvL-bfOlge995euOw/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-5-1-3",
+              "title": "Functions in C _ PDD",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1JDAmNmhBw12brE2Q_Uq6k9D8o6_g0U_b/view?usp=drivesdk",
+              "size": "1.1 MB"
+            },
+            {
+              "id": "res-5-1-4",
+              "title": "Bee_RHA.PDF",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1JBKIzFempUARfuYIyZJ8m82700ukmHS5/view?usp=drivesdk",
+              "size": "3.1 MB"
+            },
+            {
+              "id": "res-5-1-5",
+              "title": "BEE_NVC",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1J7CskbEK120_3TpzFG_OaERycj9ysWKs/view?usp=drivesdk",
+              "size": "6.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-5-2",
+          "name": "Books",
+          "code": "BOOKS",
+          "resources": []
+        },
+        {
+          "id": "sub-5-3",
+          "name": "Tutorials",
+          "code": "TUTORI",
+          "resources": []
+        },
+        {
+          "id": "sub-5-4",
+          "name": "Past Year Papers",
+          "code": "PAST Y",
+          "resources": []
+        },
+        {
+          "id": "sub-5-5",
+          "name": "Lab Manual",
+          "code": "LAB MA",
+          "resources": [
+            {
+              "id": "res-5-5-1",
+              "title": "EGD Lab Manual_ICT_2022-23",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10zZ_UxfKeLPGmiB2cxjdy6-2FcFTf1l0/view?usp=drivesdk",
+              "size": "6.3 MB"
+            },
+            {
+              "id": "res-5-5-2",
+              "title": "PPS_Labmaual_2023",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10ytrf4w87o2QiO3pCk8FcY7nwuZf4YSS/view?usp=drivesdk",
+              "size": "0.8 MB"
+            },
+            {
+              "id": "res-5-5-3",
+              "title": "BEE LAB MANUAL_updated_oct_2021",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10aJzb5lsGVQ_ZfvwI9QdbPFst2IkOwEN/view?usp=drivesdk",
+              "size": "14.9 MB"
+            },
+            {
+              "id": "res-5-5-4",
+              "title": "2022-S-Labmanual",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10_A7ZL5aJtONwDubqPb3o6Ts6PjQZdkV/view?usp=drivesdk",
+              "size": "1.6 MB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sem-6",
+      "name": "SEM-3",
+      "description": "Resources for SEM-3",
+      "subjects": [
+        {
+          "id": "sub-6-1",
+          "name": "Syllabus ",
+          "code": "SYLLAB",
+          "resources": [
+            {
+              "id": "res-6-1-1",
+              "title": "Syllabus ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1JKg1z_52vliXsREnzruJ4kOZF7qCKZFP/view?usp=drivesdk",
+              "size": "2.0 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-6-2",
+          "name": "Papers",
+          "code": "PAPERS",
+          "resources": []
+        },
+        {
+          "id": "sub-6-3",
+          "name": "Network Analysis",
+          "code": "NETWOR",
+          "resources": [
+            {
+              "id": "res-6-3-1",
+              "title": "NA_Teaching Plane_2023-24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1kcUzHj7Q93QgioaiArxmVQmMvS9kiQoe/view?usp=drivesdk",
+              "size": "0.4 MB"
+            },
+            {
+              "id": "res-6-3-2",
+              "title": "8_LaplaceTransformOfDifferentWaveforms",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1pwu5HpMivijIbRNlNaDSu79CDQ_e0QgT/view?usp=drivesdk",
+              "size": "1.1 MB"
+            },
+            {
+              "id": "res-6-3-3",
+              "title": "11_TwoPortParameters",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ihIHk7V62GtOxAGNUnvX-etFBbA8ed3D/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-6-3-4",
+              "title": "Network analysis combine",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1YhAoVC07SuhozM4KLNeK4k-1KQn7maP2/view?usp=drivesdk",
+              "size": "15.0 MB"
+            },
+            {
+              "id": "res-6-3-5",
+              "title": "NA_Assg4_Chap3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/18iH0fHuLe4_EOrRrnjn2HegrB6jYM_MO/view?usp=drivesdk",
+              "size": "0.5 MB"
+            },
+            {
+              "id": "res-6-3-6",
+              "title": "5_InitialCondition.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1YWlM0ECMfbyFjCg4jyJuI43kI90T50tx/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "1.8 MB"
+            },
+            {
+              "id": "res-6-3-7",
+              "title": "4_FirstOrderDifferentialEquation.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/13lj9Qacb5VRJbi2FXY2HxVzst8WjaQFa/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.6 MB"
+            },
+            {
+              "id": "res-6-3-8",
+              "title": "NA_Assg1_Chap1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ah8slJhoUpMhjzKiRWdHStQ41D0BjFvY/view?usp=drivesdk",
+              "size": "0.3 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-6-4",
+          "name": "Digital Electronics",
+          "code": "DIGITA",
+          "resources": [
+            {
+              "id": "res-6-4-1",
+              "title": "Fundamental of Digital Circuits PHI A. Anand Kumar",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/19Od6ZjHq5MtdcgOn_GYbl98xO7Rj_UHz/view?usp=drivesdk",
+              "size": "155.3 MB"
+            },
+            {
+              "id": "res-6-4-2",
+              "title": "Digital Logic Computer Design PHI M. Morris Mano",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1nwLRVu6zG4u1zNKOitSasSLNIdcysIas/view?usp=drivesdk",
+              "size": "6.0 MB"
+            },
+            {
+              "id": "res-6-4-3",
+              "title": "Digital-Logic-Computer-Design",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1M-uv0lysLF33k3GkOBDYDnVGpt2e8RsY/view?usp=drivesdk",
+              "size": "6.0 MB"
+            },
+            {
+              "id": "res-6-4-4",
+              "title": "Lesson Plan_BTECH_III_DE.doc",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1mC2FpbviANXfjnegJCN0DUe_UMgQfcLm/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-6-4-5",
+              "title": "Fundamentals_of_Digital_Logic_with_Verilog_Design_(3rd_edition)__ebook3000",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1CIERrqL8SD4Hd3rpNOb-vptgtVwUd07I/view?usp=drivesdk",
+              "size": "5.6 MB"
+            },
+            {
+              "id": "res-6-4-6",
+              "title": "Sessional-1 Solved RTL,DTL DE EXAMPLE",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1MasjCgioWrmURVwdHtI-7buwc2nTy6zW/view?usp=drivesdk",
+              "size": "1.2 MB"
+            },
+            {
+              "id": "res-6-4-7",
+              "title": "Assignment-Tutorial_8.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1Qg6_LrYg7Iodjv050vct9060RgheXrpS/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-6-4-8",
+              "title": "Assignment-Tutorial_7.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1sMtzdntqv7nbpweueltORmfFS7UU80aX/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-6-4-9",
+              "title": "Assignment-Tutorial_9.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1uBMZZNjknO-JzYvY6SK5hv0E5uzSaoSR/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-6-4-10",
+              "title": "Assignment-Tutorial_10.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1WmSMVzoyjQhXbfL_aDZE5blIwFTzgQ2g/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-6-4-11",
+              "title": "Digital Electronics MKP",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1CHjZaF8qMBoTZFYrmpr58Z1RncEIclOG/view?usp=drivesdk",
+              "size": "6.6 MB"
+            },
+            {
+              "id": "res-6-4-12",
+              "title": "Digital Electronics NJK",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1fsO25Rc3ov8CfZgNDY-EwvSYOhQqHbk4/view?usp=drivesdk",
+              "size": "4.8 MB"
+            },
+            {
+              "id": "res-6-4-13",
+              "title": "Assignment_NumberSystems",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1NLBYG7jvdHuegLdpxtKsFqnfKZbHhJUy/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-6-4-14",
+              "title": "Assignment-Tutorial_5",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1wbfmponI05DFo-CLkmzVDKXYHqMk1zm2/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-6-4-15",
+              "title": "Assignment-Tutorial_4.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1X_9A4DHqZRwxDEinesdEmAzbmy2NFAjN/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-6-4-16",
+              "title": "Assignment-Tutorial_3.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1QgX3m0uNGEEBXiKOGzhnbHaR5zCfIrEu/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-6-4-17",
+              "title": "Fundamentals of Digital Logic with vhdl design by Stephen Brown",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1_WIqmorQhfQa7RXNWoFjho-p2OKr247V/view?usp=drivesdk",
+              "size": "12.2 MB"
+            },
+            {
+              "id": "res-6-4-18",
+              "title": "Digital Logic & Computer design M Morris Mano 2nd-edition",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1gLM6RrmThCc3CgW3ziacX2P97BJzaQkY/view?usp=drivesdk",
+              "size": "13.9 MB"
+            },
+            {
+              "id": "res-6-4-19",
+              "title": "Assignment-Tutorial_1.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1BwFjZEecGVPC9oyca2nhbKYPRMGzHCDZ/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-6-4-20",
+              "title": "Assignment-Tutorial_2.docx",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/1CqvD6LO3LuOTLth6Ci-L4Wc3jcERTt2A/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-6-4-21",
+              "title": "Teaching Plan DE-1.doc",
+              "type": "notes",
+              "url": "https://docs.google.com/document/d/13r_yE9lKFB4SLS2y6rYLoYxvd9_Timvr/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-6-4-22",
+              "title": "revised DE EXAMPLE",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KJexHHHkZtuQ1J1he6ZS2VRTGn_6_33w/view?usp=drivesdk",
+              "size": "1.2 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-6-5",
+          "name": "Linear Electronics-I",
+          "code": "LINEAR",
+          "resources": [
+            {
+              "id": "res-6-5-1",
+              "title": "BTECH_III_EC_LABMANUAL_LE1_2023_24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Jh9bweRh7MkU94DtjNHoGZv_SHKP7Ibg/view?usp=drivesdk",
+              "size": "2.2 MB"
+            },
+            {
+              "id": "res-6-5-2",
+              "title": "Electronic Devices and Circuit Theory",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/14LFXL5Oa4U3zm_BBO-lp0PxCmLgctyXl/view?usp=drivesdk",
+              "size": "20.7 MB"
+            },
+            {
+              "id": "res-6-5-3",
+              "title": "BTECH_III_DOC2_LE1_2023_24",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1fEt3-LkGJBAErDhA3vo31DnqNLPAyXk6/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-6-5-4",
+              "title": "h-parameter",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1qKzxtlZ0tk1yMIj2XxidjUcLZ7vxUloO/view?usp=drivesdk",
+              "size": "2.8 MB"
+            },
+            {
+              "id": "res-6-5-5",
+              "title": "Assignment-7 EMOSFET_Low_High Frequency model_Current Mirror_PARTA",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1VVwk3QKo-ttWcMgYtqL2MYL4H0an-fGU/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-6-5-6",
+              "title": "Assignment-8 Transistor in detail_PARTB",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1alSkOBkBO2FyR7QGGmyHgXSDZxbCScCC/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-6-5-7",
+              "title": "Assignment-9 h parameters of transistor_PARTB",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1-njBr5573nPk56xB4elOGKNkCod_C42H/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-6-5-8",
+              "title": "PGD-PHASE 3",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1_1IMIuxsE2kTV7DWgPL7j7qQOztYUubz/view?usp=drivesdk",
+              "size": "15.6 MB"
+            },
+            {
+              "id": "res-6-5-9",
+              "title": "LE 1 SST Transistor ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1WJadWDDPjr4iysCxK4UUJPMJuMBwVvZI/view?usp=drivesdk",
+              "size": "4.0 MB"
+            },
+            {
+              "id": "res-6-5-10",
+              "title": "LE-1 SST",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1syvTKWHbxNxwbi7JNbCoz1Yv7o0xJm2P/view?usp=drivesdk",
+              "size": "5.3 MB"
+            },
+            {
+              "id": "res-6-5-11",
+              "title": "Assignment-5 EMOSFET_Amplfiers_Biasing_Low Frequency model_PARTA",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1xoaI_6QrwObFxG1HgVGyZXr-Te6xS8CG/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-6-5-12",
+              "title": "Assignment-6 Diode and circuits_Tunnel Diode_basic of Transistor_PARTB",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/19-dK9PzSuFRgV8gdL32VEWfX7XhCGCwB/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-6-5-13",
+              "title": "EMOS Derivations",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10lwGTa5R6yvhpe0SgtckQIHIQHrvRiU7/view?usp=drivesdk",
+              "size": "4.4 MB"
+            },
+            {
+              "id": "res-6-5-14",
+              "title": "Teaching Plan LE-1",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KQsp-feGMLmPZ2LvDDHrVmAnjxajubPJ/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-6-5-15",
+              "title": "Assignment-4 Transition and diffusion capacitance_PARTB",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1HgtBcZaApKiUY8POSbY8-2LqeP52JlNj/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-6-5-16",
+              "title": "Assignment-2 Semiconductor physics_PARTB",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1FLD2YdsIblajRiILoeaUQRqLyH1YQrl9/view?usp=drivesdk",
+              "size": "0.1 MB"
+            },
+            {
+              "id": "res-6-5-17",
+              "title": "Assignment-3 EMOSFET_DC Circuits_PARTA",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1KG_lGO8D_NkUAzj4bhw9C5-lvf4h51uq/view?usp=drivesdk",
+              "size": "0.3 MB"
+            },
+            {
+              "id": "res-6-5-18",
+              "title": "Assignment-1 JFET_DMOSFET_BIASING_PARTA",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1nRfGeBsBkef1qvteH18uh71seA3mja4F/view?usp=drivesdk",
+              "size": "0.2 MB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sem-7",
+      "name": "SEM-2",
+      "description": "Resources for SEM-2",
+      "subjects": [
+        {
+          "id": "sub-7-1",
+          "name": "PYQ PAPERS",
+          "code": "PYQ PA",
+          "resources": []
+        },
+        {
+          "id": "sub-7-2",
+          "name": "TUTORIAL",
+          "code": "TUTORI",
+          "resources": []
+        },
+        {
+          "id": "sub-7-3",
+          "name": "LAB MANUALS",
+          "code": "LAB MA",
+          "resources": [
+            {
+              "id": "res-7-3-1",
+              "title": "OOP_LABMANUAL ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1Sxo8X53JCCOKkeGLdzLLNBF_1zypiIUi/view?usp=drivesdk",
+              "size": "0.2 MB"
+            },
+            {
+              "id": "res-7-3-2",
+              "title": "PHYSICS LAB MANUAL",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1LNSymRhB64dYyUWH4Hlx1FRCBsogj7Rl/view?usp=drivesdk",
+              "size": "6.6 MB"
+            },
+            {
+              "id": "res-7-3-3",
+              "title": "HWS-LabManual ",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1rIsPHQKh0hwzgUrn6WAWXKiIeVk1VOVE/view?usp=drivesdk",
+              "size": "12.4 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-7-4",
+          "name": "BOOKS",
+          "code": "BOOKS",
+          "resources": [
+            {
+              "id": "res-7-4-1",
+              "title": "C++Complete Reference (3rd Ed.)",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/10pXcT0pLFXpxtb4bH22VwAHxLGfy1LmB/view?usp=drivesdk",
+              "size": "8.8 MB"
+            },
+            {
+              "id": "res-7-4-2",
+              "title": "Electronic Principles",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1krjnEInEeUVGfME5JAzUjLX009V-U3su/view?usp=drivesdk",
+              "size": "27.4 MB"
+            },
+            {
+              "id": "res-7-4-3",
+              "title": "Semiconductor \r\nDevices\r\nPhysics and Technology",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ksOqvRd93XzVG4dUDQCBCLwuQvRGQ5wq/view?usp=drivesdk",
+              "size": "14.9 MB"
+            },
+            {
+              "id": "res-7-4-4",
+              "title": "Higher Engineering Mathematics",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1-QnZTG8FdwigqoXLR13vXCN-SAMdAKjw/view?usp=drivesdk",
+              "size": "124.6 MB"
+            },
+            {
+              "id": "res-7-4-5",
+              "title": "Environmental Studies Book",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/149jR2p8svCIsX9GjsqLQtGhA4aNt-vbm/view?usp=drivesdk",
+              "size": "0.0 MB"
+            },
+            {
+              "id": "res-7-4-6",
+              "title": "Object Oriented Programming With C++",
+              "type": "notes",
+              "url": "https://drive.google.com/file/d/1ZPztpPta64lceWp9z5KgPuoxHbx835zl/view?usp=drivesdk",
+              "size": "10.1 MB"
             }
           ]
         }
