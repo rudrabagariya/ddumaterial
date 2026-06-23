@@ -1,0 +1,672 @@
+{
+  "id": "sem-1_mIBd",
+  "name": "SEM-1",
+  "description": "Resources for SEM-1",
+  "subjects": [
+    {
+      "id": "sub-1J34r2",
+      "name": "PPTS",
+      "code": "PPTS",
+      "resources": [
+        {
+          "id": "res-subject-folder-1J34r2",
+          "title": "📁 Download ENTIRE Subject Folder",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1J34r2Q1Zt7xSRR544UxceYXpmIib46fJ",
+          "size": "Subject"
+        },
+        {
+          "id": "res-1J34r-1",
+          "title": "DC Machines",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1zZsyJ6nFRkyzkBqh_DsjOF6j5zm8yF-e/view?usp=drivesdk",
+          "size": "9.7 MB"
+        },
+        {
+          "id": "res-1J34r-2",
+          "title": "Hardware interfacing",
+          "type": "notes",
+          "url": "https://docs.google.com/presentation/d/191a-yTXgZg6vzsPFvL-bfOlge995euOw/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+          "size": "0.2 MB"
+        },
+        {
+          "id": "res-1J34r-3",
+          "title": "Functions in C _ PDD",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1JDAmNmhBw12brE2Q_Uq6k9D8o6_g0U_b/view?usp=drivesdk",
+          "size": "1.1 MB"
+        },
+        {
+          "id": "res-1J34r-4",
+          "title": "Bee_RHA.PDF",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1JBKIzFempUARfuYIyZJ8m82700ukmHS5/view?usp=drivesdk",
+          "size": "3.1 MB"
+        },
+        {
+          "id": "res-1J34r-5",
+          "title": "BEE_NVC",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1J7CskbEK120_3TpzFG_OaERycj9ysWKs/view?usp=drivesdk",
+          "size": "6.0 MB"
+        }
+      ]
+    },
+    {
+      "id": "sub-1-n2TS",
+      "name": "Books",
+      "code": "BOOKS",
+      "resources": [
+        {
+          "id": "res-subject-folder-1-n2TS",
+          "title": "📁 Download ENTIRE Subject Folder",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5",
+          "size": "Subject"
+        },
+        {
+          "id": "res-folder-1Fz2e1",
+          "title": "📁 Download Folder: U. A. PATEL",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1Fz2e1LEB0ZXaeigMMMsoQ3r4QJNo0AYz",
+          "size": "Folder"
+        },
+        {
+          "id": "res-1Fz2e-6",
+          "title": "U. A. PATEL > uapatel",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1G7I0NknHCFdghFlAZgdmblEvibV8Im33/view?usp=drivesdk",
+          "size": "78.8 MB"
+        },
+        {
+          "id": "res-folder-1gvNx-",
+          "title": "📁 Download Folder: BEE B. L. THERAJA",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1gvNx-kENyjAV3w3LY-8_6M42EXXVfLeq",
+          "size": "Folder"
+        },
+        {
+          "id": "res-1gvNx-7",
+          "title": "BEE B. L. THERAJA > B. L. THERAJA-VOL-I",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1hHGugXRE0DqFbdS1zQeutSSCvxLqfHAE/view?usp=drivesdk",
+          "size": "19.6 MB"
+        },
+        {
+          "id": "res-1gvNx-8",
+          "title": "BEE B. L. THERAJA > B.L.THERAJA VOL-II",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1gvatJaZHhUVqP6lEbmt1fwsRxa-tgYU5/view?usp=drivesdk",
+          "size": "55.0 MB"
+        },
+        {
+          "id": "res-folder-1ZXZY2",
+          "title": "📁 Download Folder: Maths B. S. GREWAL",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1ZXZY2s3PlbSfLLXxCWj1IEl1jsI4y9Ng",
+          "size": "Folder"
+        },
+        {
+          "id": "res-1ZXZY-9",
+          "title": "Maths B. S. GREWAL > Higher Engineering Mathematics",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1ZQz-U4vjx4kz-B7zdjHMGrWfMWfYK89J/view?usp=drivesdk",
+          "size": "124.6 MB"
+        },
+        {
+          "id": "res-folder-1ZX85K",
+          "title": "📁 Download Folder: Engineering Graphics N. D. Bhatt",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1ZX85KD-t-tv7Li8NqJN3Qwj4eqMN1pJ0",
+          "size": "Folder"
+        },
+        {
+          "id": "res-1ZX85-10",
+          "title": "Engineering Graphics N. D. Bhatt > Engineering Drawing by N. D. Bhatt",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1ZNyH6QRXH9L0XhPaDGKqoocdq0Tscg0j/view?usp=drivesdk",
+          "size": "32.4 MB"
+        },
+        {
+          "id": "res-folder-1ZUBoa",
+          "title": "📁 Download Folder: BEE R. Muthusubhramanian",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1ZUBoa-3thjqXHqwwibSMcU-G8gj2rUfQ",
+          "size": "Folder"
+        },
+        {
+          "id": "res-1ZUBo-11",
+          "title": "BEE R. Muthusubhramanian > Basic Electrical And Electronics Engineering",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1ZP1XibYRNQ3qCmYkAuvlJORqdAJ8qtJy/view?usp=drivesdk",
+          "size": "30.2 MB"
+        },
+        {
+          "id": "res-folder-1ZU-TF",
+          "title": "📁 Download Folder: E. Balagurusamy",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1ZU-TFb7t-CdOQWRYQnnF6w8AbfnYzAOp",
+          "size": "Folder"
+        },
+        {
+          "id": "res-1ZU-T-12",
+          "title": "E. Balagurusamy > pdfcoffee.com_programming-in-ansi-c-review-question-solution-e-balagurusamy-pdf-free",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1DAKOPsBZv_UanPQmB3gAg4wqhqSHbz-X/view?usp=drivesdk",
+          "size": "1.4 MB"
+        },
+        {
+          "id": "res-1ZU-T-13",
+          "title": "E. Balagurusamy > ANSI C -(Solutions with Flowchart & Programs)",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/16OlKZb8nB8t4Vs9O3DBXAw3iVywzujZx/view?usp=drivesdk",
+          "size": "1.5 MB"
+        },
+        {
+          "id": "res-1ZU-T-14",
+          "title": "E. Balagurusamy > Programming in ANSI C-1",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/173XuocWRiBTGzPeo_z4UoZmtGHYqUiYv/view?usp=drivesdk",
+          "size": "64.1 MB"
+        }
+      ]
+    },
+    {
+      "id": "sub-11C3EB",
+      "name": "Tutorials",
+      "code": "TUTORI",
+      "resources": [
+        {
+          "id": "res-subject-folder-11C3EB",
+          "title": "📁 Download ENTIRE Subject Folder",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/11C3EB9QGjvTgtGyuJj8vpyjoCnZMqPC-",
+          "size": "Subject"
+        },
+        {
+          "id": "res-folder-11DTBS",
+          "title": "📁 Download Folder: PPS",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+          "size": "Folder"
+        },
+        {
+          "id": "res-11DTB-15",
+          "title": "PPS > Tut9_function",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1HfNkWfxZqpnDxOjGF1XqBrGAOaIEcA0g/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-11DTB-16",
+          "title": "PPS > Tut8_string",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1Hemq7Hd5bSD34er4hhrUTfpczOUu7cY1/view?usp=drivesdk",
+          "size": "0.3 MB"
+        },
+        {
+          "id": "res-11DTB-17",
+          "title": "PPS > Tut7_array",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/11pSlFF8EjztNnzrwTPEWkeOp87DveQMK/view?usp=drivesdk",
+          "size": "0.3 MB"
+        },
+        {
+          "id": "res-11DTB-18",
+          "title": "PPS > Tut6_loop",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/11lIwXa6Ha1X8_avLyTqEt7H8ikcVTKt9/view?usp=drivesdk",
+          "size": "0.3 MB"
+        },
+        {
+          "id": "res-11DTB-19",
+          "title": "PPS > Tut5_ifelse",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/11evrdp5nBHg9nKLmwTWHLkk5Ed3ye5wl/view?usp=drivesdk",
+          "size": "0.3 MB"
+        },
+        {
+          "id": "res-11DTB-20",
+          "title": "PPS > Tut4_printfscanf",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/11XOBuYB_WmoyDD7t_loqCc3KewDw-Yue/view?usp=drivesdk",
+          "size": "0.3 MB"
+        },
+        {
+          "id": "res-11DTB-21",
+          "title": "PPS > tut3_operator",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/11WETqOUkG0TPdnjdNYqOWTtF4NsvQ33A/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-11DTB-22",
+          "title": "PPS > Tut2_datatypes",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/11PgtORUJNy1e0JI6au-yZtGwFgRCx7jy/view?usp=drivesdk",
+          "size": "0.3 MB"
+        },
+        {
+          "id": "res-11DTB-23",
+          "title": "PPS > Tut1_basic",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/11Hb3wH5vH7DpXka7GuiOk1EGKXRbfa3K/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-folder-11DLuB",
+          "title": "📁 Download Folder: BEE",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/11DLuBsGXlMLkwnD601cwLwo5jobkiRgi",
+          "size": "Folder"
+        },
+        {
+          "id": "res-11DLu-24",
+          "title": "BEE > Tutorial-1.docx",
+          "type": "notes",
+          "url": "https://docs.google.com/document/d/11u08lQw7jftWBIn9PFuNhlP430ryG86j/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-11DLu-25",
+          "title": "BEE > Tutorial_4",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1245a2PDnkABsorDHSzOYmJgKI0we4EaD/view?usp=drivesdk",
+          "size": "0.6 MB"
+        },
+        {
+          "id": "res-11DLu-26",
+          "title": "BEE > Tutorial-5.docx",
+          "type": "notes",
+          "url": "https://docs.google.com/document/d/123dOEOOMtmdakEoEvXNPdWHRCqxv-4fI/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-11DLu-27",
+          "title": "BEE > Tutorial-2.docx",
+          "type": "notes",
+          "url": "https://docs.google.com/document/d/11wMafro17ia6NkMzK4xcktPejLqdLYTK/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+          "size": "0.1 MB"
+        }
+      ]
+    },
+    {
+      "id": "sub-11398U",
+      "name": "Past Year Papers",
+      "code": "PAST Y",
+      "resources": [
+        {
+          "id": "res-subject-folder-11398U",
+          "title": "📁 Download ENTIRE Subject Folder",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/11398UqoIlrTzAJf8yv4vFBLGq-meqeg5",
+          "size": "Subject"
+        },
+        {
+          "id": "res-folder-1y1BqS",
+          "title": "📁 Download Folder: Sessional paper",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1y1BqSpayi2AR6Htl2lj3Sb3HdTke8S7E",
+          "size": "Folder"
+        },
+        {
+          "id": "res-folder-12P8D_",
+          "title": "📁 Download Folder: Sessional paper > PPS",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+          "size": "Folder"
+        },
+        {
+          "id": "res-12P8D-28",
+          "title": "Sessional paper > PPS > PPS-I_Sessional2_2022_23 - Solution",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/14Iv2-fMrmnV6l4f1rs-D1l6vxZi3Fjw7/view?usp=drivesdk",
+          "size": "0.2 MB"
+        },
+        {
+          "id": "res-12P8D-29",
+          "title": "Sessional paper > PPS > BICP21516",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13BhNeARQnbksQyVfkr8miKqIPdlLeKIE/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-30",
+          "title": "Sessional paper > PPS > PPS-I_Sessional2_2022_23",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/14Mp4vYKlmo2rljhg6epgQBypHCAsvaAy/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-31",
+          "title": "Sessional paper > PPS > PPS-I_3rd_Sessional_2022 (2)",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/14GFbb04dI7TPpacff--EprHKHKFyBvHn/view?usp=drivesdk",
+          "size": "0.4 MB"
+        },
+        {
+          "id": "res-12P8D-32",
+          "title": "Sessional paper > PPS > PPS-I_2nd_Sessional_2022 (1)",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/14DjpiA_b1KRyCt_VvMcdvY-i45NOfaUj/view?usp=drivesdk",
+          "size": "0.4 MB"
+        },
+        {
+          "id": "res-12P8D-33",
+          "title": "Sessional paper > PPS > PPS-I_2nd_additional_Sessional_2022 (1)",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/14ATdBOsvZpv-Ge5XNALBBSmgQoGWtPxW/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-34",
+          "title": "Sessional paper > PPS > PPS-I_1st_sessional_2021",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/149R8rL8K9n9m122lpQU6dRPJxItLuWKH/view?usp=drivesdk",
+          "size": "0.3 MB"
+        },
+        {
+          "id": "res-12P8D-35",
+          "title": "Sessional paper > PPS > PPS-I_1st_Additional_Sessional_2022",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/144pjZLTBL3a28UaRUO5zINlfyIqje9KM/view?usp=drivesdk",
+          "size": "0.2 MB"
+        },
+        {
+          "id": "res-12P8D-36",
+          "title": "Sessional paper > PPS > BICPB2021",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/143WrZT_CVnG1CaMGJh1qIaiHHyYPLO7w/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-37",
+          "title": "Sessional paper > PPS > BICP32021",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13xpTKgunr0Bo1vH7VPEq-4nqFisCIn8W/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-38",
+          "title": "Sessional paper > PPS > BICP31920",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13uQ3RpjjO0equ9CEx5ZqyWSi359dQIBC/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-39",
+          "title": "Sessional paper > PPS > BICP31819",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13fIyc_lvWN2P6q0KxxkTPQl_ZEGIzKhk/view?usp=drivesdk",
+          "size": "0.4 MB"
+        },
+        {
+          "id": "res-12P8D-40",
+          "title": "Sessional paper > PPS > BICP31516",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13e8yCwMGgjwA72K3X8IfFB_x5Rr03fPs/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-41",
+          "title": "Sessional paper > PPS > BICP31415",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13TdFNOOQClF8c2sNfS8Maq2DwHfdJWNP/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-42",
+          "title": "Sessional paper > PPS > BICP31314",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13RydolJg7HXlcVJ6nRq-q_iqLMTHQeZH/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-43",
+          "title": "Sessional paper > PPS > BICP22021",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13MuZInbq_NxSzjIN-2FA5hO6mkhaf3qe/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-44",
+          "title": "Sessional paper > PPS > BICP21920",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13M2hVKZoB2tNsOoWi06f2OjmsZ4a_CdT/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-45",
+          "title": "Sessional paper > PPS > BICP21819",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13DLbI8qSf1hzRdDV7ZfNGkWPhuaD9pvh/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-46",
+          "title": "Sessional paper > PPS > BICP21617",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13ANmQAnT74_k8ZaogQNMPDu-d87nQ0tU/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-47",
+          "title": "Sessional paper > PPS > BICP21314",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/13-lOriXdlQxqF6b1Ad8JspGw7CLTrMtq/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-48",
+          "title": "Sessional paper > PPS > BICP12021",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12waOCObGtPBzXRA71A3ePafRuV8Q49Jq/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-49",
+          "title": "Sessional paper > PPS > BICP11920",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12wGsePV-DTQX-X2ab0lUewn1jUNONZec/view?usp=drivesdk",
+          "size": "0.2 MB"
+        },
+        {
+          "id": "res-12P8D-50",
+          "title": "Sessional paper > PPS > BICP11819",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12rNDuMrsvEF2AOVZPFSU_MiHUKkl88qN/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12P8D-51",
+          "title": "Sessional paper > PPS > BICP11617",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12gYmyvM0zysHkrFiswfQTMyj7MXhLPff/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-52",
+          "title": "Sessional paper > PPS > BICP11516",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12eDArRPrsBqR5Ug8PqXdj2_fh-B7Bqkl/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-53",
+          "title": "Sessional paper > PPS > BICP11415",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12brOd2sxdQugo0NL6W0x8W64NTTdVSj8/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-54",
+          "title": "Sessional paper > PPS > BICP11314",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12THqMNycRApahtk7Gj6SOlzKNIQ-DHNW/view?usp=drivesdk",
+          "size": "0.0 MB"
+        },
+        {
+          "id": "res-12P8D-55",
+          "title": "Sessional paper > PPS > BICP-A21617",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12Qz0_YUJEsJy6eXAGJyutaeHpFFTGqFO/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-folder-12OxcG",
+          "title": "📁 Download Folder: Sessional paper > BEE",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/12OxcGGF_9AkOaeMpEshXJ4mW504TkWD2",
+          "size": "Folder"
+        },
+        {
+          "id": "res-12Oxc-56",
+          "title": "Sessional paper > BEE > BIBEE12122",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12JTLgOMV1q8JWMWiCgIlUymIKKAsXqn5/view?usp=drivesdk",
+          "size": "0.2 MB"
+        },
+        {
+          "id": "res-12Oxc-57",
+          "title": "Sessional paper > BEE > BIBEE22122",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12GSRfaIU-uKcqED_IJ5uYkZiYf-7Z_OA/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12Oxc-58",
+          "title": "Sessional paper > BEE > BIBEE32122",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/12AWA-DWHa-KJkIO5Ea25kcI-V5knpsrc/view?usp=drivesdk",
+          "size": "0.1 MB"
+        },
+        {
+          "id": "res-12Oxc-59",
+          "title": "Sessional paper > BEE > BIBEEb2122",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/124O-zHreiyXF8ZazkHTVLjVy0vWb_x-P/view?usp=drivesdk",
+          "size": "0.2 MB"
+        },
+        {
+          "id": "res-folder-1y9gNq",
+          "title": "📁 Download Folder: External paper ",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+          "size": "Folder"
+        },
+        {
+          "id": "res-1y9gN-60",
+          "title": "External paper  > B TECH I 2023",
+          "type": "notes",
+          "url": "https://docs.google.com/document/d/1nve3p0FvqP9NsvLatKWKox_VyyvgX30FtlTnhVWPKo8/edit?usp=drivesdk",
+          "size": "0.2 MB"
+        },
+        {
+          "id": "res-1y9gN-61",
+          "title": "External paper  > B TECH I 2023",
+          "type": "notes",
+          "url": "https://docs.google.com/document/d/1DYrTWzG6EwUpW9yau8R0csRG9iGgKr_T8wW6PHJL_FY/edit?usp=drivesdk",
+          "size": "0.2 MB"
+        },
+        {
+          "id": "res-1y9gN-62",
+          "title": "External paper  > B TECH I 2023",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1yh0uk174uxi3lU7rbTFoTd-JFYo5WHeL/view?usp=drivesdk",
+          "size": "9.7 MB"
+        },
+        {
+          "id": "res-1y9gN-63",
+          "title": "External paper  > B TECH I 2019",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1yew-UIFy_vwxyH1ga2hE2EHsJCrgbzCj/view?usp=drivesdk",
+          "size": "12.3 MB"
+        },
+        {
+          "id": "res-1y9gN-64",
+          "title": "External paper  > B TECH I 2018",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1yQgEBt-xskVd7ufNaOqm3gykCzJtkRNP/view?usp=drivesdk",
+          "size": "8.8 MB"
+        },
+        {
+          "id": "res-1y9gN-65",
+          "title": "External paper  > B TECH I 2017",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1yH3Kx-E9RZE_s5zXaSzV5o8tJFl1MLkz/view?usp=drivesdk",
+          "size": "9.7 MB"
+        },
+        {
+          "id": "res-1y9gN-66",
+          "title": "External paper  > B TECH I 2016",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1yGDhy8wEnEcMwyLvRCbUZFNrHIPVIc77/view?usp=drivesdk",
+          "size": "5.7 MB"
+        },
+        {
+          "id": "res-1y9gN-67",
+          "title": "External paper  > B TECH I 2015",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1yFhrgeJqKWXKEJKtiFkTxALEuwxdtQ27/view?usp=drivesdk",
+          "size": "5.9 MB"
+        },
+        {
+          "id": "res-1y9gN-68",
+          "title": "External paper  > B TECH I 2015 RE REM",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1yA0G-Z6bTZY17wS1HgZgjxy-tefSDxsm/view?usp=drivesdk",
+          "size": "7.1 MB"
+        },
+        {
+          "id": "res-1y9gN-69",
+          "title": "External paper  > B TECH I 2013",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/1y9uAJUgooWifDPTFOAPJMAcrJszIqX6j/view?usp=drivesdk",
+          "size": "1.8 MB"
+        }
+      ]
+    },
+    {
+      "id": "sub-1138EX",
+      "name": "Lab Manual",
+      "code": "LAB MA",
+      "resources": [
+        {
+          "id": "res-subject-folder-1138EX",
+          "title": "📁 Download ENTIRE Subject Folder",
+          "type": "folder",
+          "url": "https://drive.google.com/drive/folders/1138EX6NPpGNSlhKWvSGbA5DBm5R7ZCkB",
+          "size": "Subject"
+        },
+        {
+          "id": "res-1138E-70",
+          "title": "EGD Lab Manual_ICT_2022-23",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/10zZ_UxfKeLPGmiB2cxjdy6-2FcFTf1l0/view?usp=drivesdk",
+          "size": "6.3 MB"
+        },
+        {
+          "id": "res-1138E-71",
+          "title": "PPS_Labmaual_2023",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/10ytrf4w87o2QiO3pCk8FcY7nwuZf4YSS/view?usp=drivesdk",
+          "size": "0.8 MB"
+        },
+        {
+          "id": "res-1138E-72",
+          "title": "BEE LAB MANUAL_updated_oct_2021",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/10aJzb5lsGVQ_ZfvwI9QdbPFst2IkOwEN/view?usp=drivesdk",
+          "size": "14.9 MB"
+        },
+        {
+          "id": "res-1138E-73",
+          "title": "2022-S-Labmanual",
+          "type": "notes",
+          "url": "https://drive.google.com/file/d/10_A7ZL5aJtONwDubqPb3o6Ts6PjQZdkV/view?usp=drivesdk",
+          "size": "1.6 MB"
+        }
+      ]
+    }
+  ]
+}

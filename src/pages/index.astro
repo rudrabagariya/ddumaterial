@@ -1,27 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import materials from '../data/materials.json';
+
+const allNodes = Object.values(materials).flat();
+const rootFolders = allNodes.filter(n => n.parent === 'root');
 ---
 
-<Layout title="Home">
-	<div class="container">
-		<div class="text-center mb-8">
-			<h1 class="h1 text-gradient">Your Core Academic Archive</h1>
-			<p class="h3" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-weight: 400; font-size: 1.1rem;">
-				Access high-quality lecture notes, PYQs, and lab manuals instantly. Zero ads, zero friction.
-			</p>
-		</div>
+<Layout title="EduVault - Home">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h1 class="h1 mb-4 text-gradient">Welcome to EduVault</h1>
+      <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+        Access all your engineering resources, past papers, and lecture notes in one organized place.
+      </p>
+    </div>
 
-		<div class="grid grid-cols-2 mt-8">
-			{materials.semesters.map((sem) => (
-				<a href={`/semester/${sem.id}`} class="interactive-card glass-panel">
-					<div class="flex justify-between items-center mb-2">
-						<h2 class="card-title" style="margin: 0;">{sem.name}</h2>
-						<span class="badge">{sem.subjects.length} Subjects</span>
-					</div>
-					<p class="card-desc">{sem.description}</p>
-				</a>
-			))}
-		</div>
-	</div>
+    <div class="mb-8">
+      <h2 class="h2 mb-6" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">My Google Drive</h2>
+      
+      <div class="grid grid-cols-2">
+        {rootFolders.map((folder) => (
+          <a href={`/folder/${folder.id}`} class="glass-panel hover-card block" style="padding: 2rem; text-decoration: none;">
+            <div class="flex items-center gap-4">
+              <span style="font-size: 2.5rem; display: block; line-height: 1;">📁</span>
+              <div>
+                <h3 class="card-title" style="margin-bottom: 0.5rem; color: var(--text-color);">{folder.name}</h3>
+                <span class="btn btn-outline" style="font-size: 0.8rem; padding: 0.25rem 0.75rem;">Browse Folder &rarr;</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
 </Layout>

@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import materials from '../../data/materials.json';
+
+export function getStaticPaths() {
+  const allNodes = Object.values(materials).flat();
+  const folders = allNodes.filter(n => n.type === 'folder');
+  return folders.map(folder => ({
+    params: { id: folder.id },
+    props: { folder, allNodes },
+  }));
+}
+
+const { folder, allNodes } = Astro.props;
+
+// Build breadcrumbs recursively
+const buildBreadcrumbs = (folderId) => {
+  const breadcrumbs = [];
+  let current = allNodes.find(n => n.id === folderId);
+  while (current && current.parent !== 'root') {
+    breadcrumbs.unshift(current);
+    current = allNodes.find(n => n.id === current.parent);
+  }
+  if (current && current.parent === 'root') {
+    breadcrumbs.unshift(current);
+  }
+  return breadcrumbs;
+};
+
+const breadcrumbs = buildBreadcrumbs(folder.id);
+const children = allNodes.filter(n => n.parent === folder.id);
+const childFolders = children.filter(n => n.type === 'folder');
+const childFiles = children.filter(n => n.type === 'file');
+---
+
+<Layout title={folder.name}>
+  <div class="container">
+    <div class="mb-8">
+      <nav aria-label="Breadcrumb" class="mb-4 text-sm" style="color: var(--text-muted);">
+        <ol class="flex items-center gap-2 flex-wrap">
+          <li>
+            <a href="/" style="color: var(--text-muted); text-decoration: none;" class="hover:text-white">Home</a>
+          </li>
+          {breadcrumbs.map((crumb, index) => (
+            <li class="flex items-center gap-2">
+              <span>/</span>
+              {index === breadcrumbs.length - 1 ? (
+                <span class="font-medium" style="color: white;">{crumb.name}</span>
+              ) : (
+                <a href={`/folder/${crumb.id}`} style="color: var(--text-muted); text-decoration: none;" class="hover:text-white">{crumb.name}</a>
+              )}
+            </li>
+          ))}
+        </ol>
+      </nav>
+      
+      <div class="flex items-center gap-4 justify-between">
+        <h1 class="h1 text-gradient" style="margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+          📁 {folder.name}
+        </h1>
+        <a href={folder.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+          Download Entire Folder
+        </a>
+      </div>
+    </div>
+
+    {childFolders.length > 0 && (
+      <div class="mb-8">
+        <h2 class="h3 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Folders</h2>
+        <div class="grid grid-cols-2">
+          {childFolders.map(cf => (
+            <a href={`/folder/${cf.id}`} class="glass-panel hover-card block" style="padding: 1rem 1.5rem; text-decoration: none;">
+              <div class="flex items-center gap-3">
+                <span style="font-size: 1.5rem;">📁</span>
+                <h3 class="card-title" style="font-size: 1.1rem; margin: 0; color: var(--text-color);">{cf.name}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {childFiles.length > 0 && (
+      <div>
+        <h2 class="h3 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Files</h2>
+        <div class="grid grid-cols-2">
+          {childFiles.map(res => (
+            <div class="glass-panel flex justify-between items-center" style="padding: 1rem 1.5rem;">
+              <div class="flex items-center gap-3" style="max-width: 60%;">
+                <span style="font-size: 1.5rem;">📄</span>
+                <div>
+                  <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{res.name}</h3>
+                  <span style="color: var(--text-muted); font-size: 0.85rem;">{res.size}</span>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <a href={`/view/${res.id}`} class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                  View
+                </a>
+                <a href={res.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                  Download
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {childFolders.length === 0 && childFiles.length === 0 && (
+      <div class="glass-panel text-center" style="padding: 3rem;">
+        <p style="color: var(--text-muted); font-size: 1.1rem;">This folder is empty.</p>
+      </div>
+    )}
+  </div>
+</Layout>
