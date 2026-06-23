@@ -34,6 +34,13 @@ let embedUrl = file.url;
 if (embedUrl.includes('drive.google.com/file/d/')) {
   embedUrl = embedUrl.replace(/\/view.*$/, '/preview');
 }
+
+// Convert to Direct Download Link
+let downloadUrl = file.url;
+const driveMatch = file.url.match(/file\/d\/([a-zA-Z0-9_-]+)/);
+if (driveMatch && driveMatch[1]) {
+  downloadUrl = `https://drive.google.com/uc?export=download&id=${driveMatch[1]}`;
+}
 ---
 
 <Layout title={file.name}>
@@ -63,7 +70,7 @@ if (embedUrl.includes('drive.google.com/file/d/')) {
           <button id="fullscreen-btn" class="btn btn-outline" style="padding: 0.5rem 1rem;">
             ⛶ Full Screen
           </button>
-          <a href={file.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.5rem 1rem;">
+          <a href={downloadUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 0.5rem 1rem;">
             Download Original
           </a>
         </div>
