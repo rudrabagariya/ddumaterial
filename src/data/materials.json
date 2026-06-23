@@ -1,0 +1,88 @@
+{
+  "semesters": [
+    {
+      "id": "sem-1",
+      "name": "Semester 1",
+      "description": "Foundation courses including Mathematics I, Physics, and Basic Electrical Engineering.",
+      "subjects": [
+        {
+          "id": "sub-math1",
+          "name": "Engineering Mathematics I",
+          "code": "MAT101",
+          "resources": [
+            {
+              "id": "res-math-notes-unit1",
+              "title": "Unit 1: Differential Calculus",
+              "type": "notes",
+              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+              "size": "2.4 MB"
+            },
+            {
+              "id": "res-math-pyq-2023",
+              "title": "PYQ 2023 - Solved",
+              "type": "pyq",
+              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+              "size": "1.1 MB"
+            }
+          ]
+        },
+        {
+          "id": "sub-phy",
+          "name": "Engineering Physics",
+          "code": "PHY101",
+          "resources": [
+            {
+              "id": "res-phy-lab",
+              "title": "Physics Lab Manual",
+              "type": "lab",
+              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+              "size": "5.2 MB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sem-2",
+      "name": "Semester 2",
+      "description": "Core foundation covering Mathematics II, Chemistry, and Programming in C.",
+      "subjects": [
+        {
+          "id": "sub-prog-c",
+          "name": "Programming in C",
+          "code": "CS101",
+          "resources": [
+            {
+              "id": "res-c-notes",
+              "title": "Complete C Programming Notes",
+              "type": "notes",
+              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+              "size": "8.5 MB"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sem-3",
+      "name": "Semester 3",
+      "description": "Introduction to branch-specific core subjects. Data Structures, Digital Logic.",
+      "subjects": [
+        {
+          "id": "sub-dsa",
+          "name": "Data Structures & Algorithms",
+          "code": "CS201",
+          "resources": [
+            {
+              "id": "res-dsa-trees",
+              "title": "Trees and Graphs Lecture Slides",
+              "type": "presentation",
+              "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+              "size": "4.2 MB"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

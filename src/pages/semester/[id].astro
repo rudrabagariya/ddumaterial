@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import materials from '../../data/materials.json';
+
+export function getStaticPaths() {
+  return materials.semesters.map(sem => ({
+    params: { id: sem.id },
+    props: { semester: sem },
+  }));
+}
+
+const { semester } = Astro.props;
+---
+
+<Layout title={semester.name}>
+  <div class="container">
+    <div class="mb-8">
+      <a href="/" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem; margin-bottom: 1rem;">
+        &larr; Back to Semesters
+      </a>
+      <h1 class="h1 text-gradient">{semester.name}</h1>
+      <p style="color: var(--text-secondary); font-size: 1.1rem;">{semester.description}</p>
+    </div>
+
+    <h2 class="h2 mb-4">Subjects</h2>
+    <div class="grid grid-cols-3">
+      {semester.subjects.map((sub) => (
+        <a href={`/subject/${sub.id}`} class="interactive-card glass-panel" style="border-left: 4px solid var(--accent-primary);">
+          <div class="mb-2">
+            <span class="badge">{sub.code}</span>
+          </div>
+          <h3 class="card-title">{sub.name}</h3>
+          <p class="card-desc mt-4" style="color: var(--accent-secondary); font-weight: 500;">
+            {sub.resources.length} Resources &rarr;
+          </p>
+        </a>
+      ))}
+      
+      {semester.subjects.length === 0 && (
+        <p style="color: var(--text-muted);">No subjects available for this semester yet.</p>
+      )}
+    </div>
+  </div>
+</Layout>

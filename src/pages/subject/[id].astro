@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import materials from '../../data/materials.json';
+
+export function getStaticPaths() {
+  const paths = [];
+  materials.semesters.forEach(sem => {
+    sem.subjects.forEach(sub => {
+      paths.push({
+        params: { id: sub.id },
+        props: { subject: sub, semester: sem },
+      });
+    });
+  });
+  return paths;
+}
+
+const { subject, semester } = Astro.props;
+
+// Group resources by type
+const groupedResources = subject.resources.reduce((acc, resource) => {
+  if (!acc[resource.type]) {
+    acc[resource.type] = [];
+  }
+  acc[resource.type].push(resource);
+  return acc;
+}, {});
+
+const typeLabels = {
+  notes: "Lecture Notes",
+  pyq: "Previous Year Questions",
+  lab: "Lab Manuals",
+  presentation: "Presentations & Slides"
+};
+---
+
+<Layout title={`${subject.code} - ${subject.name}`}>
+  <div class="container">
+    <div class="mb-8">
+      <a href={`/semester/${semester.id}`} class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem; margin-bottom: 1rem;">
+        &larr; Back to {semester.name}
+      </a>
+      <div class="flex items-center gap-4 mb-2">
+        <span class="badge" style="font-size: 1rem;">{subject.code}</span>
+        <h1 class="h1 text-gradient" style="margin: 0;">{subject.name}</h1>
+      </div>
+    </div>
+
+    {Object.keys(groupedResources).length === 0 ? (
+      <div class="glass-panel text-center" style="padding: 3rem;">
+        <p style="color: var(--text-muted); font-size: 1.1rem;">No resources have been uploaded for this subject yet.</p>
+      </div>
+    ) : (
+      Object.keys(groupedResources).map(type => (
+        <div class="mb-8">
+          <h2 class="h3 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+            {typeLabels[type] || type.toUpperCase()}
+          </h2>
+          <div class="grid grid-cols-2">
+            {groupedResources[type].map(res => (
+              <div class="glass-panel flex justify-between items-center" style="padding: 1rem 1.5rem;">
+                <div>
+                  <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.25rem;">{res.title}</h3>
+                  <span style="color: var(--text-muted); font-size: 0.85rem;">{res.size}</span>
+                </div>
+                <div class="flex gap-2">
+                  <a href={`/view/${res.id}`} class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                    View
+                  </a>
+                  <a href={res.url} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                    Download
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))
+    )}
+  </div>
+</Layout>

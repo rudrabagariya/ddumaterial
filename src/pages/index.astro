@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import materials from '../data/materials.json';
+---
+
+<Layout title="Home">
+	<div class="container">
+		<div class="text-center mb-8">
+			<h1 class="h1 text-gradient">Your Core Academic Archive</h1>
+			<p class="h3" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-weight: 400; font-size: 1.1rem;">
+				Access high-quality lecture notes, PYQs, and lab manuals instantly. Zero ads, zero friction.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-2 mt-8">
+			{materials.semesters.map((sem) => (
+				<a href={`/semester/${sem.id}`} class="interactive-card glass-panel">
+					<div class="flex justify-between items-center mb-2">
+						<h2 class="card-title" style="margin: 0;">{sem.name}</h2>
+						<span class="badge">{sem.subjects.length} Subjects</span>
+					</div>
+					<p class="card-desc">{sem.description}</p>
+				</a>
+			))}
+		</div>
+	</div>
+</Layout>
