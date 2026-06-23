@@ -2,32 +2,785 @@
   "sem1": [
     {
       "type": "folder",
-      "id": "root-sem1",
-      "name": "Semester 1",
+      "id": "1_mIBdjfHEj9W8TroPcDzuXA0_HJ06M8s",
+      "name": "SEM-1",
       "parent": "root",
-      "url": "https://drive.google.com/drive/folders/sem1"
+      "url": "https://drive.google.com/drive/folders/1_mIBdjfHEj9W8TroPcDzuXA0_HJ06M8s"
     },
     {
       "type": "folder",
-      "id": "sessional-paper",
-      "name": "Sessional paper",
-      "parent": "root-sem1",
-      "url": "https://drive.google.com/drive/folders/sess"
-    },
-    {
-      "type": "folder",
-      "id": "pps",
-      "name": "PPS",
-      "parent": "sessional-paper",
-      "url": "https://drive.google.com/drive/folders/pps"
+      "id": "1J34r2Q1Zt7xSRR544UxceYXpmIib46fJ",
+      "name": "PPTS",
+      "parent": "1_mIBdjfHEj9W8TroPcDzuXA0_HJ06M8s",
+      "url": "https://drive.google.com/drive/folders/1J34r2Q1Zt7xSRR544UxceYXpmIib46fJ"
     },
     {
       "type": "file",
-      "id": "pps-file-1",
-      "name": "PPS-I_Sessional2_2022_23 - Solution",
-      "parent": "pps",
-      "url": "https://drive.google.com/file/d/pps1",
+      "id": "1zZsyJ6nFRkyzkBqh_DsjOF6j5zm8yF-e",
+      "name": "DC Machines",
+      "parent": "1J34r2Q1Zt7xSRR544UxceYXpmIib46fJ",
+      "url": "https://drive.google.com/file/d/1zZsyJ6nFRkyzkBqh_DsjOF6j5zm8yF-e/view?usp=drivesdk",
+      "size": "9.7 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "191a-yTXgZg6vzsPFvL-bfOlge995euOw",
+      "name": "Hardware interfacing",
+      "parent": "1J34r2Q1Zt7xSRR544UxceYXpmIib46fJ",
+      "url": "https://docs.google.com/presentation/d/191a-yTXgZg6vzsPFvL-bfOlge995euOw/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
       "size": "0.2 MB",
+      "mimeType": "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+    },
+    {
+      "type": "file",
+      "id": "1JDAmNmhBw12brE2Q_Uq6k9D8o6_g0U_b",
+      "name": "Functions in C _ PDD",
+      "parent": "1J34r2Q1Zt7xSRR544UxceYXpmIib46fJ",
+      "url": "https://drive.google.com/file/d/1JDAmNmhBw12brE2Q_Uq6k9D8o6_g0U_b/view?usp=drivesdk",
+      "size": "1.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1JBKIzFempUARfuYIyZJ8m82700ukmHS5",
+      "name": "Bee_RHA.PDF",
+      "parent": "1J34r2Q1Zt7xSRR544UxceYXpmIib46fJ",
+      "url": "https://drive.google.com/file/d/1JBKIzFempUARfuYIyZJ8m82700ukmHS5/view?usp=drivesdk",
+      "size": "3.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1J7CskbEK120_3TpzFG_OaERycj9ysWKs",
+      "name": "BEE_NVC",
+      "parent": "1J34r2Q1Zt7xSRR544UxceYXpmIib46fJ",
+      "url": "https://drive.google.com/file/d/1J7CskbEK120_3TpzFG_OaERycj9ysWKs/view?usp=drivesdk",
+      "size": "6.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5",
+      "name": "Books",
+      "parent": "1_mIBdjfHEj9W8TroPcDzuXA0_HJ06M8s",
+      "url": "https://drive.google.com/drive/folders/1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5"
+    },
+    {
+      "type": "folder",
+      "id": "1Fz2e1LEB0ZXaeigMMMsoQ3r4QJNo0AYz",
+      "name": "U. A. PATEL",
+      "parent": "1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5",
+      "url": "https://drive.google.com/drive/folders/1Fz2e1LEB0ZXaeigMMMsoQ3r4QJNo0AYz"
+    },
+    {
+      "type": "file",
+      "id": "1G7I0NknHCFdghFlAZgdmblEvibV8Im33",
+      "name": "uapatel",
+      "parent": "1Fz2e1LEB0ZXaeigMMMsoQ3r4QJNo0AYz",
+      "url": "https://drive.google.com/file/d/1G7I0NknHCFdghFlAZgdmblEvibV8Im33/view?usp=drivesdk",
+      "size": "78.8 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "1gvNx-kENyjAV3w3LY-8_6M42EXXVfLeq",
+      "name": "BEE B. L. THERAJA",
+      "parent": "1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5",
+      "url": "https://drive.google.com/drive/folders/1gvNx-kENyjAV3w3LY-8_6M42EXXVfLeq"
+    },
+    {
+      "type": "file",
+      "id": "1hHGugXRE0DqFbdS1zQeutSSCvxLqfHAE",
+      "name": "B. L. THERAJA-VOL-I",
+      "parent": "1gvNx-kENyjAV3w3LY-8_6M42EXXVfLeq",
+      "url": "https://drive.google.com/file/d/1hHGugXRE0DqFbdS1zQeutSSCvxLqfHAE/view?usp=drivesdk",
+      "size": "19.6 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1gvatJaZHhUVqP6lEbmt1fwsRxa-tgYU5",
+      "name": "B.L.THERAJA VOL-II",
+      "parent": "1gvNx-kENyjAV3w3LY-8_6M42EXXVfLeq",
+      "url": "https://drive.google.com/file/d/1gvatJaZHhUVqP6lEbmt1fwsRxa-tgYU5/view?usp=drivesdk",
+      "size": "55.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "1ZXZY2s3PlbSfLLXxCWj1IEl1jsI4y9Ng",
+      "name": "Maths B. S. GREWAL",
+      "parent": "1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5",
+      "url": "https://drive.google.com/drive/folders/1ZXZY2s3PlbSfLLXxCWj1IEl1jsI4y9Ng"
+    },
+    {
+      "type": "file",
+      "id": "1ZQz-U4vjx4kz-B7zdjHMGrWfMWfYK89J",
+      "name": "Higher Engineering Mathematics",
+      "parent": "1ZXZY2s3PlbSfLLXxCWj1IEl1jsI4y9Ng",
+      "url": "https://drive.google.com/file/d/1ZQz-U4vjx4kz-B7zdjHMGrWfMWfYK89J/view?usp=drivesdk",
+      "size": "124.6 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "1ZX85KD-t-tv7Li8NqJN3Qwj4eqMN1pJ0",
+      "name": "Engineering Graphics N. D. Bhatt",
+      "parent": "1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5",
+      "url": "https://drive.google.com/drive/folders/1ZX85KD-t-tv7Li8NqJN3Qwj4eqMN1pJ0"
+    },
+    {
+      "type": "file",
+      "id": "1ZNyH6QRXH9L0XhPaDGKqoocdq0Tscg0j",
+      "name": "Engineering Drawing by N. D. Bhatt",
+      "parent": "1ZX85KD-t-tv7Li8NqJN3Qwj4eqMN1pJ0",
+      "url": "https://drive.google.com/file/d/1ZNyH6QRXH9L0XhPaDGKqoocdq0Tscg0j/view?usp=drivesdk",
+      "size": "32.4 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "1ZUBoa-3thjqXHqwwibSMcU-G8gj2rUfQ",
+      "name": "BEE R. Muthusubhramanian",
+      "parent": "1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5",
+      "url": "https://drive.google.com/drive/folders/1ZUBoa-3thjqXHqwwibSMcU-G8gj2rUfQ"
+    },
+    {
+      "type": "file",
+      "id": "1ZP1XibYRNQ3qCmYkAuvlJORqdAJ8qtJy",
+      "name": "Basic Electrical And Electronics Engineering",
+      "parent": "1ZUBoa-3thjqXHqwwibSMcU-G8gj2rUfQ",
+      "url": "https://drive.google.com/file/d/1ZP1XibYRNQ3qCmYkAuvlJORqdAJ8qtJy/view?usp=drivesdk",
+      "size": "30.2 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "1ZU-TFb7t-CdOQWRYQnnF6w8AbfnYzAOp",
+      "name": "E. Balagurusamy",
+      "parent": "1-n2TSzwZFfeiEtGRJED0slXdFVtisXm5",
+      "url": "https://drive.google.com/drive/folders/1ZU-TFb7t-CdOQWRYQnnF6w8AbfnYzAOp"
+    },
+    {
+      "type": "file",
+      "id": "1DAKOPsBZv_UanPQmB3gAg4wqhqSHbz-X",
+      "name": "pdfcoffee.com_programming-in-ansi-c-review-question-solution-e-balagurusamy-pdf-free",
+      "parent": "1ZU-TFb7t-CdOQWRYQnnF6w8AbfnYzAOp",
+      "url": "https://drive.google.com/file/d/1DAKOPsBZv_UanPQmB3gAg4wqhqSHbz-X/view?usp=drivesdk",
+      "size": "1.4 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "16OlKZb8nB8t4Vs9O3DBXAw3iVywzujZx",
+      "name": "ANSI C -(Solutions with Flowchart & Programs)",
+      "parent": "1ZU-TFb7t-CdOQWRYQnnF6w8AbfnYzAOp",
+      "url": "https://drive.google.com/file/d/16OlKZb8nB8t4Vs9O3DBXAw3iVywzujZx/view?usp=drivesdk",
+      "size": "1.5 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "173XuocWRiBTGzPeo_z4UoZmtGHYqUiYv",
+      "name": "Programming in ANSI C-1",
+      "parent": "1ZU-TFb7t-CdOQWRYQnnF6w8AbfnYzAOp",
+      "url": "https://drive.google.com/file/d/173XuocWRiBTGzPeo_z4UoZmtGHYqUiYv/view?usp=drivesdk",
+      "size": "64.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "11C3EB9QGjvTgtGyuJj8vpyjoCnZMqPC-",
+      "name": "Tutorials",
+      "parent": "1_mIBdjfHEj9W8TroPcDzuXA0_HJ06M8s",
+      "url": "https://drive.google.com/drive/folders/11C3EB9QGjvTgtGyuJj8vpyjoCnZMqPC-"
+    },
+    {
+      "type": "folder",
+      "id": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "name": "PPS",
+      "parent": "11C3EB9QGjvTgtGyuJj8vpyjoCnZMqPC-",
+      "url": "https://drive.google.com/drive/folders/11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa"
+    },
+    {
+      "type": "file",
+      "id": "1HfNkWfxZqpnDxOjGF1XqBrGAOaIEcA0g",
+      "name": "Tut9_function",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/1HfNkWfxZqpnDxOjGF1XqBrGAOaIEcA0g/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1Hemq7Hd5bSD34er4hhrUTfpczOUu7cY1",
+      "name": "Tut8_string",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/1Hemq7Hd5bSD34er4hhrUTfpczOUu7cY1/view?usp=drivesdk",
+      "size": "0.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "11pSlFF8EjztNnzrwTPEWkeOp87DveQMK",
+      "name": "Tut7_array",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/11pSlFF8EjztNnzrwTPEWkeOp87DveQMK/view?usp=drivesdk",
+      "size": "0.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "11lIwXa6Ha1X8_avLyTqEt7H8ikcVTKt9",
+      "name": "Tut6_loop",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/11lIwXa6Ha1X8_avLyTqEt7H8ikcVTKt9/view?usp=drivesdk",
+      "size": "0.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "11evrdp5nBHg9nKLmwTWHLkk5Ed3ye5wl",
+      "name": "Tut5_ifelse",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/11evrdp5nBHg9nKLmwTWHLkk5Ed3ye5wl/view?usp=drivesdk",
+      "size": "0.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "11XOBuYB_WmoyDD7t_loqCc3KewDw-Yue",
+      "name": "Tut4_printfscanf",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/11XOBuYB_WmoyDD7t_loqCc3KewDw-Yue/view?usp=drivesdk",
+      "size": "0.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "11WETqOUkG0TPdnjdNYqOWTtF4NsvQ33A",
+      "name": "tut3_operator",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/11WETqOUkG0TPdnjdNYqOWTtF4NsvQ33A/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "11PgtORUJNy1e0JI6au-yZtGwFgRCx7jy",
+      "name": "Tut2_datatypes",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/11PgtORUJNy1e0JI6au-yZtGwFgRCx7jy/view?usp=drivesdk",
+      "size": "0.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "11Hb3wH5vH7DpXka7GuiOk1EGKXRbfa3K",
+      "name": "Tut1_basic",
+      "parent": "11DTBSEwV7mKl_grqSy_RkKr7nthAgNxa",
+      "url": "https://drive.google.com/file/d/11Hb3wH5vH7DpXka7GuiOk1EGKXRbfa3K/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "11DLuBsGXlMLkwnD601cwLwo5jobkiRgi",
+      "name": "BEE",
+      "parent": "11C3EB9QGjvTgtGyuJj8vpyjoCnZMqPC-",
+      "url": "https://drive.google.com/drive/folders/11DLuBsGXlMLkwnD601cwLwo5jobkiRgi"
+    },
+    {
+      "type": "file",
+      "id": "11u08lQw7jftWBIn9PFuNhlP430ryG86j",
+      "name": "Tutorial-1.docx",
+      "parent": "11DLuBsGXlMLkwnD601cwLwo5jobkiRgi",
+      "url": "https://docs.google.com/document/d/11u08lQw7jftWBIn9PFuNhlP430ryG86j/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+      "size": "0.0 MB",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "type": "file",
+      "id": "1245a2PDnkABsorDHSzOYmJgKI0we4EaD",
+      "name": "Tutorial_4",
+      "parent": "11DLuBsGXlMLkwnD601cwLwo5jobkiRgi",
+      "url": "https://drive.google.com/file/d/1245a2PDnkABsorDHSzOYmJgKI0we4EaD/view?usp=drivesdk",
+      "size": "0.6 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "123dOEOOMtmdakEoEvXNPdWHRCqxv-4fI",
+      "name": "Tutorial-5.docx",
+      "parent": "11DLuBsGXlMLkwnD601cwLwo5jobkiRgi",
+      "url": "https://docs.google.com/document/d/123dOEOOMtmdakEoEvXNPdWHRCqxv-4fI/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+      "size": "0.1 MB",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "type": "file",
+      "id": "11wMafro17ia6NkMzK4xcktPejLqdLYTK",
+      "name": "Tutorial-2.docx",
+      "parent": "11DLuBsGXlMLkwnD601cwLwo5jobkiRgi",
+      "url": "https://docs.google.com/document/d/11wMafro17ia6NkMzK4xcktPejLqdLYTK/edit?usp=drivesdk&ouid=100053779175319500675&rtpof=true&sd=true",
+      "size": "0.1 MB",
+      "mimeType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    },
+    {
+      "type": "folder",
+      "id": "11398UqoIlrTzAJf8yv4vFBLGq-meqeg5",
+      "name": "Past Year Papers",
+      "parent": "1_mIBdjfHEj9W8TroPcDzuXA0_HJ06M8s",
+      "url": "https://drive.google.com/drive/folders/11398UqoIlrTzAJf8yv4vFBLGq-meqeg5"
+    },
+    {
+      "type": "folder",
+      "id": "1y1BqSpayi2AR6Htl2lj3Sb3HdTke8S7E",
+      "name": "Sessional paper",
+      "parent": "11398UqoIlrTzAJf8yv4vFBLGq-meqeg5",
+      "url": "https://drive.google.com/drive/folders/1y1BqSpayi2AR6Htl2lj3Sb3HdTke8S7E"
+    },
+    {
+      "type": "folder",
+      "id": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "name": "PPS",
+      "parent": "1y1BqSpayi2AR6Htl2lj3Sb3HdTke8S7E",
+      "url": "https://drive.google.com/drive/folders/12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ"
+    },
+    {
+      "type": "file",
+      "id": "14Iv2-fMrmnV6l4f1rs-D1l6vxZi3Fjw7",
+      "name": "PPS-I_Sessional2_2022_23 - Solution",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/14Iv2-fMrmnV6l4f1rs-D1l6vxZi3Fjw7/view?usp=drivesdk",
+      "size": "0.2 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13BhNeARQnbksQyVfkr8miKqIPdlLeKIE",
+      "name": "BICP21516",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13BhNeARQnbksQyVfkr8miKqIPdlLeKIE/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "14Mp4vYKlmo2rljhg6epgQBypHCAsvaAy",
+      "name": "PPS-I_Sessional2_2022_23",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/14Mp4vYKlmo2rljhg6epgQBypHCAsvaAy/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "14GFbb04dI7TPpacff--EprHKHKFyBvHn",
+      "name": "PPS-I_3rd_Sessional_2022 (2)",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/14GFbb04dI7TPpacff--EprHKHKFyBvHn/view?usp=drivesdk",
+      "size": "0.4 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "14DjpiA_b1KRyCt_VvMcdvY-i45NOfaUj",
+      "name": "PPS-I_2nd_Sessional_2022 (1)",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/14DjpiA_b1KRyCt_VvMcdvY-i45NOfaUj/view?usp=drivesdk",
+      "size": "0.4 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "14ATdBOsvZpv-Ge5XNALBBSmgQoGWtPxW",
+      "name": "PPS-I_2nd_additional_Sessional_2022 (1)",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/14ATdBOsvZpv-Ge5XNALBBSmgQoGWtPxW/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "149R8rL8K9n9m122lpQU6dRPJxItLuWKH",
+      "name": "PPS-I_1st_sessional_2021",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/149R8rL8K9n9m122lpQU6dRPJxItLuWKH/view?usp=drivesdk",
+      "size": "0.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "144pjZLTBL3a28UaRUO5zINlfyIqje9KM",
+      "name": "PPS-I_1st_Additional_Sessional_2022",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/144pjZLTBL3a28UaRUO5zINlfyIqje9KM/view?usp=drivesdk",
+      "size": "0.2 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "143WrZT_CVnG1CaMGJh1qIaiHHyYPLO7w",
+      "name": "BICPB2021",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/143WrZT_CVnG1CaMGJh1qIaiHHyYPLO7w/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13xpTKgunr0Bo1vH7VPEq-4nqFisCIn8W",
+      "name": "BICP32021",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13xpTKgunr0Bo1vH7VPEq-4nqFisCIn8W/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13uQ3RpjjO0equ9CEx5ZqyWSi359dQIBC",
+      "name": "BICP31920",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13uQ3RpjjO0equ9CEx5ZqyWSi359dQIBC/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13fIyc_lvWN2P6q0KxxkTPQl_ZEGIzKhk",
+      "name": "BICP31819",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13fIyc_lvWN2P6q0KxxkTPQl_ZEGIzKhk/view?usp=drivesdk",
+      "size": "0.4 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13e8yCwMGgjwA72K3X8IfFB_x5Rr03fPs",
+      "name": "BICP31516",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13e8yCwMGgjwA72K3X8IfFB_x5Rr03fPs/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13TdFNOOQClF8c2sNfS8Maq2DwHfdJWNP",
+      "name": "BICP31415",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13TdFNOOQClF8c2sNfS8Maq2DwHfdJWNP/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13RydolJg7HXlcVJ6nRq-q_iqLMTHQeZH",
+      "name": "BICP31314",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13RydolJg7HXlcVJ6nRq-q_iqLMTHQeZH/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13MuZInbq_NxSzjIN-2FA5hO6mkhaf3qe",
+      "name": "BICP22021",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13MuZInbq_NxSzjIN-2FA5hO6mkhaf3qe/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13M2hVKZoB2tNsOoWi06f2OjmsZ4a_CdT",
+      "name": "BICP21920",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13M2hVKZoB2tNsOoWi06f2OjmsZ4a_CdT/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13DLbI8qSf1hzRdDV7ZfNGkWPhuaD9pvh",
+      "name": "BICP21819",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13DLbI8qSf1hzRdDV7ZfNGkWPhuaD9pvh/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13ANmQAnT74_k8ZaogQNMPDu-d87nQ0tU",
+      "name": "BICP21617",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13ANmQAnT74_k8ZaogQNMPDu-d87nQ0tU/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "13-lOriXdlQxqF6b1Ad8JspGw7CLTrMtq",
+      "name": "BICP21314",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/13-lOriXdlQxqF6b1Ad8JspGw7CLTrMtq/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12waOCObGtPBzXRA71A3ePafRuV8Q49Jq",
+      "name": "BICP12021",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/12waOCObGtPBzXRA71A3ePafRuV8Q49Jq/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12wGsePV-DTQX-X2ab0lUewn1jUNONZec",
+      "name": "BICP11920",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/12wGsePV-DTQX-X2ab0lUewn1jUNONZec/view?usp=drivesdk",
+      "size": "0.2 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12rNDuMrsvEF2AOVZPFSU_MiHUKkl88qN",
+      "name": "BICP11819",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/12rNDuMrsvEF2AOVZPFSU_MiHUKkl88qN/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12gYmyvM0zysHkrFiswfQTMyj7MXhLPff",
+      "name": "BICP11617",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/12gYmyvM0zysHkrFiswfQTMyj7MXhLPff/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12eDArRPrsBqR5Ug8PqXdj2_fh-B7Bqkl",
+      "name": "BICP11516",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/12eDArRPrsBqR5Ug8PqXdj2_fh-B7Bqkl/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12brOd2sxdQugo0NL6W0x8W64NTTdVSj8",
+      "name": "BICP11415",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/12brOd2sxdQugo0NL6W0x8W64NTTdVSj8/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12THqMNycRApahtk7Gj6SOlzKNIQ-DHNW",
+      "name": "BICP11314",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/12THqMNycRApahtk7Gj6SOlzKNIQ-DHNW/view?usp=drivesdk",
+      "size": "0.0 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12Qz0_YUJEsJy6eXAGJyutaeHpFFTGqFO",
+      "name": "BICP-A21617",
+      "parent": "12P8D_rxrtuIT1g5qaDjfatkc2kcleVBQ",
+      "url": "https://drive.google.com/file/d/12Qz0_YUJEsJy6eXAGJyutaeHpFFTGqFO/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "12OxcGGF_9AkOaeMpEshXJ4mW504TkWD2",
+      "name": "BEE",
+      "parent": "1y1BqSpayi2AR6Htl2lj3Sb3HdTke8S7E",
+      "url": "https://drive.google.com/drive/folders/12OxcGGF_9AkOaeMpEshXJ4mW504TkWD2"
+    },
+    {
+      "type": "file",
+      "id": "12JTLgOMV1q8JWMWiCgIlUymIKKAsXqn5",
+      "name": "BIBEE12122",
+      "parent": "12OxcGGF_9AkOaeMpEshXJ4mW504TkWD2",
+      "url": "https://drive.google.com/file/d/12JTLgOMV1q8JWMWiCgIlUymIKKAsXqn5/view?usp=drivesdk",
+      "size": "0.2 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12GSRfaIU-uKcqED_IJ5uYkZiYf-7Z_OA",
+      "name": "BIBEE22122",
+      "parent": "12OxcGGF_9AkOaeMpEshXJ4mW504TkWD2",
+      "url": "https://drive.google.com/file/d/12GSRfaIU-uKcqED_IJ5uYkZiYf-7Z_OA/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "12AWA-DWHa-KJkIO5Ea25kcI-V5knpsrc",
+      "name": "BIBEE32122",
+      "parent": "12OxcGGF_9AkOaeMpEshXJ4mW504TkWD2",
+      "url": "https://drive.google.com/file/d/12AWA-DWHa-KJkIO5Ea25kcI-V5knpsrc/view?usp=drivesdk",
+      "size": "0.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "124O-zHreiyXF8ZazkHTVLjVy0vWb_x-P",
+      "name": "BIBEEb2122",
+      "parent": "12OxcGGF_9AkOaeMpEshXJ4mW504TkWD2",
+      "url": "https://drive.google.com/file/d/124O-zHreiyXF8ZazkHTVLjVy0vWb_x-P/view?usp=drivesdk",
+      "size": "0.2 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "name": "External paper ",
+      "parent": "11398UqoIlrTzAJf8yv4vFBLGq-meqeg5",
+      "url": "https://drive.google.com/drive/folders/1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe"
+    },
+    {
+      "type": "file",
+      "id": "1nve3p0FvqP9NsvLatKWKox_VyyvgX30FtlTnhVWPKo8",
+      "name": "B TECH I 2023",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://docs.google.com/document/d/1nve3p0FvqP9NsvLatKWKox_VyyvgX30FtlTnhVWPKo8/edit?usp=drivesdk",
+      "size": "0.2 MB",
+      "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+      "type": "file",
+      "id": "1DYrTWzG6EwUpW9yau8R0csRG9iGgKr_T8wW6PHJL_FY",
+      "name": "B TECH I 2023",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://docs.google.com/document/d/1DYrTWzG6EwUpW9yau8R0csRG9iGgKr_T8wW6PHJL_FY/edit?usp=drivesdk",
+      "size": "0.2 MB",
+      "mimeType": "application/vnd.google-apps.document"
+    },
+    {
+      "type": "file",
+      "id": "1yh0uk174uxi3lU7rbTFoTd-JFYo5WHeL",
+      "name": "B TECH I 2023",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://drive.google.com/file/d/1yh0uk174uxi3lU7rbTFoTd-JFYo5WHeL/view?usp=drivesdk",
+      "size": "9.7 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1yew-UIFy_vwxyH1ga2hE2EHsJCrgbzCj",
+      "name": "B TECH I 2019",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://drive.google.com/file/d/1yew-UIFy_vwxyH1ga2hE2EHsJCrgbzCj/view?usp=drivesdk",
+      "size": "12.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1yQgEBt-xskVd7ufNaOqm3gykCzJtkRNP",
+      "name": "B TECH I 2018",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://drive.google.com/file/d/1yQgEBt-xskVd7ufNaOqm3gykCzJtkRNP/view?usp=drivesdk",
+      "size": "8.8 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1yH3Kx-E9RZE_s5zXaSzV5o8tJFl1MLkz",
+      "name": "B TECH I 2017",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://drive.google.com/file/d/1yH3Kx-E9RZE_s5zXaSzV5o8tJFl1MLkz/view?usp=drivesdk",
+      "size": "9.7 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1yGDhy8wEnEcMwyLvRCbUZFNrHIPVIc77",
+      "name": "B TECH I 2016",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://drive.google.com/file/d/1yGDhy8wEnEcMwyLvRCbUZFNrHIPVIc77/view?usp=drivesdk",
+      "size": "5.7 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1yFhrgeJqKWXKEJKtiFkTxALEuwxdtQ27",
+      "name": "B TECH I 2015",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://drive.google.com/file/d/1yFhrgeJqKWXKEJKtiFkTxALEuwxdtQ27/view?usp=drivesdk",
+      "size": "5.9 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1yA0G-Z6bTZY17wS1HgZgjxy-tefSDxsm",
+      "name": "B TECH I 2015 RE REM",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://drive.google.com/file/d/1yA0G-Z6bTZY17wS1HgZgjxy-tefSDxsm/view?usp=drivesdk",
+      "size": "7.1 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "1y9uAJUgooWifDPTFOAPJMAcrJszIqX6j",
+      "name": "B TECH I 2013",
+      "parent": "1y9gNqJmEQkealtXnlLBNpsUG0kkoMrKe",
+      "url": "https://drive.google.com/file/d/1y9uAJUgooWifDPTFOAPJMAcrJszIqX6j/view?usp=drivesdk",
+      "size": "1.8 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "folder",
+      "id": "1138EX6NPpGNSlhKWvSGbA5DBm5R7ZCkB",
+      "name": "Lab Manual",
+      "parent": "1_mIBdjfHEj9W8TroPcDzuXA0_HJ06M8s",
+      "url": "https://drive.google.com/drive/folders/1138EX6NPpGNSlhKWvSGbA5DBm5R7ZCkB"
+    },
+    {
+      "type": "file",
+      "id": "10zZ_UxfKeLPGmiB2cxjdy6-2FcFTf1l0",
+      "name": "EGD Lab Manual_ICT_2022-23",
+      "parent": "1138EX6NPpGNSlhKWvSGbA5DBm5R7ZCkB",
+      "url": "https://drive.google.com/file/d/10zZ_UxfKeLPGmiB2cxjdy6-2FcFTf1l0/view?usp=drivesdk",
+      "size": "6.3 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "10ytrf4w87o2QiO3pCk8FcY7nwuZf4YSS",
+      "name": "PPS_Labmaual_2023",
+      "parent": "1138EX6NPpGNSlhKWvSGbA5DBm5R7ZCkB",
+      "url": "https://drive.google.com/file/d/10ytrf4w87o2QiO3pCk8FcY7nwuZf4YSS/view?usp=drivesdk",
+      "size": "0.8 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "10aJzb5lsGVQ_ZfvwI9QdbPFst2IkOwEN",
+      "name": "BEE LAB MANUAL_updated_oct_2021",
+      "parent": "1138EX6NPpGNSlhKWvSGbA5DBm5R7ZCkB",
+      "url": "https://drive.google.com/file/d/10aJzb5lsGVQ_ZfvwI9QdbPFst2IkOwEN/view?usp=drivesdk",
+      "size": "14.9 MB",
+      "mimeType": "application/pdf"
+    },
+    {
+      "type": "file",
+      "id": "10_A7ZL5aJtONwDubqPb3o6Ts6PjQZdkV",
+      "name": "2022-S-Labmanual",
+      "parent": "1138EX6NPpGNSlhKWvSGbA5DBm5R7ZCkB",
+      "url": "https://drive.google.com/file/d/10_A7ZL5aJtONwDubqPb3o6Ts6PjQZdkV/view?usp=drivesdk",
+      "size": "1.6 MB",
       "mimeType": "application/pdf"
     }
   ]
