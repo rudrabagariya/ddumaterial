@@ -18,6 +18,20 @@ export function getStaticPaths() {
 }
 
 const { resource, subject } = Astro.props;
+
+// Process URL for Google Drive
+let embedUrl = resource.url;
+let isGoogleDrive = false;
+
+if (resource.url.includes('drive.google.com/file/d/')) {
+  isGoogleDrive = true;
+  const match = resource.url.match(/\/file\/d\/([^/]+)/);
+  if (match && match[1]) {
+    embedUrl = `https://drive.google.com/file/d/${match[1]}/preview`;
+  }
+} else {
+  embedUrl = `${resource.url}#toolbar=0`;
+}
 ---
 
 <Layout title={resource.title}>
@@ -33,7 +47,7 @@ const { resource, subject } = Astro.props;
       <div class="flex gap-4 items-center">
         <span style="color: var(--text-muted);">{resource.size}</span>
         <a href={resource.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary" download>
-          Download Original File
+          {isGoogleDrive ? "Open in Google Drive" : "Download Original File"}
         </a>
       </div>
     </div>
@@ -41,8 +55,9 @@ const { resource, subject } = Astro.props;
     <div class="pdf-container">
       <iframe 
         class="pdf-iframe" 
-        src={`${resource.url}#toolbar=0`} 
+        src={embedUrl} 
         title={resource.title}
+        allow="autoplay"
       >
         <p>Your browser does not support PDFs. <a href={resource.url}>Download the PDF</a>.</p>
       </iframe>
