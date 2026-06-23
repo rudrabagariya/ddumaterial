@@ -88,19 +88,19 @@ const getDownloadUrl = (url) => {
         <h2 class="h3 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Files</h2>
         <div class="grid grid-cols-2">
           {childFiles.map(res => (
-            <div class="glass-panel flex justify-between items-center" style="padding: 1rem 1.5rem;">
-              <div class="flex items-center gap-3" style="max-width: 60%;">
-                <span style="font-size: 1.5rem;">📄</span>
-                <div>
-                  <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{res.name}</h3>
+            <div class="glass-panel" style="padding: 1rem 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+              <div class="flex items-start gap-3">
+                <span style="font-size: 1.5rem; line-height: 1.2;">📄</span>
+                <div style="min-width: 0; overflow: hidden;">
+                  <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title={res.name}>{res.name}</h3>
                   <span style="color: var(--text-muted); font-size: 0.85rem;">{res.size}</span>
                 </div>
               </div>
-              <div class="flex gap-2">
-                <a href={`/view/${res.id}`} class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+              <div class="flex gap-2 mt-auto">
+                <a href={`/view/${res.id}`} class="btn btn-primary" style="flex: 1; padding: 0.5rem; font-size: 0.9rem;">
                   View
                 </a>
-                <a href={getDownloadUrl(res.url)} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                <a href={getDownloadUrl(res.url)} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="flex: 1; padding: 0.5rem; font-size: 0.9rem;">
                   Download
                 </a>
               </div>
