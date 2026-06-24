@@ -4,6 +4,7 @@ import materials from '../data/materials.json';
 import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable } from '../db/schema';
 import { desc, eq } from 'drizzle-orm';
+import AdBanner from '../components/AdBanner.astro';
 import { env } from 'cloudflare:workers';
 
 const user = Astro.locals.user;
@@ -91,5 +92,8 @@ const avatar = user?.avatarUrl || defaultAvatar;
         <a href="/api/auth/google" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 2rem;">Login with Google</a>
       </div>
     )}
+
+    {/* AdSense Ad Banner */}
+    <AdBanner className="mt-8 mb-4" />
   </div>
 </Layout>

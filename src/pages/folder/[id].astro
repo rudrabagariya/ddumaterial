@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import materials from '../../data/materials.json';
+import AdBanner from '../../components/AdBanner.astro';
 
 const { id } = Astro.params;
 const allNodes = Object.values(materials).flat();
@@ -112,5 +113,8 @@ const getDownloadUrl = (url) => {
         <p style="color: var(--text-muted); font-size: 1.1rem;">This folder is empty.</p>
       </div>
     )}
+
+    {/* AdSense Ad Banner */}
+    <AdBanner className="mt-8 mb-4" />
   </div>
 </Layout>

@@ -5,6 +5,7 @@ import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable, commentsTable, userTable } from '../../db/schema';
 import { and, eq, desc } from 'drizzle-orm';
 import { generateIdFromEntropySize } from 'lucia';
+import AdBanner from '../../components/AdBanner.astro';
 
 const { id } = Astro.params;
 const allNodes = Object.values(materials).flat();
@@ -139,7 +140,12 @@ if (driveMatch && driveMatch[1]) {
       </iframe>
     </div>
 
-    <div class="mt-12 mb-12">
+    <div class="mt-8 mb-4">
+      {/* AdSense Ad Banner */}
+      <AdBanner />
+    </div>
+
+    <div class="mt-8 mb-12">
       <h3 class="h3 mb-6" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Community Discussion</h3>
       
       {user ? (

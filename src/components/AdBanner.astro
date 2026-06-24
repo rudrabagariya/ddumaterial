@@ -1,0 +1,23 @@
+---
+interface Props {
+  className?: string;
+  slotId?: string; // specific ad slot ID if you create ad units in AdSense
+}
+
+const { className = "my-4", slotId } = Astro.props;
+// Replace this with your actual Google AdSense Publisher ID
+const PUBLISHER_ID = "ca-pub-XXXXXXXXXXXXXXXX"; 
+---
+
+<div class={`ad-container ${className}`} style="text-align: center; overflow: hidden;">
+  <!-- Google AdSense Banner -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client={PUBLISHER_ID}
+       data-ad-slot={slotId || ""}
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
