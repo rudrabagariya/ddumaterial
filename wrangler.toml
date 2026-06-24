@@ -1,0 +1,8 @@
+name = "material29"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ddumaterial_db"
+database_id = "cca95b37-58f5-4a6f-b2e3-6ec45cd830ca"

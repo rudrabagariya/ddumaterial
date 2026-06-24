@@ -1,36 +1,95 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import materials from '../data/materials.json';
+import { drizzle } from 'drizzle-orm/d1';
+import { recentlyViewedTable } from '../db/schema';
+import { desc, eq } from 'drizzle-orm';
+import { env } from 'cloudflare:workers';
+
+const user = Astro.locals.user;
+const db = drizzle(env.DB as any);
 
 const allNodes = Object.values(materials).flat();
 const rootFolders = allNodes.filter(n => n.parent === 'root');
+
+let recentFiles = [];
+if (user) {
+  const history = await db.select()
+    .from(recentlyViewedTable)
+    .where(eq(recentlyViewedTable.userId, user.id))
+    .orderBy(desc(recentlyViewedTable.viewedAt))
+    .limit(4)
+    .all();
+    
+  recentFiles = history.map(h => allNodes.find(n => n.id === h.fileId)).filter(Boolean);
+}
+const defaultAvatar = user ? `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=4285f4&color=fff&size=128` : '';
+const avatar = user?.avatarUrl || defaultAvatar;
 ---
 
 <Layout title="DDU MATERIAL - Home">
   <div class="container">
     <div class="text-center mb-12">
-      <h1 class="h1 mb-4 text-gradient">Welcome to DDU MATERIAL</h1>
-      <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
-        Access all your engineering resources, past papers, and lecture notes in one organized place.
-      </p>
+      {user ? (
+        <>
+          <img src={avatar} alt="Avatar" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem auto;" onerror={`this.onerror=null;this.src='${defaultAvatar}'`} />
+          <h1 class="h1 mb-4 text-gradient">Welcome back, {user.name}!</h1>
+          <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+            Pick up right where you left off or explore new materials.
+          </p>
+        </>
+      ) : (
+        <>
+          <h1 class="h1 mb-4 text-gradient">Welcome to DDU MATERIAL</h1>
+          <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+            Access all your engineering resources, past papers, and lecture notes in one organized place.
+          </p>
+        </>
+      )}
     </div>
 
-    <div class="mb-8">
-      <h2 class="h2 mb-6" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">My Google Drive</h2>
-      
-      <div class="grid grid-cols-2">
-        {rootFolders.map((folder) => (
-          <a href={`/folder/${folder.id}`} class="glass-panel hover-card block" style="padding: 2rem; text-decoration: none;">
-            <div class="flex items-center gap-4">
-              <span style="font-size: 2.5rem; display: block; line-height: 1;">📁</span>
-              <div>
-                <h3 class="card-title" style="margin-bottom: 0.5rem; color: var(--text-color);">{folder.name}</h3>
-                <span class="btn btn-outline" style="font-size: 0.8rem; padding: 0.25rem 0.75rem;">Browse Folder &rarr;</span>
+    {user && recentFiles.length > 0 && (
+      <div class="mb-12">
+        <h2 class="h2 mb-6" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Recently Viewed</h2>
+        <div class="grid grid-cols-2">
+          {recentFiles.map((res: any) => (
+            <a href={`/view/${res.id}`} class="glass-panel hover-card block" style="padding: 1rem 1.5rem; text-decoration: none;">
+              <div class="flex items-start gap-3">
+                <span style="font-size: 1.5rem; line-height: 1.2;">📄</span>
+                <div style="min-width: 0; overflow: hidden;">
+                  <h3 class="card-title" style="font-size: 1.1rem; margin-bottom: 0.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title={res.name}>{res.name}</h3>
+                  <span style="color: var(--text-muted); font-size: 0.85rem;">{res.size || 'PDF Document'}</span>
+                </div>
               </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          ))}
+        </div>
       </div>
-    </div>
+    )}
+
+    {user ? (
+      <div class="mb-8">
+        <h2 class="h2 mb-6" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">My Google Drive</h2>
+        
+        <div class="grid grid-cols-2">
+          {rootFolders.map((folder: any) => (
+            <a href={`/folder/${folder.id}`} class="glass-panel hover-card block" style="padding: 2rem; text-decoration: none;">
+              <div class="flex items-center gap-4">
+                <span style="font-size: 2.5rem; display: block; line-height: 1;">📁</span>
+                <div>
+                  <h3 class="card-title" style="margin-bottom: 0.5rem; color: var(--text-color);">{folder.name}</h3>
+                  <span class="btn btn-outline" style="font-size: 0.8rem; padding: 0.25rem 0.75rem;">Browse Folder &rarr;</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    ) : (
+      <div class="glass-panel text-center" style="padding: 3rem; margin-top: 2rem;">
+        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 1rem;">🔒 Login to access study materials, past papers, and lecture notes.</p>
+        <a href="/api/auth/google" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 2rem;">Login with Google</a>
+      </div>
+    )}
   </div>
 </Layout>

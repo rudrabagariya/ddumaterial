@@ -2,16 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import materials from '../../data/materials.json';
 
-export function getStaticPaths() {
-  const allNodes = Object.values(materials).flat();
-  const folders = allNodes.filter(n => n.type === 'folder');
-  return folders.map(folder => ({
-    params: { id: folder.id },
-    props: { folder, allNodes },
-  }));
-}
+const { id } = Astro.params;
+const allNodes = Object.values(materials).flat();
+const folder = allNodes.find((n: any) => n.id === id && n.type === 'folder');
 
-const { folder, allNodes } = Astro.props;
+if (!folder) {
+  return Astro.redirect('/404');
+}
 
 // Build breadcrumbs recursively
 const buildBreadcrumbs = (folderId) => {

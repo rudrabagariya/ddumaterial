@@ -1,25 +1,68 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import materials from '../../data/materials.json';
+import { drizzle } from 'drizzle-orm/d1';
+import { recentlyViewedTable, commentsTable, userTable } from '../../db/schema';
+import { and, eq, desc } from 'drizzle-orm';
+import { generateIdFromEntropySize } from 'lucia';
 
-export function getStaticPaths() {
-  const allNodes = Object.values(materials).flat();
-  const files = allNodes.filter(n => n.type === 'file');
-  return files.map(file => ({
-    params: { id: file.id },
-    props: { file, allNodes },
-  }));
+const { id } = Astro.params;
+const allNodes = Object.values(materials).flat();
+const file = allNodes.find((n: any) => n.id === id && n.type === 'file');
+
+if (!file) {
+  return Astro.redirect('/404');
 }
 
-const { file, allNodes } = Astro.props;
+import { env } from 'cloudflare:workers';
+const user = Astro.locals.user;
+const db = drizzle(env.DB as any);
+
+if (user) {
+  if (Astro.request.method === "POST") {
+    const data = await Astro.request.formData();
+    const content = data.get("content");
+    if (typeof content === "string" && content.trim() !== "") {
+      await db.insert(commentsTable).values({
+        id: generateIdFromEntropySize(10),
+        userId: user.id,
+        fileId: id,
+        content: content.trim(),
+        createdAt: Date.now()
+      });
+    }
+  } else {
+    // Record view history on GET
+    await db.delete(recentlyViewedTable).where(and(eq(recentlyViewedTable.userId, user.id), eq(recentlyViewedTable.fileId, id)));
+    await db.insert(recentlyViewedTable).values({
+      id: generateIdFromEntropySize(10),
+      userId: user.id,
+      fileId: id,
+      viewedAt: Date.now()
+    });
+  }
+}
+
+const comments = await db.select({
+  id: commentsTable.id,
+  content: commentsTable.content,
+  createdAt: commentsTable.createdAt,
+  userName: userTable.name,
+  userAvatar: userTable.avatarUrl
+})
+.from(commentsTable)
+.innerJoin(userTable, eq(commentsTable.userId, userTable.id))
+.where(eq(commentsTable.fileId, id))
+.orderBy(desc(commentsTable.createdAt))
+.all();
 
 // Build breadcrumbs for the file
-const buildBreadcrumbs = (parentId) => {
-  const breadcrumbs = [];
-  let current = allNodes.find(n => n.id === parentId);
+const buildBreadcrumbs = (parentId: string) => {
+  const breadcrumbs: any[] = [];
+  let current = allNodes.find((n: any) => n.id === parentId);
   while (current && current.parent !== 'root') {
     breadcrumbs.unshift(current);
-    current = allNodes.find(n => n.id === current.parent);
+    current = allNodes.find((n: any) => n.id === current.parent);
   }
   if (current && current.parent === 'root') {
     breadcrumbs.unshift(current);
@@ -94,6 +137,45 @@ if (driveMatch && driveMatch[1]) {
           <a href={file.url} target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-4">Open File Directly</a>
         </div>
       </iframe>
+    </div>
+
+    <div class="mt-12 mb-12">
+      <h3 class="h3 mb-6" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Community Discussion</h3>
+      
+      {user ? (
+        <form method="POST" class="mb-8" style="background: white; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border-color);">
+          <div class="flex gap-4">
+            <img src={user.avatarUrl} style="width: 40px; height: 40px; border-radius: 50%;" />
+            <div style="flex: 1;">
+              <textarea name="content" required placeholder="Ask a question or share a note about this file..." style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: 8px; resize: vertical; min-height: 80px; font-family: inherit; font-size: 0.95rem;"></textarea>
+              <button type="submit" class="btn btn-primary mt-2">Post Comment</button>
+            </div>
+          </div>
+        </form>
+      ) : (
+        <div class="mb-8 text-center" style="background: #f8f9fa; padding: 2rem; border-radius: 8px; border: 1px solid var(--border-color);">
+          <p class="mb-4" style="color: var(--text-muted);">Log in to ask questions, share notes, and join the discussion.</p>
+          <a href="/api/auth/google" class="btn btn-primary">Login with Google</a>
+        </div>
+      )}
+
+      <div class="comments-list flex flex-col gap-4">
+        {comments.map((comment: any) => (
+          <div class="flex gap-4" style="background: white; padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+            <img src={comment.userAvatar} style="width: 40px; height: 40px; border-radius: 50%;" />
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span style="font-weight: 500;">{comment.userName}</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">{new Date(comment.createdAt).toLocaleDateString()}</span>
+              </div>
+              <p style="color: var(--text-primary); white-space: pre-wrap;">{comment.content}</p>
+            </div>
+          </div>
+        ))}
+        {comments.length === 0 && (
+          <p style="text-align: center; color: var(--text-muted); padding: 2rem 0;">No comments yet. Be the first to start the discussion!</p>
+        )}
+      </div>
     </div>
   </div>
 </Layout>

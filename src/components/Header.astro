@@ -1,14 +1,29 @@
 ---
+const user = Astro.locals.user;
+const defaultAvatar = user ? `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=4285f4&color=fff&size=128` : '';
+const avatar = user?.avatarUrl || defaultAvatar;
 ---
 <header class="site-header">
   <div class="container header-content">
     <a href="/" class="logo">DDU MATERIAL</a>
-    <div class="search-wrapper">
+    <div class="search-wrapper" style="flex: 1; max-width: 600px; margin: 0 2rem;">
       <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
       <input type="text" class="search-input" placeholder="Search for subjects, PDFs, PYQs..." aria-label="Search resources">
+    </div>
+    <div>
+      {user ? (
+        <div class="flex items-center gap-3">
+          <img src={avatar} alt={user.name} style="width: 32px; height: 32px; border-radius: 50%;" onerror={`this.onerror=null;this.src='${defaultAvatar}'`} />
+          <form method="POST" action="/api/auth/logout">
+            <button class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Logout</button>
+          </form>
+        </div>
+      ) : (
+        <a href="/api/auth/google" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;">Login</a>
+      )}
     </div>
   </div>
 </header>
