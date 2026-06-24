@@ -5,7 +5,7 @@ import type { APIRoute } from "astro";
 import { drizzle } from "drizzle-orm/d1";
 import { userTable } from "../../../../db/schema";
 import { eq } from "drizzle-orm";
-import { env } from "cloudflare:workers";
+import { getPlatformEnv } from "../../../../utils/env";
 
 export const GET: APIRoute = async (context) => {
 	const code = context.url.searchParams.get("code");
@@ -19,10 +19,11 @@ export const GET: APIRoute = async (context) => {
 		});
 	}
 
+	const { DB, GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = getPlatformEnv(context);
 	const origin = new URL(context.request.url).origin;
-	const google = initializeGoogle(env.GOOGLE_CLIENT_ID as string, env.GOOGLE_CLIENT_SECRET as string, origin);
-	const lucia = initializeLucia(env.DB as any);
-	const db = drizzle(env.DB as any);
+	const google = initializeGoogle(GOOGLE_CLIENT_ID as string, GOOGLE_CLIENT_SECRET as string, origin);
+	const lucia = initializeLucia(DB as any);
+	const db = drizzle(DB as any);
 
 	try {
 		const tokens = await google.validateAuthorizationCode(code, storedCodeVerifier);
