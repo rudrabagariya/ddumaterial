@@ -1,15 +1,14 @@
 import { generateState, generateCodeVerifier } from "arctic";
 import { initializeGoogle } from "../../../auth";
 import type { APIRoute } from "astro";
-import { getPlatformEnv } from "../../../utils/env";
+import { env } from "cloudflare:workers";
 
 export const GET: APIRoute = async (context) => {
 	const state = generateState();
 	const codeVerifier = generateCodeVerifier();
 	
-	const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = getPlatformEnv(context);
 	const origin = new URL(context.request.url).origin;
-	const google = initializeGoogle(GOOGLE_CLIENT_ID as string, GOOGLE_CLIENT_SECRET as string, origin);
+	const google = initializeGoogle(env.GOOGLE_CLIENT_ID as string, env.GOOGLE_CLIENT_SECRET as string, origin);
 
 	const url = google.createAuthorizationURL(state, codeVerifier, ["openid", "profile", "email"]);
 

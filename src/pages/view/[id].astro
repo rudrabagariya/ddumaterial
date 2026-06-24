@@ -14,10 +14,9 @@ if (!file) {
   return Astro.redirect('/404');
 }
 
-import { getPlatformEnv } from '../../utils/env';
+import { env } from 'cloudflare:workers';
 const user = Astro.locals.user;
-const { DB } = getPlatformEnv(Astro);
-const db = drizzle(DB as any);
+const db = drizzle(env.DB as any);
 
 if (user) {
   if (Astro.request.method === "POST") {

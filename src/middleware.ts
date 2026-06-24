@@ -1,20 +1,18 @@
 import { defineMiddleware } from "astro:middleware";
 import { initializeLucia } from "./auth";
-import { getPlatformEnv } from "./utils/env";
+import { env } from "cloudflare:workers";
 
 export const onRequest = defineMiddleware(async (context, next) => {
 	try {
-		const { DB } = getPlatformEnv(context);
-		
-		if (!DB) {
-			console.warn("Cloudflare runtime DB is not available!");
+		if (!env || !env.DB) {
+			console.warn("Cloudflare runtime is not available!");
 			context.locals.user = null;
 			context.locals.session = null;
 			return next();
 		}
 		
 		// Initialize Lucia using the Cloudflare D1 binding from the request runtime
-		const lucia = initializeLucia(DB as any);
+		const lucia = initializeLucia(env.DB as any);
 		
 		const sessionId = context.cookies.get(lucia.sessionCookieName)?.value ?? null;
 		if (!sessionId) {

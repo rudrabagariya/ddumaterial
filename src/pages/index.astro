@@ -4,11 +4,10 @@ import materials from '../data/materials.json';
 import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable } from '../db/schema';
 import { desc, eq } from 'drizzle-orm';
-import { getPlatformEnv } from '../utils/env';
+import { env } from 'cloudflare:workers';
 
 const user = Astro.locals.user;
-const { DB } = getPlatformEnv(Astro);
-const db = drizzle(DB as any);
+const db = drizzle(env.DB as any);
 
 const allNodes = Object.values(materials).flat();
 const rootFolders = allNodes.filter(n => n.parent === 'root');
