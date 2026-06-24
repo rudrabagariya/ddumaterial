@@ -68,27 +68,27 @@ const avatar = user?.avatarUrl || defaultAvatar;
       </div>
     )}
 
-    {user ? (
-      <div class="mb-8">
-        <h2 class="h2 mb-6" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">My Google Drive</h2>
-        
-        <div class="grid grid-cols-2">
-          {rootFolders.map((folder: any) => (
-            <a href={`/folder/${folder.id}`} class="glass-panel hover-card block" style="padding: 2rem; text-decoration: none;">
-              <div class="flex items-center gap-4">
-                <span style="font-size: 2.5rem; display: block; line-height: 1;">📁</span>
-                <div>
-                  <h3 class="card-title" style="margin-bottom: 0.5rem; color: var(--text-color);">{folder.name}</h3>
-                  <span class="btn btn-outline" style="font-size: 0.8rem; padding: 0.25rem 0.75rem;">Browse Folder &rarr;</span>
-                </div>
+    <div class="mb-8 mt-8">
+      <h2 class="h2 mb-6" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Semester Folders</h2>
+      
+      <div class="grid grid-cols-2">
+        {rootFolders.map((folder: any) => (
+          <a href={`/folder/${folder.id}`} class="glass-panel hover-card block" style="padding: 2rem; text-decoration: none;">
+            <div class="flex items-center gap-4">
+              <span style="font-size: 2.5rem; display: block; line-height: 1;">📁</span>
+              <div>
+                <h3 class="card-title" style="margin-bottom: 0.5rem; color: var(--text-color);">{folder.name}</h3>
+                <span class="btn btn-outline" style="font-size: 0.8rem; padding: 0.25rem 0.75rem;">Browse Folder &rarr;</span>
               </div>
-            </a>
-          ))}
-        </div>
+            </div>
+          </a>
+        ))}
       </div>
-    ) : (
+    </div>
+
+    {!user && (
       <div class="glass-panel text-center" style="padding: 3rem; margin-top: 2rem;">
-        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 1rem;">🔒 Login to access study materials, past papers, and lecture notes.</p>
+        <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 1rem;">🔒 Login to track recently viewed files, post comments, and join the discussion.</p>
         <a href="/api/auth/google" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 2rem;">Login with Google</a>
       </div>
     )}

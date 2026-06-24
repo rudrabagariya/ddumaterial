@@ -19,11 +19,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
 			context.locals.user = null;
 			context.locals.session = null;
 			// Redirect unauthenticated users from protected pages
-			const protectedPaths = ["/folder/", "/view/"];
-			const isProtected = protectedPaths.some(p => context.url.pathname.startsWith(p));
-			if (isProtected) {
-				return context.redirect("/");
-			}
+			// const protectedPaths = ["/folder/", "/view/"];
+			// const isProtected = protectedPaths.some(p => context.url.pathname.startsWith(p));
+			// if (isProtected) {
+			// 	return context.redirect("/");
+			// }
 			return next();
 		}
 
@@ -40,12 +40,12 @@ export const onRequest = defineMiddleware(async (context, next) => {
 		context.locals.session = session;
 		context.locals.user = user;
 
-		// Route protection: redirect unauthenticated users away from content pages
-		const protectedPaths = ["/folder/", "/view/"];
-		const isProtected = protectedPaths.some(p => context.url.pathname.startsWith(p));
-		if (isProtected && !context.locals.user) {
-			return context.redirect("/");
-		}
+		// Route protection temporarily disabled for AdSense Approval:
+		// const protectedPaths = ["/folder/", "/view/"];
+		// const isProtected = protectedPaths.some(p => context.url.pathname.startsWith(p));
+		// if (isProtected && !context.locals.user) {
+		// 	return context.redirect("/");
+		// }
 
 		return await next();
 	} catch (error) {
