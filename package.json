@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node -e \"const fs=require('fs');const f='dist/server/wrangler.json';const d=JSON.parse(fs.readFileSync(f));d.kv_namespaces=[];delete d.assets;d.previews={};fs.writeFileSync(f,JSON.stringify(d));console.log('Cleaned wrangler.json')\"",
     "preview": "astro preview",
     "astro": "astro"
   },
