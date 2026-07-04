@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { drizzle } from 'drizzle-orm/d1';
-import { searchQueriesTable, donationsTable, recentlyViewedTable, userTable } from '../db/schema';
+import { searchQueriesTable, donationsTable, recentlyViewedTable, userTable, feedbackTable } from '../db/schema';
 import { desc, count, sql, eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
 import materials from '../data/materials.json';
@@ -92,6 +92,22 @@ const pendingDonations = await db.select({
 .innerJoin(userTable, eq(donationsTable.userId, userTable.id))
 .where(eq(donationsTable.status, 'pending'))
 .orderBy(desc(donationsTable.submittedAt))
+.all();
+
+// 6. User Feedback
+const userFeedback = await db.select({
+  id: feedbackTable.id,
+  category: feedbackTable.category,
+  message: feedbackTable.message,
+  status: feedbackTable.status,
+  submittedAt: feedbackTable.submittedAt,
+  userName: userTable.name,
+  userEmail: userTable.email
+})
+.from(feedbackTable)
+.leftJoin(userTable, eq(feedbackTable.userId, userTable.id))
+.orderBy(desc(feedbackTable.submittedAt))
+.limit(20)
 .all();
 
 ---
@@ -241,6 +257,42 @@ const pendingDonations = await db.select({
           </tbody>
         </table>
       </div>
+    </div>
+
+    {/* User Feedback */}
+    <div class="mt-8 glass-panel" style="padding: 1.5rem;">
+      <h2 class="h3 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; justify-content: space-between;">
+        <span>User Feedback & Requests</span>
+        {userFeedback.length > 0 && (
+          <span class="badge" style="background: rgba(147, 52, 230, 0.1); color: #9334e6; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem;">{userFeedback.length} Items</span>
+        )}
+      </h2>
+      
+      {userFeedback.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {userFeedback.map(fb => (
+            <div style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <div class="flex justify-between items-start">
+                <span class="badge" style={`
+                  padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase; font-weight: bold;
+                  ${fb.category === 'bug' ? 'background: rgba(234, 67, 53, 0.1); color: #ea4335;' : 
+                    fb.category === 'request' ? 'background: rgba(66, 133, 244, 0.1); color: #4285f4;' : 
+                    'background: rgba(52, 168, 83, 0.1); color: #34a853;'}
+                `}>
+                  {fb.category}
+                </span>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">{new Date(fb.submittedAt).toLocaleDateString()}</span>
+              </div>
+              <p style="margin: 0; font-size: 0.95rem; line-height: 1.5; flex-grow: 1;">{fb.message}</p>
+              <div style="font-size: 0.8rem; color: var(--text-muted); border-top: 1px solid var(--border-color); padding-top: 0.5rem; margin-top: 0.5rem;">
+                From: {fb.userEmail || 'Anonymous'}
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p style="color: var(--text-muted); text-align: center; padding: 2rem 0;">No feedback received yet.</p>
+      )}
     </div>
   </div>
 </Layout>

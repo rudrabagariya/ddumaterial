@@ -53,3 +53,12 @@ export const donationsTable = sqliteTable('donations', {
   status: text('status').notNull().default('pending'), // 'pending', 'approved', 'rejected'
   submittedAt: integer('submitted_at').notNull()
 });
+
+export const feedbackTable = sqliteTable('feedback', {
+  id: text('id').primaryKey(),
+  userId: text('user_id').references(() => userTable.id), // Optional, can be anonymous
+  category: text('category').notNull(), // 'request', 'bug', 'general'
+  message: text('message').notNull(),
+  status: text('status').notNull().default('new'), // 'new', 'reviewed', 'resolved'
+  submittedAt: integer('submitted_at').notNull()
+});
