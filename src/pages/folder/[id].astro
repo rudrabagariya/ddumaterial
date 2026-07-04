@@ -9,6 +9,10 @@ import { env } from 'cloudflare:workers';
 
 const { id } = Astro.params;
 const user = Astro.locals.user;
+if (!user) {
+  return Astro.redirect('/');
+}
+
 const db = drizzle(env.DB as any);
 
 let starredFileIds = new Set();

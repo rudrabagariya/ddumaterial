@@ -9,6 +9,10 @@ import { generateIdFromEntropySize } from 'lucia';
 import AdBanner from '../components/AdBanner.astro';
 
 const user = Astro.locals.user;
+if (!user) {
+  return Astro.redirect('/');
+}
+
 const query = Astro.url.searchParams.get('q') || '';
 const semFilter = Astro.url.searchParams.get('sem') || 'all';
 const searchQuery = query.toLowerCase();

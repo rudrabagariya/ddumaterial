@@ -17,6 +17,10 @@ if (!file) {
 
 import { env } from 'cloudflare:workers';
 const user = Astro.locals.user;
+if (!user) {
+  return Astro.redirect('/');
+}
+
 const db = drizzle(env.DB as any);
 
 if (user) {

@@ -16,32 +16,34 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
       </button>
       
       <!-- Desktop Search Form -->
-      <form action="/search" method="GET" class="search-form-container desktop-search" id="search-form-desktop">
-        <div class="search-wrapper" style="display: flex; gap: 0.5rem;">
-          <div style="position: relative; flex: 1;">
-            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="text" name="q" id="search-input-field-desktop" class="search-input" placeholder="Search..." aria-label="Search resources" required autocomplete="off">
+      {user && (
+        <form action="/search" method="GET" class="search-form-container desktop-search" id="search-form-desktop">
+          <div class="search-wrapper" style="display: flex; gap: 0.5rem;">
+            <div style="position: relative; flex: 1;">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" name="q" id="search-input-field-desktop" class="search-input" placeholder="Search..." aria-label="Search resources" required autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Go</button>
           </div>
-          <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Go</button>
-        </div>
-        
-        <div id="search-filters-tray-desktop" class="search-filters-tray">
-          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500;">Filter by Semester:</div>
-          <div class="filter-pills">
-            <label class="filter-pill-label"><input type="radio" name="sem" value="all" checked={currentSem === 'all'}><span class="filter-pill">All</span></label>
-            <label class="filter-pill-label"><input type="radio" name="sem" value="sem1" checked={currentSem === 'sem1'}><span class="filter-pill">Sem 1</span></label>
-            <label class="filter-pill-label"><input type="radio" name="sem" value="sem2" checked={currentSem === 'sem2'}><span class="filter-pill">Sem 2</span></label>
-            <label class="filter-pill-label"><input type="radio" name="sem" value="sem3" checked={currentSem === 'sem3'}><span class="filter-pill">Sem 3</span></label>
-            <label class="filter-pill-label"><input type="radio" name="sem" value="sem4" checked={currentSem === 'sem4'}><span class="filter-pill">Sem 4</span></label>
-            <label class="filter-pill-label"><input type="radio" name="sem" value="sem5" checked={currentSem === 'sem5'}><span class="filter-pill">Sem 5</span></label>
-            <label class="filter-pill-label"><input type="radio" name="sem" value="sem6" checked={currentSem === 'sem6'}><span class="filter-pill">Sem 6</span></label>
-            <label class="filter-pill-label"><input type="radio" name="sem" value="sem7" checked={currentSem === 'sem7'}><span class="filter-pill">Sem 7</span></label>
+          
+          <div id="search-filters-tray-desktop" class="search-filters-tray">
+            <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500;">Filter by Semester:</div>
+            <div class="filter-pills">
+              <label class="filter-pill-label"><input type="radio" name="sem" value="all" checked={currentSem === 'all'}><span class="filter-pill">All</span></label>
+              <label class="filter-pill-label"><input type="radio" name="sem" value="sem1" checked={currentSem === 'sem1'}><span class="filter-pill">Sem 1</span></label>
+              <label class="filter-pill-label"><input type="radio" name="sem" value="sem2" checked={currentSem === 'sem2'}><span class="filter-pill">Sem 2</span></label>
+              <label class="filter-pill-label"><input type="radio" name="sem" value="sem3" checked={currentSem === 'sem3'}><span class="filter-pill">Sem 3</span></label>
+              <label class="filter-pill-label"><input type="radio" name="sem" value="sem4" checked={currentSem === 'sem4'}><span class="filter-pill">Sem 4</span></label>
+              <label class="filter-pill-label"><input type="radio" name="sem" value="sem5" checked={currentSem === 'sem5'}><span class="filter-pill">Sem 5</span></label>
+              <label class="filter-pill-label"><input type="radio" name="sem" value="sem6" checked={currentSem === 'sem6'}><span class="filter-pill">Sem 6</span></label>
+              <label class="filter-pill-label"><input type="radio" name="sem" value="sem7" checked={currentSem === 'sem7'}><span class="filter-pill">Sem 7</span></label>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      )}
     </div>
 
     <div class="flex items-center gap-4">
@@ -63,31 +65,33 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
   </div>
 
   <!-- Mobile Search Form (Renders Below Top Row) -->
-  <form action="/search" method="GET" class="search-form-container mobile-search" id="search-form-mobile">
-    <div class="search-wrapper" style="display: flex; gap: 0.5rem;">
-      <div style="position: relative; flex: 1;">
-        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" name="q" id="search-input-field-mobile" class="search-input" placeholder="Search..." aria-label="Search resources" required autocomplete="off">
+  {user && (
+    <form action="/search" method="GET" class="search-form-container mobile-search" id="search-form-mobile">
+      <div class="search-wrapper" style="display: flex; gap: 0.5rem;">
+        <div style="position: relative; flex: 1;">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" name="q" id="search-input-field-mobile" class="search-input" placeholder="Search..." aria-label="Search resources" required autocomplete="off">
+        </div>
       </div>
-    </div>
-    
-    <div id="search-filters-tray-mobile" class="search-filters-tray">
-      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500;">Filter by Semester:</div>
-      <div class="filter-pills">
-        <label class="filter-pill-label"><input type="radio" name="sem" value="all" checked={currentSem === 'all'}><span class="filter-pill">All</span></label>
-        <label class="filter-pill-label"><input type="radio" name="sem" value="sem1" checked={currentSem === 'sem1'}><span class="filter-pill">Sem 1</span></label>
-        <label class="filter-pill-label"><input type="radio" name="sem" value="sem2" checked={currentSem === 'sem2'}><span class="filter-pill">Sem 2</span></label>
-        <label class="filter-pill-label"><input type="radio" name="sem" value="sem3" checked={currentSem === 'sem3'}><span class="filter-pill">Sem 3</span></label>
-        <label class="filter-pill-label"><input type="radio" name="sem" value="sem4" checked={currentSem === 'sem4'}><span class="filter-pill">Sem 4</span></label>
-        <label class="filter-pill-label"><input type="radio" name="sem" value="sem5" checked={currentSem === 'sem5'}><span class="filter-pill">Sem 5</span></label>
-        <label class="filter-pill-label"><input type="radio" name="sem" value="sem6" checked={currentSem === 'sem6'}><span class="filter-pill">Sem 6</span></label>
-        <label class="filter-pill-label"><input type="radio" name="sem" value="sem7" checked={currentSem === 'sem7'}><span class="filter-pill">Sem 7</span></label>
+      
+      <div id="search-filters-tray-mobile" class="search-filters-tray">
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500;">Filter by Semester:</div>
+        <div class="filter-pills">
+          <label class="filter-pill-label"><input type="radio" name="sem" value="all" checked={currentSem === 'all'}><span class="filter-pill">All</span></label>
+          <label class="filter-pill-label"><input type="radio" name="sem" value="sem1" checked={currentSem === 'sem1'}><span class="filter-pill">Sem 1</span></label>
+          <label class="filter-pill-label"><input type="radio" name="sem" value="sem2" checked={currentSem === 'sem2'}><span class="filter-pill">Sem 2</span></label>
+          <label class="filter-pill-label"><input type="radio" name="sem" value="sem3" checked={currentSem === 'sem3'}><span class="filter-pill">Sem 3</span></label>
+          <label class="filter-pill-label"><input type="radio" name="sem" value="sem4" checked={currentSem === 'sem4'}><span class="filter-pill">Sem 4</span></label>
+          <label class="filter-pill-label"><input type="radio" name="sem" value="sem5" checked={currentSem === 'sem5'}><span class="filter-pill">Sem 5</span></label>
+          <label class="filter-pill-label"><input type="radio" name="sem" value="sem6" checked={currentSem === 'sem6'}><span class="filter-pill">Sem 6</span></label>
+          <label class="filter-pill-label"><input type="radio" name="sem" value="sem7" checked={currentSem === 'sem7'}><span class="filter-pill">Sem 7</span></label>
+        </div>
       </div>
-    </div>
-  </form>
+    </form>
+  )}
 </header>
 
 <script>
