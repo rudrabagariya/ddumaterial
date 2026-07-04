@@ -63,12 +63,18 @@ const getDownloadUrl = (url) => {
 
 <Layout title={`Search: ${query}`}>
   <div class="container">
-    <div class="mb-8 flex items-center gap-4">
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <h1 class="h2" style="margin: 0;">Search results for "{query}"</h1>
+    <div class="mb-8 flex items-center justify-between gap-4" style="flex-wrap: wrap;">
+      <div class="flex items-center gap-4">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <h1 class="h2" style="margin: 0;">Search results for "{query}"</h1>
+      </div>
+      <a href="/" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+        <span style="font-size: 1.25rem;">✕</span>
+        Clear Search
+      </a>
     </div>
 
     {results.length > 0 ? (
