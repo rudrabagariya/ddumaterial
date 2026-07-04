@@ -6,7 +6,7 @@ import { desc, count, sql, eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
 
 const user = Astro.locals.user;
-const adminEmail = env.ADMIN_EMAIL || 'rudrabagariya@gmail.com'; // fallback if env is missing
+const adminEmail = env.ADMIN_EMAIL || 'bagariyarudra@gmail.com'; // fallback if env is missing
 
 if (!user || user.email !== adminEmail) {
   return new Response('Unauthorized - Admins Only', { status: 403 });
