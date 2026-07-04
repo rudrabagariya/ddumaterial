@@ -3,6 +3,8 @@ import { drizzle } from 'drizzle-orm/d1';
 import { starredTable } from '../../db/schema';
 import { and, eq } from 'drizzle-orm';
 
+import { env } from 'cloudflare:workers';
+
 export const POST: APIRoute = async (context) => {
   const { request, locals } = context;
   const user = locals.user;
@@ -19,7 +21,7 @@ export const POST: APIRoute = async (context) => {
     return new Response('Missing fileId', { status: 400 });
   }
 
-  const db = drizzle(context.locals.runtime.env.DB);
+  const db = drizzle(env.DB as any);
 
   // Check if already starred
   const existing = await db.select().from(starredTable)
