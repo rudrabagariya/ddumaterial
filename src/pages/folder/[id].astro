@@ -77,6 +77,12 @@ const getDownloadUrl = (url) => {
         <h1 class="h1 text-gradient" style="margin: 0; display: flex; align-items: center; gap: 0.5rem;">
           📁 {folder.name}
         </h1>
+        {childFiles.length > 0 && (
+          <button id="download-zip-btn" class="btn btn-primary" style="display: flex; align-items: center; gap: 0.5rem; white-space: nowrap;" data-folder-name={folder.name} data-files={JSON.stringify(childFiles.map(f => ({ id: f.id, name: f.name })))}>
+            <span id="zip-icon">📦</span>
+            <span id="zip-text">Download Folder as ZIP</span>
+          </button>
+        )}
       </div>
     </div>
 
@@ -142,4 +148,57 @@ const getDownloadUrl = (url) => {
     {/* AdSense Ad Banner */}
     <AdBanner className="mt-8 mb-4" />
   </div>
+
+  <script>
+    import JSZip from 'jszip';
+    import { saveAs } from 'file-saver';
+
+    const btn = document.getElementById('download-zip-btn');
+    if (btn) {
+      btn.addEventListener('click', async () => {
+        const folderName = btn.getAttribute('data-folder-name') || 'folder';
+        const files = JSON.parse(btn.getAttribute('data-files') || '[]');
+        
+        if (files.length === 0) return;
+
+        const icon = document.getElementById('zip-icon');
+        const text = document.getElementById('zip-text');
+        
+        // Update UI to loading state
+        btn.style.opacity = '0.7';
+        btn.style.pointerEvents = 'none';
+        if (icon) icon.textContent = '⏳';
+        if (text) text.textContent = `Zipping ${files.length} files...`;
+
+        try {
+          const zip = new JSZip();
+
+          // Fetch all files in parallel via our proxy
+          await Promise.all(files.map(async (file: any) => {
+            const res = await fetch(`/api/proxy?id=${file.id}`);
+            if (!res.ok) throw new Error(`Failed to fetch ${file.name}`);
+            const blob = await res.blob();
+            // Append .pdf if missing so files are easily readable
+            const fileName = file.name.endsWith('.pdf') ? file.name : `${file.name}.pdf`;
+            zip.file(fileName, blob);
+          }));
+
+          // Generate and save ZIP
+          if (text) text.textContent = 'Saving...';
+          const zipContent = await zip.generateAsync({ type: 'blob' });
+          saveAs(zipContent, `${folderName}.zip`);
+
+        } catch (error) {
+          console.error("ZIP Error:", error);
+          alert("Failed to create ZIP. Some files might be too large or unavailable.");
+        } finally {
+          // Reset UI
+          btn.style.opacity = '1';
+          btn.style.pointerEvents = 'auto';
+          if (icon) icon.textContent = '📦';
+          if (text) text.textContent = 'Download Folder as ZIP';
+        }
+      });
+    }
+  </script>
 </Layout>

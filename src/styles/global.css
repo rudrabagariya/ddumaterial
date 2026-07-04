@@ -30,6 +30,24 @@
   --transition-normal: 0.2s ease-out;
 }
 
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-glass: #1e1e1e;
+  --bg-glass-hover: #2d2d2d;
+  
+  --accent-primary: #8ab4f8;
+  --accent-secondary: #aecbfa; 
+  --accent-glow: transparent;
+  
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-muted: #9aa0a6;
+  
+  --border-color: #3c4043;
+  --border-focus: #8ab4f8;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
