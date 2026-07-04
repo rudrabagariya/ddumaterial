@@ -23,13 +23,6 @@ const pathname = new URL(Astro.request.url).pathname;
       <span class="nav-label">Contribute</span>
     </a>
   </nav>
-
-  <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-    <button id="theme-toggle" class="nav-item" style="width: 100%; border: none; background: none; cursor: pointer; display: flex; align-items: center;">
-      <span class="nav-icon" id="theme-icon">🌙</span>
-      <span class="nav-label">Dark Mode</span>
-    </button>
-  </div>
 </aside>
 
 <script>
@@ -51,33 +44,6 @@ const pathname = new URL(Astro.request.url).pathname;
   
   if (overlay) {
     overlay.addEventListener('click', toggleSidebar);
-  }
-
-  // Dark Mode Logic
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeIcon = document.getElementById('theme-icon');
-
-  if (themeToggle && themeIcon) {
-    // Initial icon state
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    themeIcon.textContent = isDark ? '☀️' : '🌙';
-
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const isCurrentlyDark = currentTheme === 'dark';
-      
-      if (isCurrentlyDark) {
-        // Switch to Light Mode (remove the attribute cleanly)
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-        themeIcon.textContent = '🌙';
-      } else {
-        // Switch to Dark Mode
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-        themeIcon.textContent = '☀️';
-      }
-    });
   }
 </script>
 

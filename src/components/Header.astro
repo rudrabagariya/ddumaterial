@@ -21,7 +21,11 @@ const avatar = user?.avatarUrl || defaultAvatar;
         <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search resources" required>
       </form>
     </div>
-    <div>
+    <div class="flex items-center gap-4">
+      <button id="theme-toggle" class="btn btn-outline" style="padding: 0.25rem 0.5rem; border: none; font-size: 1.25rem; cursor: pointer;" aria-label="Toggle Dark Mode">
+        <span id="theme-icon">🌙</span>
+      </button>
+      
       {user ? (
         <div class="flex items-center gap-3">
           <img src={avatar} alt={user.name} style="width: 32px; height: 32px; border-radius: 50%;" onerror={`this.onerror=null;this.src='${defaultAvatar}'`} />
@@ -35,6 +39,33 @@ const avatar = user?.avatarUrl || defaultAvatar;
     </div>
   </div>
 </header>
+
+<script>
+  // Dark Mode Logic
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+
+  if (themeToggle && themeIcon) {
+    // Initial icon state
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    themeIcon.textContent = isDark ? '☀️' : '🌙';
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const isCurrentlyDark = currentTheme === 'dark';
+      
+      if (isCurrentlyDark) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        themeIcon.textContent = '🌙';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeIcon.textContent = '☀️';
+      }
+    });
+  }
+</script>
 
 <style>
   .mobile-only-btn {
