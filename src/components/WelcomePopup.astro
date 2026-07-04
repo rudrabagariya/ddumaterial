@@ -199,10 +199,11 @@
 
     if (!modal) return;
 
-    // Check localStorage
+    // Check localStorage (permanent) and sessionStorage (current session)
     const hasSeenWelcome = localStorage.getItem('hideWelcome') === 'true';
+    const hasDismissedThisSession = sessionStorage.getItem('sessionHideWelcome') === 'true';
     
-    if (!hasSeenWelcome) {
+    if (!hasSeenWelcome && !hasDismissedThisSession) {
       // Small delay for smooth entrance animation
       setTimeout(() => {
         modal.classList.remove('hidden');
@@ -211,6 +212,10 @@
 
     const closeModal = () => {
       modal.classList.add('hidden');
+      // Always dismiss for the current session
+      sessionStorage.setItem('sessionHideWelcome', 'true');
+      
+      // Permanently dismiss if checkbox is checked
       if (dontShowCheckbox && dontShowCheckbox.checked) {
         localStorage.setItem('hideWelcome', 'true');
       }
