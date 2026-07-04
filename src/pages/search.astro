@@ -1,86 +1,55 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import materials from '../../data/materials.json';
-import AdBanner from '../../components/AdBanner.astro';
+import Layout from '../layouts/Layout.astro';
+import materials from '../data/materials.json';
 import { drizzle } from 'drizzle-orm/d1';
-import { starredTable } from '../../db/schema';
+import { starredTable } from '../db/schema';
 import { eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
+import AdBanner from '../components/AdBanner.astro';
 
-const { id } = Astro.params;
 const user = Astro.locals.user;
-const db = drizzle(env.DB as any);
+const query = Astro.url.searchParams.get('q') || '';
+const searchQuery = query.toLowerCase();
+
+const allNodes = Object.values(materials).flat() as any[];
+let results = [];
+
+if (searchQuery) {
+  results = allNodes.filter(node => 
+    node.name && node.name.toLowerCase().includes(searchQuery)
+  ).slice(0, 50); // limit to top 50 hits for rendering
+}
+
+const childFolders = results.filter(n => n.type === 'folder');
+const childFiles = results.filter(n => n.type === 'file');
 
 let starredFileIds = new Set();
 if (user) {
+  const db = drizzle(env.DB as any);
   const starred = await db.select({ fileId: starredTable.fileId })
     .from(starredTable)
     .where(eq(starredTable.userId, user.id))
     .all();
   starredFileIds = new Set(starred.map(s => s.fileId));
 }
-const allNodes = Object.values(materials).flat();
-const folder = allNodes.find((n: any) => n.id === id && n.type === 'folder');
 
-if (!folder) {
-  return Astro.redirect('/404');
-}
-
-// Build breadcrumbs recursively
-const buildBreadcrumbs = (folderId) => {
-  const breadcrumbs = [];
-  let current = allNodes.find(n => n.id === folderId);
-  while (current && current.parent !== 'root') {
-    breadcrumbs.unshift(current);
-    current = allNodes.find(n => n.id === current.parent);
-  }
-  if (current && current.parent === 'root') {
-    breadcrumbs.unshift(current);
-  }
-  return breadcrumbs;
-};
-
-const breadcrumbs = buildBreadcrumbs(folder.id);
-const children = allNodes.filter(n => n.parent === folder.id);
-const childFolders = children.filter(n => n.type === 'folder').sort((a: any, b: any) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
-const childFiles = children.filter(n => n.type === 'file').sort((a: any, b: any) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
-
-// Helper to convert Google Drive view URLs into Direct Download URLs
 const getDownloadUrl = (url) => {
   const match = url.match(/file\/d\/([a-zA-Z0-9_-]+)/);
   return match ? `https://drive.google.com/uc?export=download&id=${match[1]}` : url;
 };
 ---
 
-<Layout title={folder.name}>
+<Layout title={`Search: ${query}`}>
   <div class="container">
-    <div class="mb-8">
-      <nav aria-label="Breadcrumb" class="mb-4 text-sm" style="color: var(--text-muted);">
-        <ol class="flex items-center gap-2 flex-wrap">
-          <li>
-            <a href="/" style="color: var(--text-muted); text-decoration: none;" class="hover:text-white">Home</a>
-          </li>
-          {breadcrumbs.map((crumb, index) => (
-            <li class="flex items-center gap-2">
-              <span>/</span>
-              {index === breadcrumbs.length - 1 ? (
-                <span class="font-medium" style="color: white;">{crumb.name}</span>
-              ) : (
-                <a href={`/folder/${crumb.id}`} style="color: var(--text-muted); text-decoration: none;" class="hover:text-white">{crumb.name}</a>
-              )}
-            </li>
-          ))}
-        </ol>
-      </nav>
-      
-      <div class="flex items-center gap-4 justify-between">
-        <h1 class="h1 text-gradient" style="margin: 0; display: flex; align-items: center; gap: 0.5rem;">
-          📁 {folder.name}
-        </h1>
-      </div>
+    <div class="mb-8 flex items-center gap-4">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <h1 class="h2" style="margin: 0;">Search results for "{query}"</h1>
     </div>
 
-    {(childFolders.length > 0 || childFiles.length > 0) && (
+    {results.length > 0 ? (
       <div class="grid grid-cols-2" style="align-items: start;">
         {childFolders.map(cf => (
           <a href={`/folder/${cf.id}`} class="glass-panel hover-card block" style="padding: 1rem 1.5rem; text-decoration: none;">
@@ -108,7 +77,7 @@ const getDownloadUrl = (url) => {
                 {user && (
                   <form method="POST" action="/api/star" class="star-form">
                     <input type="hidden" name="fileId" value={res.id} />
-                    <input type="hidden" name="redirect" value={`/folder/${id}`} />
+                    <input type="hidden" name="redirect" value={`/search?q=${encodeURIComponent(query)}`} />
                     <button type="submit" style="background: none; border: none; cursor: pointer; color: #f4b400; padding: 0.25rem;">
                       <svg width="20" height="20" viewBox="0 0 24 24" fill={isStarred ? "#f4b400" : "none"} stroke="#f4b400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -124,15 +93,17 @@ const getDownloadUrl = (url) => {
           </div>
         )})}
       </div>
-    )}
-
-    {childFolders.length === 0 && childFiles.length === 0 && (
-      <div class="glass-panel text-center" style="padding: 3rem;">
-        <p style="color: var(--text-muted); font-size: 1.1rem;">This folder is empty.</p>
+    ) : (
+      <div class="glass-panel text-center" style="padding: 4rem;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--border-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1rem auto; display: block;">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <h2 class="h3 mb-2">No results found</h2>
+        <p style="color: var(--text-muted);">Try searching for a different subject or term.</p>
       </div>
     )}
 
-    {/* AdSense Ad Banner */}
     <AdBanner className="mt-8 mb-4" />
   </div>
 </Layout>

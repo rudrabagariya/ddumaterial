@@ -71,27 +71,21 @@ a:hover {
 
 /* Header */
 .site-header {
+  padding: 1rem 2rem;
+  background: var(--bg-primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 50;
-  padding: 1rem 0;
-  background: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  width: 100%;
 }
 
 /* Search Bar */
@@ -220,9 +214,26 @@ a:hover {
   color: #1967d2;
 }
 
-/* Main Content Area */
+/* App Layout */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  flex: 1;
+  margin-left: 256px; /* Match Sidebar width */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--bg-primary);
+}
+
 .main-content {
-  padding: 2rem 0;
+  padding: 1.5rem 2rem;
+  flex: 1;
 }
 
 /* Utility */

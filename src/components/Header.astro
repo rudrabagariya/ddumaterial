@@ -4,15 +4,14 @@ const defaultAvatar = user ? `https://ui-avatars.com/api/?name=${encodeURICompon
 const avatar = user?.avatarUrl || defaultAvatar;
 ---
 <header class="site-header">
-  <div class="container header-content">
-    <a href="/" class="logo">DDU MATERIAL</a>
-    <div class="search-wrapper" style="flex: 1; max-width: 600px; margin: 0 2rem;">
+  <div class="header-content">
+    <form action="/search" method="GET" class="search-wrapper" style="flex: 1; max-width: 600px; margin-right: 2rem;">
       <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
-      <input type="text" class="search-input" placeholder="Search for subjects, PDFs, PYQs..." aria-label="Search resources">
-    </div>
+      <input type="text" name="q" class="search-input" placeholder="Search for subjects, PDFs, PYQs..." aria-label="Search resources" required>
+    </form>
     <div>
       {user ? (
         <div class="flex items-center gap-3">

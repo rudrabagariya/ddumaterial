@@ -28,3 +28,10 @@ export const commentsTable = sqliteTable('comments', {
   content: text('content').notNull(),
   createdAt: integer('created_at').notNull()
 });
+
+export const starredTable = sqliteTable('starred_files', {
+  id: text('id').primaryKey(),
+  userId: text('user_id').notNull().references(() => userTable.id),
+  fileId: text('file_id').notNull(),
+  starredAt: integer('starred_at').notNull()
+});

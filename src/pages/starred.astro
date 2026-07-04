@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import materials from '../data/materials.json';
+import { drizzle } from 'drizzle-orm/d1';
+import { starredTable } from '../db/schema';
+import { eq, desc } from 'drizzle-orm';
+import { env } from 'cloudflare:workers';
+import AdBanner from '../components/AdBanner.astro';
+
+const user = Astro.locals.user;
+if (!user) {
+  return Astro.redirect('/');
+}
+
+const db = drizzle(env.DB as any);
+const starredEntries = await db.select()
+  .from(starredTable)
+  .where(eq(starredTable.userId, user.id))
+  .orderBy(desc(starredTable.starredAt))
+  .all();
+
+const allNodes = Object.values(materials).flat();
+const starredFileIds = new Set(starredEntries.map(s => s.fileId));
+const starredFiles = starredEntries.map(entry => allNodes.find((n: any) => n.id === entry.fileId)).filter(Boolean);
+
+const getDownloadUrl = (url) => {
+  const match = url.match(/file\/d\/([a-zA-Z0-9_-]+)/);
+  return match ? `https://drive.google.com/uc?export=download&id=${match[1]}` : url;
+};
+---
+
+<Layout title="Starred Files">
+  <div class="container">
+    <div class="mb-8 flex items-center gap-4">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="#f4b400" stroke="#f4b400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+      </svg>
+      <h1 class="h1 text-gradient" style="margin: 0;">Starred Files</h1>
+    </div>
+
+    {starredFiles.length > 0 ? (
+      <div class="grid grid-cols-2" style="align-items: start;">
+        {starredFiles.map(res => (
+          <div class="glass-panel" style="display: flex; flex-direction: column; overflow: hidden;">
+            <a href={`/view/${res.id}`} style="display: block; height: 160px; background-color: #f1f3f4; border-bottom: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; overflow: hidden; text-decoration: none;">
+               <img src={`https://drive.google.com/thumbnail?id=${res.id}&sz=w400-h400`} alt="Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src=''; this.style.display='none'; this.nextElementSibling.style.display='block';" />
+               <span style="display: none; font-size: 3rem;">📄</span>
+            </a>
+            
+            <div style="padding: 1rem; display: flex; flex-direction: column; flex: 1; gap: 0.75rem;">
+              <div class="flex items-start justify-between gap-2">
+                <div style="min-width: 0; flex: 1;">
+                  <h3 class="card-title" style="font-size: 1rem; margin-bottom: 0.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title={res.name}>{res.name}</h3>
+                  <span style="color: var(--text-muted); font-size: 0.8rem;">{res.size}</span>
+                </div>
+                <form method="POST" action="/api/star" class="star-form">
+                  <input type="hidden" name="fileId" value={res.id} />
+                  <input type="hidden" name="redirect" value="/starred" />
+                  <button type="submit" style="background: none; border: none; cursor: pointer; color: #f4b400; padding: 0.25rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#f4b400" stroke="#f4b400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+              <div class="flex gap-2 mt-auto">
+                <a href={getDownloadUrl(res.url)} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="flex: 1; padding: 0.4rem; font-size: 0.85rem;">Download</a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="glass-panel text-center" style="padding: 4rem;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--border-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1rem auto; display: block;">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <h2 class="h3 mb-2">No starred files yet</h2>
+        <p style="color: var(--text-muted);">Star important PDFs to quickly find them later.</p>
+      </div>
+    )}
+
+    <AdBanner className="mt-8 mb-4" />
+  </div>
+</Layout>
