@@ -5,8 +5,8 @@ const avatar = user?.avatarUrl || defaultAvatar;
 const currentSem = Astro.url.searchParams.get('sem') || 'all';
 ---
 <header class="site-header">
-  <div class="header-content">
-    <div class="flex items-center gap-3" style="flex: 1; max-width: 600px; margin-right: 2rem;">
+  <div class="header-top-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+    <div class="flex items-center gap-3">
       <button id="mobile-menu-btn" class="mobile-only-btn" aria-label="Toggle Menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
@@ -14,58 +14,36 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
-      <form action="/search" method="GET" class="search-form-container" style="flex: 1;" id="search-form">
+      
+      <!-- Desktop Search Form -->
+      <form action="/search" method="GET" class="search-form-container desktop-search" id="search-form-desktop">
         <div class="search-wrapper" style="display: flex; gap: 0.5rem;">
           <div style="position: relative; flex: 1;">
             <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" name="q" id="search-input-field" class="search-input" placeholder="Search..." aria-label="Search resources" required autocomplete="off">
+            <input type="text" name="q" id="search-input-field-desktop" class="search-input" placeholder="Search..." aria-label="Search resources" required autocomplete="off">
           </div>
-          <button type="submit" class="btn btn-primary mobile-hidden" style="padding: 0.5rem 1rem;">Go</button>
+          <button type="submit" class="btn btn-primary" style="padding: 0.5rem 1rem;">Go</button>
         </div>
         
-        <!-- Expandable Tray -->
-        <div id="search-filters-tray" class="search-filters-tray">
+        <div id="search-filters-tray-desktop" class="search-filters-tray">
           <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500;">Filter by Semester:</div>
           <div class="filter-pills">
-            <label class="filter-pill-label">
-              <input type="radio" name="sem" value="all" checked={currentSem === 'all'}>
-              <span class="filter-pill">All</span>
-            </label>
-            <label class="filter-pill-label">
-              <input type="radio" name="sem" value="sem1" checked={currentSem === 'sem1'}>
-              <span class="filter-pill">Sem 1</span>
-            </label>
-            <label class="filter-pill-label">
-              <input type="radio" name="sem" value="sem2" checked={currentSem === 'sem2'}>
-              <span class="filter-pill">Sem 2</span>
-            </label>
-            <label class="filter-pill-label">
-              <input type="radio" name="sem" value="sem3" checked={currentSem === 'sem3'}>
-              <span class="filter-pill">Sem 3</span>
-            </label>
-            <label class="filter-pill-label">
-              <input type="radio" name="sem" value="sem4" checked={currentSem === 'sem4'}>
-              <span class="filter-pill">Sem 4</span>
-            </label>
-            <label class="filter-pill-label">
-              <input type="radio" name="sem" value="sem5" checked={currentSem === 'sem5'}>
-              <span class="filter-pill">Sem 5</span>
-            </label>
-            <label class="filter-pill-label">
-              <input type="radio" name="sem" value="sem6" checked={currentSem === 'sem6'}>
-              <span class="filter-pill">Sem 6</span>
-            </label>
-            <label class="filter-pill-label">
-              <input type="radio" name="sem" value="sem7" checked={currentSem === 'sem7'}>
-              <span class="filter-pill">Sem 7</span>
-            </label>
+            <label class="filter-pill-label"><input type="radio" name="sem" value="all" checked={currentSem === 'all'}><span class="filter-pill">All</span></label>
+            <label class="filter-pill-label"><input type="radio" name="sem" value="sem1" checked={currentSem === 'sem1'}><span class="filter-pill">Sem 1</span></label>
+            <label class="filter-pill-label"><input type="radio" name="sem" value="sem2" checked={currentSem === 'sem2'}><span class="filter-pill">Sem 2</span></label>
+            <label class="filter-pill-label"><input type="radio" name="sem" value="sem3" checked={currentSem === 'sem3'}><span class="filter-pill">Sem 3</span></label>
+            <label class="filter-pill-label"><input type="radio" name="sem" value="sem4" checked={currentSem === 'sem4'}><span class="filter-pill">Sem 4</span></label>
+            <label class="filter-pill-label"><input type="radio" name="sem" value="sem5" checked={currentSem === 'sem5'}><span class="filter-pill">Sem 5</span></label>
+            <label class="filter-pill-label"><input type="radio" name="sem" value="sem6" checked={currentSem === 'sem6'}><span class="filter-pill">Sem 6</span></label>
+            <label class="filter-pill-label"><input type="radio" name="sem" value="sem7" checked={currentSem === 'sem7'}><span class="filter-pill">Sem 7</span></label>
           </div>
         </div>
       </form>
     </div>
+
     <div class="flex items-center gap-4">
       <button id="theme-toggle" class="btn btn-outline" style="padding: 0.25rem 0.5rem; border: none; font-size: 1.25rem; cursor: pointer;" aria-label="Toggle Dark Mode">
         <span id="theme-icon">🌙</span>
@@ -75,7 +53,7 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
         <div class="flex items-center gap-3">
           <img src={avatar} alt={user.name} style="width: 32px; height: 32px; border-radius: 50%;" onerror={`this.onerror=null;this.src='${defaultAvatar}'`} />
           <form method="POST" action="/api/auth/logout">
-            <button class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Logout</button>
+            <button class="btn btn-outline mobile-hidden" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Logout</button>
           </form>
         </div>
       ) : (
@@ -83,26 +61,58 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
       )}
     </div>
   </div>
+
+  <!-- Mobile Search Form (Renders Below Top Row) -->
+  <form action="/search" method="GET" class="search-form-container mobile-search" id="search-form-mobile">
+    <div class="search-wrapper" style="display: flex; gap: 0.5rem;">
+      <div style="position: relative; flex: 1;">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" name="q" id="search-input-field-mobile" class="search-input" placeholder="Search..." aria-label="Search resources" required autocomplete="off">
+      </div>
+    </div>
+    
+    <div id="search-filters-tray-mobile" class="search-filters-tray">
+      <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500;">Filter by Semester:</div>
+      <div class="filter-pills">
+        <label class="filter-pill-label"><input type="radio" name="sem" value="all" checked={currentSem === 'all'}><span class="filter-pill">All</span></label>
+        <label class="filter-pill-label"><input type="radio" name="sem" value="sem1" checked={currentSem === 'sem1'}><span class="filter-pill">Sem 1</span></label>
+        <label class="filter-pill-label"><input type="radio" name="sem" value="sem2" checked={currentSem === 'sem2'}><span class="filter-pill">Sem 2</span></label>
+        <label class="filter-pill-label"><input type="radio" name="sem" value="sem3" checked={currentSem === 'sem3'}><span class="filter-pill">Sem 3</span></label>
+        <label class="filter-pill-label"><input type="radio" name="sem" value="sem4" checked={currentSem === 'sem4'}><span class="filter-pill">Sem 4</span></label>
+        <label class="filter-pill-label"><input type="radio" name="sem" value="sem5" checked={currentSem === 'sem5'}><span class="filter-pill">Sem 5</span></label>
+        <label class="filter-pill-label"><input type="radio" name="sem" value="sem6" checked={currentSem === 'sem6'}><span class="filter-pill">Sem 6</span></label>
+        <label class="filter-pill-label"><input type="radio" name="sem" value="sem7" checked={currentSem === 'sem7'}><span class="filter-pill">Sem 7</span></label>
+      </div>
+    </div>
+  </form>
 </header>
 
 <script>
   // Search Tray Logic
-  const searchInput = document.getElementById('search-input-field');
-  const searchTray = document.getElementById('search-filters-tray');
-  const searchForm = document.getElementById('search-form');
+  const setupSearchForm = (prefix) => {
+    const searchInput = document.getElementById(`search-input-field-${prefix}`);
+    const searchTray = document.getElementById(`search-filters-tray-${prefix}`);
+    const searchForm = document.getElementById(`search-form-${prefix}`);
 
-  if (searchInput && searchTray && searchForm) {
-    searchInput.addEventListener('focus', () => {
-      searchTray.classList.add('open');
-    });
+    if (searchInput && searchTray && searchForm) {
+      searchInput.addEventListener('focus', () => {
+        searchTray.classList.add('open');
+      });
 
-    // Close when clicking outside the form
-    document.addEventListener('click', (e) => {
-      if (!searchForm.contains(e.target as Node)) {
-        searchTray.classList.remove('open');
-      }
-    });
-  }
+      // Close when clicking outside the form
+      document.addEventListener('click', (e) => {
+        if (!searchForm.contains(e.target)) {
+          searchTray.classList.remove('open');
+        }
+      });
+    }
+  };
+
+  setupSearchForm('desktop');
+  setupSearchForm('mobile');
 
   // Dark Mode Logic
   const themeToggle = document.getElementById('theme-toggle');
@@ -187,6 +197,15 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
     border-color: var(--accent-primary);
   }
 
+  .mobile-search {
+    display: none;
+  }
+
+  .desktop-search {
+    display: block;
+    flex: 1;
+  }
+
   .mobile-only-btn {
     display: none;
     background: none;
@@ -197,13 +216,29 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
   }
 
   @media (max-width: 768px) {
+    .site-header {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: stretch !important;
+    }
+    
     .mobile-only-btn {
       display: flex;
       align-items: center;
       justify-content: center;
     }
+    
     .mobile-hidden {
       display: none !important;
+    }
+
+    .desktop-search {
+      display: none !important;
+    }
+
+    .mobile-search {
+      display: block;
+      width: 100%;
     }
   }
 </style>
