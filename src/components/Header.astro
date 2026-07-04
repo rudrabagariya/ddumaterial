@@ -53,7 +53,7 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
         <div class="flex items-center gap-3">
           <img src={avatar} alt={user.name} style="width: 32px; height: 32px; border-radius: 50%;" onerror={`this.onerror=null;this.src='${defaultAvatar}'`} />
           <form method="POST" action="/api/auth/logout">
-            <button class="btn btn-outline mobile-hidden" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Logout</button>
+            <button class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Logout</button>
           </form>
         </div>
       ) : (
