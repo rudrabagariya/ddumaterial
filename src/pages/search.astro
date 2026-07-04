@@ -50,50 +50,60 @@ const getDownloadUrl = (url) => {
     </div>
 
     {results.length > 0 ? (
-      <div class="grid grid-cols-2" style="align-items: start;">
-        {childFolders.map(cf => (
-          <a href={`/folder/${cf.id}`} class="glass-panel hover-card block" style="padding: 1rem 1.5rem; text-decoration: none;">
-            <div class="flex items-center gap-3">
-              <span style="font-size: 1.5rem;">📁</span>
-              <h3 class="card-title" style="font-size: 1.1rem; margin: 0; color: var(--text-color);">{cf.name}</h3>
-            </div>
-          </a>
-        ))}
-        {childFiles.map(res => {
-          const isStarred = starredFileIds.has(res.id);
-          return (
-          <div class="glass-panel" style="display: flex; flex-direction: column; overflow: hidden;">
-            <a href={`/view/${res.id}`} style="display: block; height: 160px; background-color: #f1f3f4; border-bottom: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; overflow: hidden; text-decoration: none;">
-               <img src={`https://drive.google.com/thumbnail?id=${res.id}&sz=w400-h400`} alt="Preview" loading="lazy" referrerpolicy="no-referrer" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src=''; this.style.display='none'; this.nextElementSibling.style.display='block';" />
-               <span style="display: none; font-size: 3rem;">📄</span>
-            </a>
-            
-            <div style="padding: 1rem; display: flex; flex-direction: column; flex: 1; gap: 0.75rem;">
-              <div class="flex items-start justify-between gap-2">
-                <div style="min-width: 0; flex: 1;">
-                  <h3 class="card-title" style="font-size: 1rem; margin-bottom: 0.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title={res.name}>{res.name}</h3>
-                  <span style="color: var(--text-muted); font-size: 0.8rem;">{res.size}</span>
-                </div>
-                {user && (
-                  <form method="POST" action="/api/star" class="star-form">
-                    <input type="hidden" name="fileId" value={res.id} />
-                    <input type="hidden" name="redirect" value={`/search?q=${encodeURIComponent(query)}`} />
-                    <button type="submit" style="background: none; border: none; cursor: pointer; color: #f4b400; padding: 0.25rem;">
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill={isStarred ? "#f4b400" : "none"} stroke="#f4b400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                      </svg>
-                    </button>
-                  </form>
-                )}
-              </div>
-              <div class="flex gap-2 mt-auto">
-                <a href={getDownloadUrl(res.url)} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="flex: 1; padding: 0.4rem; font-size: 0.85rem;">Download</a>
-              </div>
+      <>
+        {childFolders.length > 0 && (
+          <div class="mb-6">
+            <div class="grid grid-cols-4">
+              {childFolders.map(cf => (
+                <a href={`/folder/${cf.id}`} class="glass-panel hover-card block" style="padding: 0.75rem 1rem; text-decoration: none;">
+                  <div class="flex items-center gap-3">
+                    <span style="font-size: 1.25rem;">📁</span>
+                    <h3 class="card-title" style="font-size: 0.95rem; margin: 0; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{cf.name}</h3>
+                  </div>
+                </a>
+              ))}
             </div>
           </div>
-        )})}
-      </div>
-    ) : (
+        )}
+
+        {childFiles.length > 0 && (
+          <div class="grid grid-cols-3" style="align-items: start;">
+            {childFiles.map(res => {
+              const isStarred = starredFileIds.has(res.id);
+              return (
+              <div class="glass-panel" style="display: flex; flex-direction: column; overflow: hidden;">
+                <a href={`/view/${res.id}`} style="display: block; height: 160px; background-color: #f1f3f4; border-bottom: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; overflow: hidden; text-decoration: none;">
+                   <img src={`https://drive.google.com/thumbnail?id=${res.id}&sz=w400-h400`} alt="Preview" loading="lazy" referrerpolicy="no-referrer" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.src=''; this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                   <span style="display: none; font-size: 3rem;">📄</span>
+                </a>
+                
+                <div style="padding: 1rem; display: flex; flex-direction: column; flex: 1; gap: 0.75rem;">
+                  <div class="flex items-start justify-between gap-2">
+                    <div style="min-width: 0; flex: 1;">
+                      <h3 class="card-title" style="font-size: 1rem; margin-bottom: 0.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title={res.name}>{res.name}</h3>
+                      <span style="color: var(--text-muted); font-size: 0.8rem;">{res.size}</span>
+                    </div>
+                    {user && (
+                      <form method="POST" action="/api/star" class="star-form">
+                        <input type="hidden" name="fileId" value={res.id} />
+                        <input type="hidden" name="redirect" value={`/search?q=${encodeURIComponent(query)}`} />
+                        <button type="submit" style="background: none; border: none; cursor: pointer; color: #f4b400; padding: 0.25rem;">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill={isStarred ? "#f4b400" : "none"} stroke="#f4b400" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                          </svg>
+                        </button>
+                      </form>
+                    )}
+                  </div>
+                  <div class="flex gap-2 mt-auto">
+                    <a href={getDownloadUrl(res.url)} target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="flex: 1; padding: 0.4rem; font-size: 0.85rem;">Download</a>
+                  </div>
+                </div>
+              </div>
+            )})}
+          </div>
+        )}
+      </>
       <div class="glass-panel text-center" style="padding: 4rem;">
         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--border-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin: 0 auto 1rem auto; display: block;">
           <circle cx="11" cy="11" r="8"></circle>

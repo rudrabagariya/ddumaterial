@@ -139,6 +139,7 @@ a:hover {
 }
 .grid-cols-2 { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
 .grid-cols-3 { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
 
 /* Interactive Cards */
 .interactive-card, .hover-card {

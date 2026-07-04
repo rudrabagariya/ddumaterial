@@ -80,16 +80,23 @@ const getDownloadUrl = (url) => {
       </div>
     </div>
 
-    {(childFolders.length > 0 || childFiles.length > 0) && (
-      <div class="grid grid-cols-2" style="align-items: start;">
-        {childFolders.map(cf => (
-          <a href={`/folder/${cf.id}`} class="glass-panel hover-card block" style="padding: 1rem 1.5rem; text-decoration: none;">
-            <div class="flex items-center gap-3">
-              <span style="font-size: 1.5rem;">📁</span>
-              <h3 class="card-title" style="font-size: 1.1rem; margin: 0; color: var(--text-color);">{cf.name}</h3>
-            </div>
-          </a>
-        ))}
+    {childFolders.length > 0 && (
+      <div class="mb-6">
+        <div class="grid grid-cols-4">
+          {childFolders.map(cf => (
+            <a href={`/folder/${cf.id}`} class="glass-panel hover-card block" style="padding: 0.75rem 1rem; text-decoration: none;">
+              <div class="flex items-center gap-3">
+                <span style="font-size: 1.25rem;">📁</span>
+                <h3 class="card-title" style="font-size: 0.95rem; margin: 0; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{cf.name}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    {childFiles.length > 0 && (
+      <div class="grid grid-cols-3" style="align-items: start;">
         {childFiles.map(res => {
           const isStarred = starredFileIds.has(res.id);
           return (

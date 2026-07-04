@@ -37,15 +37,12 @@ const avatar = user?.avatarUrl || defaultAvatar;
             <span>📚</span> Semester Folders
           </h2>
           
-          <div class="grid grid-cols-2">
+          <div class="grid grid-cols-4">
             {rootFolders.map((folder: any) => (
-              <a href={`/folder/${folder.id}`} class="glass-panel hover-card block" style="padding: 1.5rem; text-decoration: none;">
-                <div class="flex items-center gap-4">
-                  <span style="font-size: 2.5rem; display: block; line-height: 1;">📁</span>
-                  <div>
-                    <h3 class="card-title" style="margin-bottom: 0.25rem; color: var(--text-color);">{folder.name}</h3>
-                    <span style="color: var(--text-muted); font-size: 0.85rem;">Browse Folder &rarr;</span>
-                  </div>
+              <a href={`/folder/${folder.id}`} class="glass-panel hover-card block" style="padding: 0.75rem 1rem; text-decoration: none;">
+                <div class="flex items-center gap-3">
+                  <span style="font-size: 1.25rem;">📁</span>
+                  <h3 class="card-title" style="font-size: 0.95rem; margin: 0; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{folder.name}</h3>
                 </div>
               </a>
             ))}
