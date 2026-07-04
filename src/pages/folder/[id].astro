@@ -27,8 +27,8 @@ const buildBreadcrumbs = (folderId) => {
 
 const breadcrumbs = buildBreadcrumbs(folder.id);
 const children = allNodes.filter(n => n.parent === folder.id);
-const childFolders = children.filter(n => n.type === 'folder');
-const childFiles = children.filter(n => n.type === 'file');
+const childFolders = children.filter(n => n.type === 'folder').sort((a: any, b: any) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
+const childFiles = children.filter(n => n.type === 'file').sort((a: any, b: any) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
 
 // Helper to convert Google Drive view URLs into Direct Download URLs
 const getDownloadUrl = (url) => {
