@@ -2,6 +2,7 @@
 const user = Astro.locals.user;
 const defaultAvatar = user ? `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=4285f4&color=fff&size=128` : '';
 const avatar = user?.avatarUrl || defaultAvatar;
+const currentSem = Astro.url.searchParams.get('sem') || 'all';
 ---
 <header class="site-header">
   <div class="header-content">
@@ -13,12 +14,26 @@ const avatar = user?.avatarUrl || defaultAvatar;
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
-      <form action="/search" method="GET" class="search-wrapper" style="flex: 1;">
-        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-        <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search resources" required>
+      <form action="/search" method="GET" class="search-wrapper" style="flex: 1; display: flex; gap: 0.5rem;">
+        <div style="position: relative; flex: 1;">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search resources" required>
+        </div>
+        <select name="sem" class="search-input" style="width: auto; padding-left: 1rem; padding-right: 2rem; cursor: pointer; border-right: 1rem solid transparent;">
+          <option value="all" selected={currentSem === 'all'}>All Sems</option>
+          <option value="sem1" selected={currentSem === 'sem1'}>Sem 1</option>
+          <option value="sem2" selected={currentSem === 'sem2'}>Sem 2</option>
+          <option value="sem3" selected={currentSem === 'sem3'}>Sem 3</option>
+          <option value="sem4" selected={currentSem === 'sem4'}>Sem 4</option>
+          <option value="sem5" selected={currentSem === 'sem5'}>Sem 5</option>
+          <option value="sem6" selected={currentSem === 'sem6'}>Sem 6</option>
+          <option value="sem7" selected={currentSem === 'sem7'}>Sem 7</option>
+          <option value="sem8" selected={currentSem === 'sem8'}>Sem 8</option>
+        </select>
+        <button type="submit" class="btn btn-primary mobile-hidden" style="padding: 0.5rem 1rem;">Go</button>
       </form>
     </div>
     <div class="flex items-center gap-4">
@@ -82,6 +97,9 @@ const avatar = user?.avatarUrl || defaultAvatar;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    .mobile-hidden {
+      display: none !important;
     }
   }
 </style>

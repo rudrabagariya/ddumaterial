@@ -10,9 +10,17 @@ import AdBanner from '../components/AdBanner.astro';
 
 const user = Astro.locals.user;
 const query = Astro.url.searchParams.get('q') || '';
+const semFilter = Astro.url.searchParams.get('sem') || 'all';
 const searchQuery = query.toLowerCase();
 
-const allNodes = Object.values(materials).flat() as any[];
+let targetMaterials = [];
+if (semFilter !== 'all' && materials[semFilter]) {
+  targetMaterials = materials[semFilter];
+} else {
+  targetMaterials = Object.values(materials).flat();
+}
+
+const allNodes = targetMaterials as any[];
 let results = [];
 
 if (searchQuery) {
