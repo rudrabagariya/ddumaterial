@@ -1,0 +1,193 @@
+---
+---
+
+<!-- Custom Context Menu -->
+<div id="folder-context-menu" class="context-menu" style="display: none;">
+  <button id="context-download-zip" class="context-item">
+    <span class="context-icon">📦</span>
+    <span>Download as ZIP</span>
+  </button>
+</div>
+
+<!-- Download Progress Toast -->
+<div id="download-toast" class="download-toast" style="display: none;">
+  <div class="toast-content flex items-center gap-3">
+    <div id="toast-spinner" style="animation: spin 1s linear infinite;">⏳</div>
+    <span id="toast-text">Preparing download...</span>
+  </div>
+</div>
+
+<style>
+  .context-menu {
+    position: absolute;
+    z-index: 9999;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    padding: 0.5rem 0;
+    backdrop-filter: blur(10px);
+  }
+
+  .context-item {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: background 0.2s;
+  }
+
+  .context-item:hover {
+    background: var(--bg-glass-hover);
+  }
+
+  .context-icon {
+    font-size: 1.1rem;
+  }
+
+  .download-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    background: var(--bg-glass);
+    border: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+</style>
+
+<script>
+  import JSZip from 'jszip';
+  import { saveAs } from 'file-saver';
+
+  const contextMenu = document.getElementById('folder-context-menu');
+  const downloadBtn = document.getElementById('context-download-zip');
+  const toast = document.getElementById('download-toast');
+  const toastText = document.getElementById('toast-text');
+  const toastSpinner = document.getElementById('toast-spinner');
+
+  let currentFolderName = '';
+  let currentFiles = [];
+
+  // Hide context menu on click anywhere else
+  document.addEventListener('click', (e) => {
+    if (contextMenu && e.target !== contextMenu && !contextMenu.contains(e.target as Node)) {
+      contextMenu.style.display = 'none';
+    }
+  });
+  
+  // Hide on scroll
+  document.addEventListener('scroll', () => {
+    if (contextMenu) contextMenu.style.display = 'none';
+  });
+
+  // Attach context menu to any .context-folder
+  document.addEventListener('contextmenu', (e) => {
+    const target = e.target as HTMLElement;
+    const folderCard = target.closest('.context-folder');
+    
+    if (folderCard && contextMenu) {
+      e.preventDefault(); // Prevent standard browser context menu
+      
+      // Grab data
+      currentFolderName = folderCard.getAttribute('data-folder-name') || 'folder';
+      currentFiles = JSON.parse(folderCard.getAttribute('data-files') || '[]');
+
+      // Position the menu
+      contextMenu.style.display = 'block';
+      
+      // Keep it within screen bounds
+      let x = e.pageX;
+      let y = e.pageY;
+      
+      if (x + contextMenu.offsetWidth > window.innerWidth) {
+        x = window.innerWidth - contextMenu.offsetWidth - 10;
+      }
+      if (y + contextMenu.offsetHeight > window.innerHeight + window.scrollY) {
+        y = window.innerHeight + window.scrollY - contextMenu.offsetHeight - 10;
+      }
+
+      contextMenu.style.left = `${x}px`;
+      contextMenu.style.top = `${y}px`;
+    }
+  });
+
+  // Handle Download Click
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', async () => {
+      if (contextMenu) contextMenu.style.display = 'none';
+      if (currentFiles.length === 0) {
+        alert("This folder is empty!");
+        return;
+      }
+
+      // Show toast
+      if (toast && toastText && toastSpinner) {
+        toast.style.display = 'block';
+        toastSpinner.textContent = '⏳';
+        toastText.textContent = `Zipping ${currentFiles.length} files...`;
+      }
+
+      try {
+        const zip = new JSZip();
+
+        // Batch download to prevent overwhelming the browser/server
+        const batchSize = 5;
+        let completed = 0;
+
+        for (let i = 0; i < currentFiles.length; i += batchSize) {
+          const batch = currentFiles.slice(i, i + batchSize);
+          await Promise.all(batch.map(async (file: any) => {
+            const res = await fetch(`/api/proxy?id=${file.id}`);
+            if (!res.ok) throw new Error(`Failed to fetch ${file.name}`);
+            const blob = await res.blob();
+            const fileName = file.name.endsWith('.pdf') ? file.name : `${file.name}.pdf`;
+            zip.file(fileName, blob);
+          }));
+          
+          completed += batch.length;
+          if (toastText) toastText.textContent = `Downloaded ${completed} of ${currentFiles.length}...`;
+        }
+
+        if (toastText && toastSpinner) {
+          toastText.textContent = 'Compressing and Saving...';
+          toastSpinner.textContent = '📦';
+        }
+
+        const zipContent = await zip.generateAsync({ type: 'blob' });
+        saveAs(zipContent, `${currentFolderName}.zip`);
+
+        if (toastText && toastSpinner) {
+          toastText.textContent = 'Done!';
+          toastSpinner.textContent = '✅';
+        }
+        setTimeout(() => { if (toast) toast.style.display = 'none'; }, 3000);
+
+      } catch (error) {
+        console.error("ZIP Error:", error);
+        if (toastText && toastSpinner) {
+          toastText.textContent = 'Download Failed!';
+          toastSpinner.textContent = '❌';
+        }
+        setTimeout(() => { if (toast) toast.style.display = 'none'; }, 4000);
+      }
+    });
+  }
+</script>
