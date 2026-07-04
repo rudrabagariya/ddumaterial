@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Sidebar from '../components/Sidebar.astro';
 import FolderContextMenu from '../components/FolderContextMenu.astro';
+import WelcomePopup from '../components/WelcomePopup.astro';
 
 interface Props {
 	title: string;
@@ -55,5 +56,6 @@ const { title } = Astro.props;
 				fetch('/api/ping', { method: 'POST' }).catch(() => {});
 			</script>
 		)}
+		<WelcomePopup />
 	</body>
 </html>

@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdBanner from '../components/AdBanner.astro';
+---
+
+<Layout title="About">
+  <div class="container" style="max-width: 800px; padding: 2rem 1rem;">
+    <div class="glass-panel" style="padding: 2rem;">
+      <h1 class="h2 text-gradient" style="margin-bottom: 1rem;">About DDU MATERIAL</h1>
+      
+      <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+        Welcome to DDU MATERIAL! This platform is built specifically for DDU students to make finding, organizing, and studying course materials as frictionless as possible. No more digging through messy WhatsApp groups to find that one PYQ from two years ago.
+      </p>
+
+      <h2 class="h3" style="color: var(--text-primary); margin-top: 2rem; margin-bottom: 1rem;">✨ Pro Features</h2>
+      
+      <div style="display: grid; gap: 1.5rem; margin-bottom: 2rem;">
+        <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <span style="font-size: 1.5rem;">📦</span>
+            <strong style="color: var(--text-primary); font-size: 1.1rem;">Bulk Folder Downloads</strong>
+          </div>
+          <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">
+            Need an entire subject's notes? Don't download them one by one. Simply <strong>Right-Click</strong> (or Long-Press on your phone) on any folder to open the secret Context Menu and download everything inside as a single ZIP file!
+          </p>
+        </div>
+
+        <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <span style="font-size: 1.5rem;">🌙</span>
+            <strong style="color: var(--text-primary); font-size: 1.1rem;">OLED Dark Mode</strong>
+          </div>
+          <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">
+            Studying late at night? Click the Moon icon in the top header to instantly switch the entire platform into an eye-friendly, OLED-optimized dark theme. We even save your preference so it remembers for next time!
+          </p>
+        </div>
+
+        <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <span style="font-size: 1.5rem;">🔍</span>
+            <strong style="color: var(--text-primary); font-size: 1.1rem;">Smart Semester Search</strong>
+          </div>
+          <p style="color: var(--text-secondary); margin: 0; line-height: 1.5;">
+            Click the search bar at the top of the page to reveal the advanced filter tray. You can tell the search engine to *only* look for files inside a specific semester!
+          </p>
+        </div>
+      </div>
+
+      <h2 class="h3" style="color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 1rem;">🤝 Help the Community</h2>
+      <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+        This platform runs on community contributions. If you have handwritten notes, old sessional papers, or lab manuals that aren't on the site yet, please consider donating them!
+      </p>
+      
+      <a href="/contribute" class="btn btn-primary" style="display: inline-flex; padding: 0.75rem 1.5rem;">
+        Contribute Material
+      </a>
+    </div>
+
+    <div class="mt-8">
+      <AdBanner />
+    </div>
+  </div>
+</Layout>
