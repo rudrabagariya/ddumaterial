@@ -14,26 +14,56 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
-      <form action="/search" method="GET" class="search-wrapper" style="flex: 1; display: flex; gap: 0.5rem;">
-        <div style="position: relative; flex: 1;">
-          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
-          <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search resources" required>
+      <form action="/search" method="GET" class="search-form-container" style="flex: 1;" id="search-form">
+        <div class="search-wrapper" style="display: flex; gap: 0.5rem;">
+          <div style="position: relative; flex: 1;">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" name="q" id="search-input-field" class="search-input" placeholder="Search..." aria-label="Search resources" required autocomplete="off">
+          </div>
+          <button type="submit" class="btn btn-primary mobile-hidden" style="padding: 0.5rem 1rem;">Go</button>
         </div>
-        <select name="sem" class="search-input" style="width: auto; padding-left: 1rem; padding-right: 2rem; cursor: pointer; border-right: 1rem solid transparent;">
-          <option value="all" selected={currentSem === 'all'}>All Sems</option>
-          <option value="sem1" selected={currentSem === 'sem1'}>Sem 1</option>
-          <option value="sem2" selected={currentSem === 'sem2'}>Sem 2</option>
-          <option value="sem3" selected={currentSem === 'sem3'}>Sem 3</option>
-          <option value="sem4" selected={currentSem === 'sem4'}>Sem 4</option>
-          <option value="sem5" selected={currentSem === 'sem5'}>Sem 5</option>
-          <option value="sem6" selected={currentSem === 'sem6'}>Sem 6</option>
-          <option value="sem7" selected={currentSem === 'sem7'}>Sem 7</option>
-          <option value="sem8" selected={currentSem === 'sem8'}>Sem 8</option>
-        </select>
-        <button type="submit" class="btn btn-primary mobile-hidden" style="padding: 0.5rem 1rem;">Go</button>
+        
+        <!-- Expandable Tray -->
+        <div id="search-filters-tray" class="search-filters-tray">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; font-weight: 500;">Filter by Semester:</div>
+          <div class="filter-pills">
+            <label class="filter-pill-label">
+              <input type="radio" name="sem" value="all" checked={currentSem === 'all'}>
+              <span class="filter-pill">All</span>
+            </label>
+            <label class="filter-pill-label">
+              <input type="radio" name="sem" value="sem1" checked={currentSem === 'sem1'}>
+              <span class="filter-pill">Sem 1</span>
+            </label>
+            <label class="filter-pill-label">
+              <input type="radio" name="sem" value="sem2" checked={currentSem === 'sem2'}>
+              <span class="filter-pill">Sem 2</span>
+            </label>
+            <label class="filter-pill-label">
+              <input type="radio" name="sem" value="sem3" checked={currentSem === 'sem3'}>
+              <span class="filter-pill">Sem 3</span>
+            </label>
+            <label class="filter-pill-label">
+              <input type="radio" name="sem" value="sem4" checked={currentSem === 'sem4'}>
+              <span class="filter-pill">Sem 4</span>
+            </label>
+            <label class="filter-pill-label">
+              <input type="radio" name="sem" value="sem5" checked={currentSem === 'sem5'}>
+              <span class="filter-pill">Sem 5</span>
+            </label>
+            <label class="filter-pill-label">
+              <input type="radio" name="sem" value="sem6" checked={currentSem === 'sem6'}>
+              <span class="filter-pill">Sem 6</span>
+            </label>
+            <label class="filter-pill-label">
+              <input type="radio" name="sem" value="sem7" checked={currentSem === 'sem7'}>
+              <span class="filter-pill">Sem 7</span>
+            </label>
+          </div>
+        </div>
       </form>
     </div>
     <div class="flex items-center gap-4">
@@ -56,6 +86,24 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
 </header>
 
 <script>
+  // Search Tray Logic
+  const searchInput = document.getElementById('search-input-field');
+  const searchTray = document.getElementById('search-filters-tray');
+  const searchForm = document.getElementById('search-form');
+
+  if (searchInput && searchTray && searchForm) {
+    searchInput.addEventListener('focus', () => {
+      searchTray.classList.add('open');
+    });
+
+    // Close when clicking outside the form
+    document.addEventListener('click', (e) => {
+      if (!searchForm.contains(e.target as Node)) {
+        searchTray.classList.remove('open');
+      }
+    });
+  }
+
   // Dark Mode Logic
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
@@ -83,6 +131,62 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
 </script>
 
 <style>
+  .search-form-container {
+    position: relative;
+    /* This allows the container to naturally expand height, pushing content down */
+  }
+
+  .search-filters-tray {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0;
+  }
+
+  .search-filters-tray.open {
+    max-height: 200px; /* arbitrary large enough height */
+    opacity: 1;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .filter-pill-label {
+    cursor: pointer;
+  }
+
+  .filter-pill-label input[type="radio"] {
+    display: none;
+  }
+
+  .filter-pill {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .filter-pill:hover {
+    background: var(--bg-glass-hover);
+  }
+
+  .filter-pill-label input[type="radio"]:checked + .filter-pill {
+    background: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+  }
+
   .mobile-only-btn {
     display: none;
     background: none;
