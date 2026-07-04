@@ -34,7 +34,31 @@ const activeUsers = await db.select({
 .where(sql`${recentlyViewedTable.viewedAt} > ${sevenDaysAgo}`)
 .all();
 
-// 3. Pending Donations
+// 3. Live Users Counter (Active in the last 2 minutes)
+const twoMinutesAgo = Date.now() - (2 * 60 * 1000);
+const liveUsers = await db.select({
+  count: count(userTable.id)
+})
+.from(userTable)
+.where(sql`${userTable.lastActiveAt} > ${twoMinutesAgo}`)
+.all();
+
+// 4. Registered Users Directory
+const registeredUsers = await db.select({
+  id: userTable.id,
+  name: userTable.name,
+  email: userTable.email,
+  avatar: userTable.avatarUrl,
+  lastActiveAt: userTable.lastActiveAt,
+  views: count(recentlyViewedTable.id)
+})
+.from(userTable)
+.leftJoin(recentlyViewedTable, eq(userTable.id, recentlyViewedTable.userId))
+.groupBy(userTable.id)
+.orderBy(desc(userTable.lastActiveAt))
+.all();
+
+// 5. Pending Donations
 const pendingDonations = await db.select({
   id: donationsTable.id,
   materialName: donationsTable.materialName,
@@ -53,17 +77,32 @@ const pendingDonations = await db.select({
 ---
 
 <Layout title="Admin Dashboard">
-  <div class="container">
+  <div class="container" style="max-width: 1200px;">
     <div class="mb-8 flex items-center justify-between gap-4">
       <div class="flex items-center gap-4">
         <span style="font-size: 2.5rem;">⚙️</span>
         <h1 class="h2" style="margin: 0;">Admin Dashboard</h1>
       </div>
-      <div class="glass-panel" style="padding: 0.5rem 1rem; background: var(--bg-primary);">
-        <span style="color: var(--text-muted); font-size: 0.9rem;">7-Day Active Users:</span>
-        <span style="font-size: 1.25rem; font-weight: bold; margin-left: 0.5rem; color: var(--text-color);">{activeUsers[0]?.count || 0}</span>
+      <div class="flex gap-4">
+        <div class="glass-panel flex items-center" style="padding: 0.5rem 1rem; background: var(--bg-primary);">
+          <div style="width: 10px; height: 10px; background-color: #34a853; border-radius: 50%; margin-right: 0.5rem; animation: pulse 2s infinite;"></div>
+          <span style="color: var(--text-muted); font-size: 0.9rem;">Live Now:</span>
+          <span style="font-size: 1.25rem; font-weight: bold; margin-left: 0.5rem; color: #34a853;">{liveUsers[0]?.count || 0}</span>
+        </div>
+        <div class="glass-panel" style="padding: 0.5rem 1rem; background: var(--bg-primary);">
+          <span style="color: var(--text-muted); font-size: 0.9rem;">7-Day Active Users:</span>
+          <span style="font-size: 1.25rem; font-weight: bold; margin-left: 0.5rem; color: var(--text-color);">{activeUsers[0]?.count || 0}</span>
+        </div>
       </div>
     </div>
+
+    <style>
+      @keyframes pulse {
+        0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.7); }
+        70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(52, 168, 83, 0); }
+        100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(52, 168, 83, 0); }
+      }
+    </style>
 
     <div class="grid grid-cols-2" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
       
@@ -121,6 +160,62 @@ const pendingDonations = await db.select({
         )}
       </div>
 
+    </div>
+
+    {/* Registered Users Directory */}
+    <div class="mt-8 glass-panel" style="padding: 1.5rem;">
+      <h2 class="h3 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; justify-content: space-between;">
+        <span>Registered Users</span>
+        <span class="badge" style="background: rgba(66, 133, 244, 0.1); color: #4285f4; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem;">{registeredUsers.length} Total</span>
+      </h2>
+      
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem;">
+              <th style="padding: 0.75rem 0.5rem; font-weight: 500;">User</th>
+              <th style="padding: 0.75rem 0.5rem; font-weight: 500;">Email</th>
+              <th style="padding: 0.75rem 0.5rem; font-weight: 500;">Files Viewed</th>
+              <th style="padding: 0.75rem 0.5rem; font-weight: 500;">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {registeredUsers.map(u => {
+              const isActive = u.lastActiveAt && (Date.now() - u.lastActiveAt) < (2 * 60 * 1000);
+              return (
+                <tr style="border-bottom: 1px solid var(--border-color); transition: background-color 0.2s;">
+                  <td style="padding: 0.75rem 0.5rem;">
+                    <div class="flex items-center gap-3">
+                      {u.avatar ? (
+                        <img src={u.avatar} style="width: 32px; height: 32px; border-radius: 50%;" />
+                      ) : (
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--border-color); display: flex; align-items: center; justify-content: center;">👤</div>
+                      )}
+                      <span style="font-weight: 500;">{u.name}</span>
+                    </div>
+                  </td>
+                  <td style="padding: 0.75rem 0.5rem; color: var(--text-muted);">{u.email}</td>
+                  <td style="padding: 0.75rem 0.5rem;">
+                    <span class="badge" style="background: var(--bg-primary); padding: 0.25rem 0.5rem; border-radius: 4px;">{u.views}</span>
+                  </td>
+                  <td style="padding: 0.75rem 0.5rem;">
+                    {isActive ? (
+                      <span style="color: #34a853; font-weight: 600; font-size: 0.9rem; display: flex; items-center; gap: 0.25rem;">
+                        <span style="display: inline-block; width: 8px; height: 8px; background-color: #34a853; border-radius: 50%; align-self: center;"></span>
+                        Online
+                      </span>
+                    ) : (
+                      <span style="color: var(--text-muted); font-size: 0.85rem;">
+                        {u.lastActiveAt ? new Date(u.lastActiveAt).toLocaleString() : 'Never'}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </Layout>

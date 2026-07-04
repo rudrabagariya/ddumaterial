@@ -5,7 +5,8 @@ export const userTable = sqliteTable('user', {
   googleId: text('google_id').notNull().unique(),
   email: text('email').notNull(),
   name: text('name').notNull(),
-  avatarUrl: text('avatar_url')
+  avatarUrl: text('avatar_url'),
+  lastActiveAt: integer('last_active_at')
 });
 
 export const sessionTable = sqliteTable('session', {
