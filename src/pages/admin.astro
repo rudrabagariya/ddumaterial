@@ -4,6 +4,7 @@ import { drizzle } from 'drizzle-orm/d1';
 import { searchQueriesTable, donationsTable, recentlyViewedTable, userTable } from '../db/schema';
 import { desc, count, sql, eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
+import materials from '../data/materials.json';
 
 const user = Astro.locals.user;
 const adminEmail = env.ADMIN_EMAIL || 'bagariyarudra@gmail.com'; // fallback if env is missing
@@ -57,6 +58,25 @@ const registeredUsers = await db.select({
 .groupBy(userTable.id)
 .orderBy(desc(userTable.lastActiveAt))
 .all();
+
+// 4.5. Get Last Viewed File for Each User
+const latestViews = await db.select({
+  userId: recentlyViewedTable.userId,
+  fileId: recentlyViewedTable.fileId
+})
+.from(recentlyViewedTable)
+.orderBy(desc(recentlyViewedTable.viewedAt))
+.all();
+
+const allNodes = Object.values(materials).flat() as any[];
+const getFileName = (id: string) => allNodes.find(n => n.id === id)?.name || 'Unknown File';
+
+const lastViewedPerUser: Record<string, string> = {};
+for (const view of latestViews) {
+  if (!lastViewedPerUser[view.userId]) {
+    lastViewedPerUser[view.userId] = getFileName(view.fileId);
+  }
+}
 
 // 5. Pending Donations
 const pendingDonations = await db.select({
@@ -176,12 +196,14 @@ const pendingDonations = await db.select({
               <th style="padding: 0.75rem 0.5rem; font-weight: 500;">User</th>
               <th style="padding: 0.75rem 0.5rem; font-weight: 500;">Email</th>
               <th style="padding: 0.75rem 0.5rem; font-weight: 500;">Files Viewed</th>
+              <th style="padding: 0.75rem 0.5rem; font-weight: 500;">Last Viewed File</th>
               <th style="padding: 0.75rem 0.5rem; font-weight: 500;">Status</th>
             </tr>
           </thead>
           <tbody>
             {registeredUsers.map(u => {
               const isActive = u.lastActiveAt && (Date.now() - u.lastActiveAt) < (2 * 60 * 1000);
+              const lastFile = lastViewedPerUser[u.id];
               return (
                 <tr style="border-bottom: 1px solid var(--border-color); transition: background-color 0.2s;">
                   <td style="padding: 0.75rem 0.5rem;">
@@ -197,6 +219,9 @@ const pendingDonations = await db.select({
                   <td style="padding: 0.75rem 0.5rem; color: var(--text-muted);">{u.email}</td>
                   <td style="padding: 0.75rem 0.5rem;">
                     <span class="badge" style="background: var(--bg-primary); padding: 0.25rem 0.5rem; border-radius: 4px;">{u.views}</span>
+                  </td>
+                  <td style="padding: 0.75rem 0.5rem; color: var(--text-muted); max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title={lastFile || ''}>
+                    {lastFile ? lastFile : '-'}
                   </td>
                   <td style="padding: 0.75rem 0.5rem;">
                     {isActive ? (
