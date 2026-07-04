@@ -5,13 +5,22 @@ const avatar = user?.avatarUrl || defaultAvatar;
 ---
 <header class="site-header">
   <div class="header-content">
-    <form action="/search" method="GET" class="search-wrapper" style="flex: 1; max-width: 600px; margin-right: 2rem;">
-      <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="text" name="q" class="search-input" placeholder="Search for subjects, PDFs, PYQs..." aria-label="Search resources" required>
-    </form>
+    <div class="flex items-center gap-3" style="flex: 1; max-width: 600px; margin-right: 2rem;">
+      <button id="mobile-menu-btn" class="mobile-only-btn" aria-label="Toggle Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+      <form action="/search" method="GET" class="search-wrapper" style="flex: 1;">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search resources" required>
+      </form>
+    </div>
     <div>
       {user ? (
         <div class="flex items-center gap-3">
@@ -26,3 +35,22 @@ const avatar = user?.avatarUrl || defaultAvatar;
     </div>
   </div>
 </header>
+
+<style>
+  .mobile-only-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-only-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+</style>
