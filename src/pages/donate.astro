@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdBanner from '../components/AdBanner.astro';
+
+const user = Astro.locals.user;
+
+if (!user) {
+  return Astro.redirect('/api/auth/google?redirect=/donate');
+}
+---
+
+<Layout title="Donate Materials">
+  <div class="container" style="max-width: 800px; padding: 2rem 1rem;">
+    <div class="glass-panel" style="padding: 2rem;">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">🎁</span>
+        <h1 class="h2 text-gradient">Donate Study Material</h1>
+        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+          Have some great notes, PYQs, or syllabus files? Help out your fellow juniors and batchmates by donating them to DDU MATERIAL! 
+          Submit a public Google Drive link, and our admins will review and add it to the platform.
+        </p>
+      </div>
+
+      <form id="donate-form" class="flex flex-col gap-4">
+        <div>
+          <label for="materialName" style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-color);">Material Name</label>
+          <input type="text" id="materialName" name="materialName" required placeholder="e.g., Mathematics 4 Sessional 2 Notes" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-color); font-size: 1rem;" />
+        </div>
+
+        <div>
+          <label for="driveLink" style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-color);">Google Drive Link (Must be "Anyone with the link can view")</label>
+          <input type="url" id="driveLink" name="driveLink" required placeholder="https://drive.google.com/file/d/..." style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-color); font-size: 1rem;" />
+        </div>
+
+        <div>
+          <label for="description" style="display: block; font-weight: 500; margin-bottom: 0.5rem; color: var(--text-color);">Description (Optional)</label>
+          <textarea id="description" name="description" placeholder="Which semester? Which subject? Who wrote these notes?" style="width: 100%; padding: 0.75rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-color); font-size: 1rem; min-height: 100px; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submit-btn" style="padding: 1rem; font-size: 1.1rem; margin-top: 1rem;">
+          Submit Donation
+        </button>
+      </form>
+
+      <div id="success-msg" style="display: none; text-align: center; margin-top: 2rem; padding: 1rem; background: rgba(52, 168, 83, 0.1); border: 1px solid #34a853; border-radius: 8px; color: #34a853;">
+        <h3>🎉 Thank you for your donation!</h3>
+        <p>Your material has been submitted for admin review.</p>
+      </div>
+      <div id="error-msg" style="display: none; text-align: center; margin-top: 2rem; padding: 1rem; background: rgba(234, 67, 53, 0.1); border: 1px solid #ea4335; border-radius: 8px; color: #ea4335;">
+        <p>Failed to submit. Please try again.</p>
+      </div>
+    </div>
+    
+    <div class="mt-8">
+      <AdBanner />
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById('donate-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const successMsg = document.getElementById('success-msg');
+  const errorMsg = document.getElementById('error-msg');
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      
+      try {
+        const formData = new FormData(form);
+        const res = await fetch('/api/donate', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          if (successMsg) successMsg.style.display = 'block';
+          if (errorMsg) errorMsg.style.display = 'none';
+        } else {
+          throw new Error('Failed to submit');
+        }
+      } catch (err) {
+        if (errorMsg) errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Donation';
+      }
+    });
+  }
+</script>

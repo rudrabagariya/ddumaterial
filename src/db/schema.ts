@@ -35,3 +35,20 @@ export const starredTable = sqliteTable('starred_files', {
   fileId: text('file_id').notNull(),
   starredAt: integer('starred_at').notNull()
 });
+
+export const searchQueriesTable = sqliteTable('search_queries', {
+  id: text('id').primaryKey(),
+  query: text('query').notNull(),
+  userId: text('user_id'), // optional, for anonymous searches
+  timestamp: integer('timestamp').notNull()
+});
+
+export const donationsTable = sqliteTable('donations', {
+  id: text('id').primaryKey(),
+  userId: text('user_id').notNull().references(() => userTable.id),
+  materialName: text('material_name').notNull(),
+  driveLink: text('drive_link').notNull(),
+  description: text('description'),
+  status: text('status').notNull().default('pending'), // 'pending', 'approved', 'rejected'
+  submittedAt: integer('submitted_at').notNull()
+});

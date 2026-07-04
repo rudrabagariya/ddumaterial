@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { drizzle } from 'drizzle-orm/d1';
+import { searchQueriesTable, donationsTable, recentlyViewedTable, userTable } from '../db/schema';
+import { desc, count, sql, eq } from 'drizzle-orm';
+import { env } from 'cloudflare:workers';
+
+const user = Astro.locals.user;
+const adminEmail = env.ADMIN_EMAIL || 'rudrabagariya@gmail.com'; // fallback if env is missing
+
+if (!user || user.email !== adminEmail) {
+  return new Response('Unauthorized - Admins Only', { status: 403 });
+}
+
+const db = drizzle(env.DB as any);
+
+// 1. Get Top 10 Searches
+const topSearches = await db.select({
+  query: searchQueriesTable.query,
+  count: count(searchQueriesTable.id)
+})
+.from(searchQueriesTable)
+.groupBy(searchQueriesTable.query)
+.orderBy(desc(count(searchQueriesTable.id)))
+.limit(10)
+.all();
+
+// 2. Get User Engagement (Unique users in last 7 days)
+const sevenDaysAgo = Date.now() - (7 * 24 * 60 * 60 * 1000);
+const activeUsers = await db.select({
+  count: count(sql`DISTINCT ${recentlyViewedTable.userId}`)
+})
+.from(recentlyViewedTable)
+.where(sql`${recentlyViewedTable.viewedAt} > ${sevenDaysAgo}`)
+.all();
+
+// 3. Pending Donations
+const pendingDonations = await db.select({
+  id: donationsTable.id,
+  materialName: donationsTable.materialName,
+  driveLink: donationsTable.driveLink,
+  description: donationsTable.description,
+  submittedAt: donationsTable.submittedAt,
+  userName: userTable.name,
+  userEmail: userTable.email
+})
+.from(donationsTable)
+.innerJoin(userTable, eq(donationsTable.userId, userTable.id))
+.where(eq(donationsTable.status, 'pending'))
+.orderBy(desc(donationsTable.submittedAt))
+.all();
+
+---
+
+<Layout title="Admin Dashboard">
+  <div class="container">
+    <div class="mb-8 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <span style="font-size: 2.5rem;">⚙️</span>
+        <h1 class="h2" style="margin: 0;">Admin Dashboard</h1>
+      </div>
+      <div class="glass-panel" style="padding: 0.5rem 1rem; background: var(--bg-primary);">
+        <span style="color: var(--text-muted); font-size: 0.9rem;">7-Day Active Users:</span>
+        <span style="font-size: 1.25rem; font-weight: bold; margin-left: 0.5rem; color: var(--text-color);">{activeUsers[0]?.count || 0}</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+      
+      {/* Search Analytics */}
+      <div class="glass-panel" style="padding: 1.5rem;">
+        <h2 class="h3 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">Top Search Queries</h2>
+        {topSearches.length > 0 ? (
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+            {topSearches.map((s, idx) => (
+              <li class="flex justify-between items-center" style="padding: 0.75rem; background: var(--bg-primary); border-radius: 8px;">
+                <span class="flex items-center gap-3">
+                  <span style="color: var(--text-muted); font-weight: bold;">#{idx + 1}</span>
+                  <span style="font-weight: 500;">{s.query}</span>
+                </span>
+                <span class="badge" style="background: rgba(66, 133, 244, 0.1); color: #4285f4; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem;">
+                  {s.count} searches
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p style="color: var(--text-muted);">No search data yet.</p>
+        )}
+      </div>
+
+      {/* Pending Donations */}
+      <div class="glass-panel" style="padding: 1.5rem;">
+        <h2 class="h3 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; justify-content: space-between;">
+          <span>Material Submissions</span>
+          {pendingDonations.length > 0 && (
+            <span class="badge" style="background: rgba(234, 67, 53, 0.1); color: #ea4335; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem;">{pendingDonations.length} Pending</span>
+          )}
+        </h2>
+        
+        {pendingDonations.length > 0 ? (
+          <div class="flex flex-col gap-4">
+            {pendingDonations.map(donation => (
+              <div style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem;">
+                <div class="flex justify-between items-start mb-2">
+                  <h4 style="margin: 0; font-size: 1.1rem;">{donation.materialName}</h4>
+                  <span style="font-size: 0.8rem; color: var(--text-muted);">{new Date(donation.submittedAt).toLocaleDateString()}</span>
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Submitted by: {donation.userEmail}</p>
+                {donation.description && (
+                  <p style="font-size: 0.9rem; background: rgba(0,0,0,0.05); padding: 0.5rem; border-radius: 4px; margin-bottom: 1rem;">{donation.description}</p>
+                )}
+                <div class="flex gap-2">
+                  <a href={donation.driveLink} target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1; padding: 0.5rem; font-size: 0.9rem; text-align: center;">View Drive Link</a>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p style="color: var(--text-muted); text-align: center; padding: 2rem 0;">No pending submissions to review! 🎉</p>
+        )}
+      </div>
+
+    </div>
+  </div>
+</Layout>

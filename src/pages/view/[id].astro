@@ -88,7 +88,7 @@ if (driveMatch && driveMatch[1]) {
 ---
 
 <Layout title={file.name}>
-  <div class="container" style="max-width: 1000px;">
+  <div class="container" style="max-width: 1400px;">
     <div class="mb-4">
       <nav aria-label="Breadcrumb" class="mb-4 text-sm" style="color: var(--text-muted);">
         <ol class="flex items-center gap-2 flex-wrap">
@@ -121,7 +121,7 @@ if (driveMatch && driveMatch[1]) {
       </div>
     </div>
 
-    <div id="pdf-container" class="glass-panel" style="padding: 0.5rem; height: 75vh; border-radius: 12px; overflow: hidden; position: relative; background: #f8f9fa;">
+    <div id="pdf-container" class="glass-panel" style="padding: 0.5rem; height: 90vh; min-height: 800px; border-radius: 12px; overflow: hidden; position: relative; background: #f8f9fa;">
       <!-- Masking Div to block the Google Drive Pop-out button -->
       <div style="position: absolute; top: 0.5rem; right: 0.5rem; width: 60px; height: 60px; background: transparent; z-index: 10;"></div>
       <iframe 

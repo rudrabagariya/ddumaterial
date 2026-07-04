@@ -2,9 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import materials from '../data/materials.json';
 import { drizzle } from 'drizzle-orm/d1';
-import { starredTable } from '../db/schema';
+import { starredTable, searchQueriesTable } from '../db/schema';
 import { eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
+import { generateIdFromEntropySize } from 'lucia';
 import AdBanner from '../components/AdBanner.astro';
 
 const user = Astro.locals.user;
@@ -18,6 +19,19 @@ if (searchQuery) {
   results = allNodes.filter(node => 
     node.name && node.name.toLowerCase().includes(searchQuery)
   ).slice(0, 50); // limit to top 50 hits for rendering
+
+  // Log the search query in the background (non-blocking)
+  try {
+    const db = drizzle(env.DB as any);
+    await db.insert(searchQueriesTable).values({
+      id: generateIdFromEntropySize(10),
+      query: searchQuery,
+      userId: user?.id || null,
+      timestamp: Date.now()
+    });
+  } catch (e) {
+    console.error("Failed to log search query:", e);
+  }
 }
 
 const childFolders = results.filter(n => n.type === 'folder');
