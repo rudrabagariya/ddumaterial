@@ -31,6 +31,10 @@ const pathname = new URL(Astro.request.url).pathname;
       <span class="nav-label">About</span>
     </a>
   </nav>
+
+  <div class="sidebar-ad-note">
+    <p>☕ Ads help keep this free — No ads when you open any PDF or document!</p>
+  </div>
 </aside>
 
 <script>
@@ -140,5 +144,18 @@ const pathname = new URL(Astro.request.url).pathname;
   .nav-item.active {
     background-color: var(--accent-primary);
     color: white;
+  }
+
+  .sidebar-ad-note {
+    margin-top: auto;
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .sidebar-ad-note p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
   }
 </style>

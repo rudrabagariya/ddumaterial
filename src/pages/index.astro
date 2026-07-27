@@ -85,7 +85,16 @@ const avatar = user?.avatarUrl || defaultAvatar;
       </div>
     )}
 
-    {/* AdSense Ad Banner */}
-    <AdBanner className="mt-8 mb-4" />
+    {user && (
+      <div class="glass-panel" style="padding: 1.25rem 1.5rem; margin-top: 2rem; margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem; border-left: 3px solid var(--accent-primary);">
+        <span style="font-size: 1.5rem; flex-shrink: 0;">☕</span>
+        <div>
+          <p style="margin: 0; font-size: 0.9rem; font-weight: 600; color: var(--text-primary);">Why Ads?</p>
+          <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            Running this site costs time and effort. The occasional small ad you see helps keep everything free and running for all DDU students. Don't worry though — ads are <strong>completely disabled</strong> while you're reading any document. Study in peace! 📖
+          </p>
+        </div>
+      </div>
+    )}
   </div>
 </Layout>
