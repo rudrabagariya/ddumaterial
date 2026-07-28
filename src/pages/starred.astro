@@ -5,7 +5,6 @@ import { drizzle } from 'drizzle-orm/d1';
 import { starredTable } from '../db/schema';
 import { eq, desc } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
-import AdBanner from '../components/AdBanner.astro';
 
 const user = Astro.locals.user;
 if (!user) {
@@ -80,6 +79,5 @@ const getDownloadUrl = (url) => {
       </div>
     )}
 
-    <AdBanner className="mt-8 mb-4" />
   </div>
 </Layout>

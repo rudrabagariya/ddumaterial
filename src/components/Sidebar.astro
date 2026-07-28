@@ -30,6 +30,14 @@ const pathname = new URL(Astro.request.url).pathname;
       <span class="nav-icon">ℹ️</span>
       <span class="nav-label">About</span>
     </a>
+    <a href="/privacy" class={`nav-item ${pathname === '/privacy' ? 'active' : ''}`}>
+      <span class="nav-icon">🔒</span>
+      <span class="nav-label">Privacy Policy</span>
+    </a>
+    <a href="/terms" class={`nav-item ${pathname === '/terms' ? 'active' : ''}`}>
+      <span class="nav-icon">📜</span>
+      <span class="nav-label">Terms</span>
+    </a>
   </nav>
 </aside>
 
@@ -140,18 +148,5 @@ const pathname = new URL(Astro.request.url).pathname;
   .nav-item.active {
     background-color: var(--accent-primary);
     color: white;
-  }
-
-  .sidebar-ad-note {
-    margin-top: auto;
-    padding: 1rem 1.25rem;
-    border-top: 1px solid var(--border-color);
-  }
-
-  .sidebar-ad-note p {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin: 0;
   }
 </style>

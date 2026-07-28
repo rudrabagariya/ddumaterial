@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AdBanner from '../components/AdBanner.astro';
 
 const success = Astro.url.searchParams.get('success') === 'true';
 ---
@@ -57,7 +56,6 @@ const success = Astro.url.searchParams.get('success') === 'true';
     </div>
     
     <div class="mt-8">
-      <AdBanner />
     </div>
   </div>
 </Layout>

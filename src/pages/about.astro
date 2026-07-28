@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AdBanner from '../components/AdBanner.astro';
 ---
 
 <Layout title="About">
@@ -75,10 +74,12 @@ import AdBanner from '../components/AdBanner.astro';
       <a href="/contribute" class="btn btn-primary" style="display: inline-flex; padding: 0.75rem 1.5rem;">
         Contribute Material
       </a>
-    </div>
 
-    <div class="mt-8">
-      <AdBanner />
+      <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+        <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; margin: 0;">
+          By using DDU MATERIAL, you agree to our <a href="/privacy" style="color: var(--accent-primary);">Privacy Policy</a> and <a href="/terms" style="color: var(--accent-primary);">Terms of Service</a>.
+        </p>
+      </div>
     </div>
   </div>
 </Layout>

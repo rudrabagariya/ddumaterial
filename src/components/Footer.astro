@@ -1,0 +1,92 @@
+---
+---
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <span style="font-size: 1.25rem;">📁</span>
+      <span class="footer-title">DDU MATERIAL</span>
+    </div>
+    <p class="footer-desc">A free, community-driven study resource platform for DDU students. Access notes, PYQs, lab manuals, and more — all in one place.</p>
+    
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <span class="footer-divider">·</span>
+      <a href="/feedback">Feedback</a>
+      <span class="footer-divider">·</span>
+      <a href="/contribute">Contribute</a>
+      <span class="footer-divider">·</span>
+      <a href="/privacy">Privacy Policy</a>
+      <span class="footer-divider">·</span>
+      <a href="/terms">Terms of Service</a>
+    </div>
+
+    <p class="footer-copyright">© {new Date().getFullYear()} DDU MATERIAL. Built by students, for students.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-primary);
+  }
+
+  .footer-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent-primary);
+  }
+
+  .footer-divider {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .footer-copyright {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    margin: 0;
+  }
+</style>

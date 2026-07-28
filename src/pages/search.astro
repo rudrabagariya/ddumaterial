@@ -6,7 +6,6 @@ import { starredTable, searchQueriesTable } from '../db/schema';
 import { eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
 import { generateIdFromEntropySize } from 'lucia';
-import AdBanner from '../components/AdBanner.astro';
 
 const user = Astro.locals.user;
 if (!user) {
@@ -147,6 +146,5 @@ const getDownloadUrl = (url) => {
       </div>
     )}
 
-    <AdBanner className="mt-8 mb-4" />
   </div>
 </Layout>

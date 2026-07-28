@@ -4,7 +4,7 @@ import materials from '../data/materials.json';
 import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable } from '../db/schema';
 import { desc, eq } from 'drizzle-orm';
-import AdBanner from '../components/AdBanner.astro';
+
 import { env } from 'cloudflare:workers';
 
 const user = Astro.locals.user;
@@ -76,13 +76,85 @@ const avatar = user?.avatarUrl || defaultAvatar;
         )}
       </>
     ) : (
-      <div class="glass-panel text-center" style="padding: 4rem 2rem; margin-top: 2rem;">
-        <h1 class="h1 mb-4 text-gradient">Welcome to DDU MATERIAL</h1>
-        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem auto;">
-          Access all your engineering resources, past papers, and lecture notes in one organized place.
-        </p>
-        <a href="/api/auth/google" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 2rem;">Login with Google</a>
-      </div>
+      <>
+        <div class="glass-panel text-center" style="padding: 3rem 2rem; margin-top: 2rem;">
+          <h1 class="h1 mb-4 text-gradient">Welcome to DDU MATERIAL</h1>
+          <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto 2rem auto; line-height: 1.7;">
+            Your one-stop platform for all Dharmsinh Desai University study resources. Access organized notes, previous year question papers, lab manuals, and more — completely free.
+          </p>
+          <a href="/api/auth/google" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 2rem;">Login with Google to Get Started</a>
+        </div>
+
+        <div style="margin-top: 2.5rem;">
+          <h2 class="h2 mb-4" style="text-align: center;">📚 What You'll Find Inside</h2>
+          <div class="grid grid-cols-2" style="gap: 1rem;">
+            <div class="glass-panel" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">📝</div>
+              <h3 style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Handwritten & Typed Notes</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin: 0;">High-quality notes from top-performing students across all semesters and subjects, carefully curated to help you study smarter.</p>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">📄</div>
+              <h3 style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Previous Year Questions</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin: 0;">Sessional and university exam papers from previous years. Practice with real questions to understand the exam pattern and boost your preparation.</p>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔬</div>
+              <h3 style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Lab Manuals & Practicals</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin: 0;">Complete lab manuals with experiment procedures, observations, and viva questions to help you prepare for practical exams.</p>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">📖</div>
+              <h3 style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0.5rem;">Syllabus & Reference Books</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin: 0;">Official university syllabus documents and recommended textbook references so you always know exactly what to study.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 2.5rem;">
+          <h2 class="h2 mb-4" style="text-align: center;">✨ Platform Features</h2>
+          <div class="grid grid-cols-3" style="gap: 1rem;">
+            <div class="glass-panel text-center" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔍</div>
+              <h3 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.4rem;">Smart Search</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">Search across all semesters with advanced filters to find exactly what you need.</p>
+            </div>
+            <div class="glass-panel text-center" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">📦</div>
+              <h3 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.4rem;">ZIP Downloads</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">Download entire folders as a single ZIP file with one click.</p>
+            </div>
+            <div class="glass-panel text-center" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🖥️</div>
+              <h3 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.4rem;">PDF Viewer</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">Read documents directly in your browser with full-screen mode.</p>
+            </div>
+            <div class="glass-panel text-center" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">⭐</div>
+              <h3 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.4rem;">Star & Bookmark</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">Star important files to quickly access them later.</p>
+            </div>
+            <div class="glass-panel text-center" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+              <h3 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.4rem;">Comments</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">Discuss and ask questions on any file with other students.</p>
+            </div>
+            <div class="glass-panel text-center" style="padding: 1.5rem;">
+              <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌙</div>
+              <h3 style="color: var(--text-primary); font-size: 0.95rem; margin-bottom: 0.4rem;">Dark Mode</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; margin: 0;">Eye-friendly OLED dark theme for late-night study sessions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel" style="margin-top: 2.5rem; padding: 2rem; text-align: center;">
+          <h2 class="h3" style="color: var(--text-primary); margin-bottom: 0.75rem;">🤝 Built by Students, for Students</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; max-width: 600px; margin: 0 auto 1.5rem auto;">
+            DDU MATERIAL is a community-driven initiative. All study materials are contributed by fellow students and alumni. Have notes that could help others? You can contribute too!
+          </p>
+          <a href="/about" class="btn btn-outline" style="padding: 0.6rem 1.5rem;">Learn More</a>
+        </div>
+      </>
     )}
 
   </div>

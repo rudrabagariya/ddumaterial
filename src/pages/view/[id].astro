@@ -5,7 +5,6 @@ import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable, commentsTable, userTable } from '../../db/schema';
 import { and, eq, desc } from 'drizzle-orm';
 import { generateIdFromEntropySize } from 'lucia';
-import AdBanner from '../../components/AdBanner.astro';
 
 const { id } = Astro.params;
 const allNodes = Object.values(materials).flat();
@@ -146,7 +145,6 @@ if (driveMatch && driveMatch[1]) {
 
     <div class="mt-8 mb-4">
       {/* AdSense Ad Banner */}
-      <AdBanner />
     </div>
 
     <div class="mt-8 mb-12">
