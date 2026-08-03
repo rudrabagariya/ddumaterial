@@ -9,6 +9,7 @@ import { drizzle } from 'drizzle-orm/d1';
 import { filesTable } from '../../../db/schema';
 import { eq, inArray } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
+import { invalidateCache } from '../../../lib/files';
 
 function isAdmin(locals: any): boolean {
   const user = locals.user;
@@ -44,6 +45,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
       mimeType: mimeType || null,
       addedAt: Date.now()
     });
+
+    invalidateCache();
 
     return new Response(JSON.stringify({ success: true, message: `Added ${type}: ${name}` }), {
       status: 200,
@@ -97,6 +100,7 @@ export const DELETE: APIRoute = async ({ request, locals }) => {
     }
 
     console.log(`[DELETE API] Successfully deleted ${deleteIds.length} items.`);
+    invalidateCache();
 
     return new Response(JSON.stringify({ 
       success: true, 
@@ -133,6 +137,8 @@ export const PUT: APIRoute = async ({ request, locals }) => {
 
   try {
     await db.update(filesTable).set({ name }).where(eq(filesTable.id, id));
+    
+    invalidateCache();
 
     return new Response(JSON.stringify({ success: true, message: `Renamed to: ${name}` }), {
       status: 200,

@@ -17,10 +17,24 @@ export type FileNode = {
   addedAt: number;
 };
 
-/** Get all files/folders from the database */
+// In-memory cache for Worker isolates to massively reduce D1 reads and lag
+let cachedNodes: FileNode[] | null = null;
+let lastCacheTime = 0;
+const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
+
+export function invalidateCache() {
+  cachedNodes = null;
+}
+
+/** Get all files/folders from the database (Cached) */
 export async function getAllNodes(DB: any): Promise<FileNode[]> {
+  if (cachedNodes && Date.now() - lastCacheTime < CACHE_TTL) {
+    return cachedNodes;
+  }
   const db = drizzle(DB);
-  return await db.select().from(filesTable).all() as FileNode[];
+  cachedNodes = await db.select().from(filesTable).all() as FileNode[];
+  lastCacheTime = Date.now();
+  return cachedNodes;
 }
 
 /** Get root-level semester folders */
@@ -54,23 +68,24 @@ export async function getChildren(DB: any, parentId: string): Promise<FileNode[]
   );
 }
 
-/** Build breadcrumb trail for a folder */
+/** Build breadcrumb trail for a folder (Optimized) */
 export async function buildBreadcrumbs(DB: any, folderId: string): Promise<FileNode[]> {
-  const allNodes = await getAllNodes(DB);
   const breadcrumbs: FileNode[] = [];
-  let current = allNodes.find(n => n.id === folderId);
-  while (current && current.parent !== 'root') {
-    breadcrumbs.unshift(current);
-    current = allNodes.find(n => n.id === current!.parent);
+  let currentId = folderId;
+  
+  while (currentId && currentId !== 'root') {
+    const node = await getNodeById(DB, currentId);
+    if (!node) break;
+    breadcrumbs.unshift(node);
+    currentId = node.parent;
   }
-  if (current && current.parent === 'root') {
-    breadcrumbs.unshift(current);
-  }
+  
   return breadcrumbs;
 }
 
 /** Recursively get all child files of a folder (for ZIP downloads) */
 export async function getAllChildFiles(DB: any, folderId: string): Promise<{ id: string; name: string }[]> {
+  // Use cached nodes to prevent massive D1 reads for recursive search
   const allNodes = await getAllNodes(DB);
   const result: { id: string; name: string }[] = [];
   
