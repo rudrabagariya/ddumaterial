@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import materials from '../../data/materials.json';
+import { getNodeById, getChildren, buildBreadcrumbs, getAllChildFiles } from '../../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { starredTable } from '../../db/schema';
 import { eq } from 'drizzle-orm';
@@ -22,49 +22,32 @@ if (user) {
     .all();
   starredFileIds = new Set(starred.map(s => s.fileId));
 }
-const allNodes = Object.values(materials).flat();
-const folder = allNodes.find((n: any) => n.id === id && n.type === 'folder');
 
-if (!folder) {
+const folder = await getNodeById(env.DB as any, id!);
+
+if (!folder || folder.type !== 'folder') {
   return Astro.redirect('/404');
 }
 
-// Build breadcrumbs recursively
-const buildBreadcrumbs = (folderId) => {
-  const breadcrumbs = [];
-  let current = allNodes.find(n => n.id === folderId);
-  while (current && current.parent !== 'root') {
-    breadcrumbs.unshift(current);
-    current = allNodes.find(n => n.id === current.parent);
-  }
-  if (current && current.parent === 'root') {
-    breadcrumbs.unshift(current);
-  }
-  return breadcrumbs;
+const breadcrumbs = await buildBreadcrumbs(env.DB as any, folder.id);
+const children = await getChildren(env.DB as any, folder.id);
+const childFolders = children.filter(n => n.type === 'folder');
+const childFiles = children.filter(n => n.type === 'file');
+
+// Helper to get all child files for ZIP download
+const getChildFilesForZip = async (folderId: string) => {
+  return await getAllChildFiles(env.DB as any, folderId);
 };
 
-const breadcrumbs = buildBreadcrumbs(folder.id);
-const children = allNodes.filter(n => n.parent === folder.id);
-const childFolders = children.filter(n => n.type === 'folder').sort((a: any, b: any) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
-const childFiles = children.filter(n => n.type === 'file').sort((a: any, b: any) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
-
-// Helper to recursively get all files for a folder
-const getAllChildFiles = (folderId: string) => {
-  let files: { id: string, name: string }[] = [];
-  const folderChildren = allNodes.filter(n => n.parent === folderId);
-  for (const child of folderChildren) {
-    if (child.type === 'file') {
-      files.push({ id: child.id, name: child.name });
-    } else if (child.type === 'folder') {
-      files.push(...getAllChildFiles(child.id));
-    }
-  }
-  return files;
-};
+// Pre-fetch child files for each folder (for context menu ZIP)
+const folderChildFiles: Record<string, { id: string; name: string }[]> = {};
+for (const cf of childFolders) {
+  folderChildFiles[cf.id] = await getChildFilesForZip(cf.id);
+}
 
 // Helper to convert Google Drive view URLs into Direct Download URLs
 const getDownloadUrl = (url) => {
-  const match = url.match(/file\/d\/([a-zA-Z0-9_-]+)/);
+  const match = url?.match(/file\/d\/([a-zA-Z0-9_-]+)/);
   return match ? `https://drive.google.com/uc?export=download&id=${match[1]}` : url;
 };
 ---
@@ -101,7 +84,7 @@ const getDownloadUrl = (url) => {
       <div class="mb-6">
         <div class="grid grid-cols-4">
           {childFolders.map(cf => (
-            <a href={`/folder/${cf.id}`} class="glass-panel hover-card block context-folder" data-folder-name={cf.name} data-files={JSON.stringify(getAllChildFiles(cf.id))} style="padding: 0.75rem 1rem; text-decoration: none;">
+            <a href={`/folder/${cf.id}`} class="glass-panel hover-card block context-folder" data-folder-name={cf.name} data-files={JSON.stringify(folderChildFiles[cf.id] || [])} style="padding: 0.75rem 1rem; text-decoration: none;">
               <div class="flex items-center gap-3">
                 <span style="font-size: 1.25rem;">📁</span>
                 <h3 class="card-title" style="font-size: 0.95rem; margin: 0; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{cf.name}</h3>
@@ -126,7 +109,9 @@ const getDownloadUrl = (url) => {
             <div style="padding: 1rem; display: flex; flex-direction: column; flex: 1; gap: 0.75rem;">
               <div class="flex items-start justify-between gap-2">
                 <div style="min-width: 0; flex: 1;">
-                  <h3 class="card-title" style="font-size: 1rem; margin-bottom: 0.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title={res.name}>{res.name}</h3>
+                  <h3 class="card-title" style="font-size: 1rem; margin-bottom: 0.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 0.4rem;" title={res.name}>
+                    {res.name}
+                  </h3>
                   <span style="color: var(--text-muted); font-size: 0.8rem;">{res.size}</span>
                 </div>
                 {user && (

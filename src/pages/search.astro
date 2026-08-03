@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import materials from '../data/materials.json';
+import { getAllNodes } from '../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { starredTable, searchQueriesTable } from '../db/schema';
 import { eq } from 'drizzle-orm';
@@ -16,22 +16,33 @@ const query = Astro.url.searchParams.get('q') || '';
 const semFilter = Astro.url.searchParams.get('sem') || 'all';
 const searchQuery = query.toLowerCase();
 
-let targetMaterials = [];
-if (semFilter !== 'all' && materials[semFilter]) {
-  targetMaterials = materials[semFilter];
-} else {
-  targetMaterials = Object.values(materials).flat();
+const allNodes = await getAllNodes(env.DB as any);
+
+// Filter by semester if specified (find root folder, then get descendants)
+let targetNodes = allNodes;
+if (semFilter !== 'all') {
+  const semRoot = allNodes.find(n => n.parent === 'root' && n.name.toLowerCase().includes(semFilter.replace('sem', 'sem-')));
+  if (semRoot) {
+    // Get all descendants of this semester
+    const descendants = new Set<string>();
+    const queue = [semRoot.id];
+    while (queue.length > 0) {
+      const parentId = queue.shift()!;
+      descendants.add(parentId);
+      allNodes.filter(n => n.parent === parentId).forEach(n => queue.push(n.id));
+    }
+    targetNodes = allNodes.filter(n => descendants.has(n.parent) || descendants.has(n.id));
+  }
 }
 
-const allNodes = targetMaterials as any[];
-let results = [];
+let results: any[] = [];
 
 if (searchQuery) {
-  results = allNodes.filter(node => 
+  results = targetNodes.filter(node => 
     node.name && node.name.toLowerCase().includes(searchQuery)
-  ).slice(0, 50); // limit to top 50 hits for rendering
+  ).slice(0, 50);
 
-  // Log the search query in the background (non-blocking)
+  // Log the search query
   try {
     const db = drizzle(env.DB as any);
     await db.insert(searchQueriesTable).values({

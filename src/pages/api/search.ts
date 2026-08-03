@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
-import materials from '../../data/materials.json';
+import { getAllNodes } from '../../lib/files';
+import { env } from 'cloudflare:workers';
 
 export const GET: APIRoute = async ({ request }) => {
   const url = new URL(request.url);
@@ -12,7 +13,7 @@ export const GET: APIRoute = async ({ request }) => {
     });
   }
 
-  const allNodes = Object.values(materials).flat() as any[];
+  const allNodes = await getAllNodes(env.DB as any);
   
   // Basic search matching folder or file names
   const results = allNodes.filter(node => 

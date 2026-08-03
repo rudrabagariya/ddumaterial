@@ -62,3 +62,14 @@ export const feedbackTable = sqliteTable('feedback', {
   status: text('status').notNull().default('new'), // 'new', 'reviewed', 'resolved'
   submittedAt: integer('submitted_at').notNull()
 });
+
+export const filesTable = sqliteTable('files', {
+  id: text('id').primaryKey(),              // Google Drive file/folder ID
+  type: text('type').notNull(),             // 'file' or 'folder'
+  name: text('name').notNull(),
+  parent: text('parent').notNull(),         // parent folder ID or 'root'
+  url: text('url'),                         // Google Drive URL
+  size: text('size'),                       // e.g. "3.1 MB" (files only)
+  mimeType: text('mime_type'),              // e.g. "application/pdf" (files only)
+  addedAt: integer('added_at').notNull()    // timestamp for "NEW" badge
+});

@@ -4,7 +4,7 @@ import { drizzle } from 'drizzle-orm/d1';
 import { searchQueriesTable, donationsTable, recentlyViewedTable, userTable, feedbackTable } from '../db/schema';
 import { desc, count, sql, eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
-import materials from '../data/materials.json';
+import { getAllNodes } from '../lib/files';
 
 const user = Astro.locals.user;
 const adminEmail = env.ADMIN_EMAIL; 
@@ -68,7 +68,7 @@ const latestViews = await db.select({
 .orderBy(desc(recentlyViewedTable.viewedAt))
 .all();
 
-const allNodes = Object.values(materials).flat() as any[];
+const allNodes = await getAllNodes(env.DB as any);
 const getFileName = (id: string) => allNodes.find(n => n.id === id)?.name || 'Unknown File';
 
 const lastViewedPerUser: Record<string, string> = {};
@@ -118,6 +118,9 @@ const userFeedback = await db.select({
       <div class="flex items-center gap-4">
         <span style="font-size: 2.5rem;">⚙️</span>
         <h1 class="h2" style="margin: 0;">Admin Dashboard</h1>
+        <a href="/admin/files" class="btn btn-outline ml-4" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+          <span>📁</span> Manage Files
+        </a>
       </div>
       <div class="flex gap-4">
         <div class="glass-panel flex items-center" style="padding: 0.5rem 1rem; background: var(--bg-primary);">

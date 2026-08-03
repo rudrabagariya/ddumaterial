@@ -1,20 +1,19 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import materials from '../../data/materials.json';
+import { getNodeById, buildBreadcrumbs } from '../../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable, commentsTable, userTable } from '../../db/schema';
 import { and, eq, desc } from 'drizzle-orm';
 import { generateIdFromEntropySize } from 'lucia';
+import { env } from 'cloudflare:workers';
 
 const { id } = Astro.params;
-const allNodes = Object.values(materials).flat();
-const file = allNodes.find((n: any) => n.id === id && n.type === 'file');
+const file = await getNodeById(env.DB as any, id!);
 
-if (!file) {
+if (!file || file.type !== 'file') {
   return Astro.redirect('/404');
 }
 
-import { env } from 'cloudflare:workers';
 const user = Astro.locals.user;
 if (!user) {
   return Astro.redirect('/');
@@ -60,31 +59,17 @@ const comments = await db.select({
 .orderBy(desc(commentsTable.createdAt))
 .all();
 
-// Build breadcrumbs for the file
-const buildBreadcrumbs = (parentId: string) => {
-  const breadcrumbs: any[] = [];
-  let current = allNodes.find((n: any) => n.id === parentId);
-  while (current && current.parent !== 'root') {
-    breadcrumbs.unshift(current);
-    current = allNodes.find((n: any) => n.id === current.parent);
-  }
-  if (current && current.parent === 'root') {
-    breadcrumbs.unshift(current);
-  }
-  return breadcrumbs;
-};
-
-const breadcrumbs = buildBreadcrumbs(file.parent);
+const breadcrumbs = await buildBreadcrumbs(env.DB as any, file.parent);
 
 // Automatically detect Google Drive file URLs and switch them to preview mode
-let embedUrl = file.url;
+let embedUrl = file.url || '';
 if (embedUrl.includes('drive.google.com/file/d/')) {
   embedUrl = embedUrl.replace(/\/view.*$/, '/preview');
 }
 
 // Convert to Direct Download Link
-let downloadUrl = file.url;
-const driveMatch = file.url.match(/file\/d\/([a-zA-Z0-9_-]+)/);
+let downloadUrl = file.url || '';
+const driveMatch = file.url?.match(/file\/d\/([a-zA-Z0-9_-]+)/);
 if (driveMatch && driveMatch[1]) {
   downloadUrl = `https://drive.google.com/uc?export=download&id=${driveMatch[1]}`;
 }

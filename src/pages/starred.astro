@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import materials from '../data/materials.json';
+import { getNodeById } from '../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { starredTable } from '../db/schema';
 import { eq, desc } from 'drizzle-orm';
@@ -18,12 +18,14 @@ const starredEntries = await db.select()
   .orderBy(desc(starredTable.starredAt))
   .all();
 
-const allNodes = Object.values(materials).flat();
 const starredFileIds = new Set(starredEntries.map(s => s.fileId));
-const starredFiles = starredEntries.map(entry => allNodes.find((n: any) => n.id === entry.fileId)).filter(Boolean);
+const files = await Promise.all(
+  starredEntries.map(entry => getNodeById(env.DB as any, entry.fileId))
+);
+const starredFiles = files.filter(Boolean);
 
 const getDownloadUrl = (url) => {
-  const match = url.match(/file\/d\/([a-zA-Z0-9_-]+)/);
+  const match = url?.match(/file\/d\/([a-zA-Z0-9_-]+)/);
   return match ? `https://drive.google.com/uc?export=download&id=${match[1]}` : url;
 };
 ---

@@ -1,19 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import materials from '../data/materials.json';
+import { getRootFolders, getNodeById } from '../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable } from '../db/schema';
 import { desc, eq } from 'drizzle-orm';
-
 import { env } from 'cloudflare:workers';
 
 const user = Astro.locals.user;
 const db = drizzle(env.DB as any);
 
-const allNodes = Object.values(materials).flat();
-const rootFolders = allNodes.filter(n => n.parent === 'root').sort((a: any, b: any) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
+const rootFolders = await getRootFolders(env.DB as any);
 
-let recentFiles = [];
+let recentFiles: any[] = [];
 if (user) {
   const history = await db.select()
     .from(recentlyViewedTable)
@@ -22,7 +20,10 @@ if (user) {
     .limit(4)
     .all();
     
-  recentFiles = history.map(h => allNodes.find(n => n.id === h.fileId)).filter(Boolean);
+  const files = await Promise.all(
+    history.map(h => getNodeById(env.DB as any, h.fileId))
+  );
+  recentFiles = files.filter(Boolean);
 }
 const defaultAvatar = user ? `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=4285f4&color=fff&size=128` : '';
 const avatar = user?.avatarUrl || defaultAvatar;

@@ -1,0 +1,319 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { drizzle } from 'drizzle-orm/d1';
+import { env } from 'cloudflare:workers';
+import { getAllNodes } from '../../lib/files';
+
+const user = Astro.locals.user;
+const adminEmail = env.ADMIN_EMAIL; 
+
+if (!user || user.email !== adminEmail) {
+  return new Response('Unauthorized - Admins Only', { status: 403 });
+}
+
+const allNodes = await getAllNodes(env.DB as any);
+// Pass this to the client for easy browsing
+const allNodesJson = JSON.stringify(allNodes);
+---
+
+<Layout title="Manage Files">
+  <div class="container" style="max-width: 1200px;">
+    <div class="mb-8 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <a href="/admin" style="text-decoration: none; font-size: 1.5rem;">⬅️</a>
+        <h1 class="h2" style="margin: 0;">Manage Files</h1>
+      </div>
+      <div class="flex gap-2">
+        <a href="/api/admin/backup" class="btn btn-outline" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;" title="Download database as JSON">
+          <span>💾</span> Backup
+        </a>
+        <button id="addFileBtn" class="btn btn-primary">Add File/Folder</button>
+      </div>
+    </div>
+
+    <div class="glass-panel" style="padding: 1.5rem;">
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" class="mb-4 text-sm" style="color: var(--text-muted); background: var(--bg-primary); padding: 0.5rem 1rem; border-radius: 8px;">
+        <ol id="breadcrumbContainer" class="flex items-center gap-2 flex-wrap" style="list-style: none; margin: 0; padding: 0;">
+          <!-- Populated by JS -->
+        </ol>
+      </nav>
+
+      <!-- File Browser -->
+      <div id="browserContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Modal -->
+  <dialog id="addModal" style="padding: 0; border: none; background: transparent; max-width: 500px; width: 100%; margin: auto;">
+    <div class="glass-panel" style="padding: 2rem; border-radius: 12px; border: 1px solid var(--border-color);">
+      <h3 class="h3 mb-4">Add New Item</h3>
+      <form id="addForm" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="form-group">
+          <label style="display: block; margin-bottom: 0.5rem;">Type</label>
+          <select name="type" required class="input" style="width: 100%; padding: 0.5rem; background: var(--bg-primary); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 4px;">
+            <option value="file">File (PDF, Doc, etc)</option>
+            <option value="folder">Folder</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label style="display: block; margin-bottom: 0.5rem;">Name</label>
+          <input type="text" name="name" required class="input" style="width: 100%; padding: 0.5rem; background: var(--bg-primary); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 4px;" placeholder="e.g. Engineering Graphics">
+        </div>
+
+        <div class="form-group">
+          <label style="display: block; margin-bottom: 0.5rem;">Google Drive File/Folder ID</label>
+          <input type="text" name="id" required class="input" style="width: 100%; padding: 0.5rem; background: var(--bg-primary); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 4px;" placeholder="e.g. 1zZsyJ6nFRkyzkBqh_DsjOF6j5zm8yF-e">
+          <span style="font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 0.25rem;">Extract from the Drive URL</span>
+        </div>
+
+        <div id="fileOnlyFields" class="flex flex-col gap-4">
+          <div class="form-group">
+            <label style="display: block; margin-bottom: 0.5rem;">Size (Optional)</label>
+            <input type="text" name="size" class="input" style="width: 100%; padding: 0.5rem; background: var(--bg-primary); color: var(--text-color); border: 1px solid var(--border-color); border-radius: 4px;" placeholder="e.g. 2.5 MB">
+          </div>
+        </div>
+
+        <div class="flex gap-2 mt-4">
+          <button type="button" id="closeModalBtn" class="btn btn-outline" style="flex: 1;">Cancel</button>
+          <button type="submit" class="btn btn-primary" style="flex: 1;">Save</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+</Layout>
+
+<script is:inline define:vars={{ allNodesJson }}>
+  const allNodes = JSON.parse(allNodesJson);
+  let currentFolderId = 'root';
+
+  const container = document.getElementById('browserContainer');
+  const breadcrumbContainer = document.getElementById('breadcrumbContainer');
+  const addModal = document.getElementById('addModal');
+  const addForm = document.getElementById('addForm');
+  
+  document.getElementById('addFileBtn').addEventListener('click', () => addModal.showModal());
+  document.getElementById('closeModalBtn').addEventListener('click', () => {
+    addModal.close();
+    addForm.reset();
+  });
+
+  // Toggle file fields based on type
+  addForm.elements['type'].addEventListener('change', (e) => {
+    document.getElementById('fileOnlyFields').style.display = e.target.value === 'file' ? 'flex' : 'none';
+  });
+
+  function renderBreadcrumbs() {
+    breadcrumbContainer.innerHTML = '';
+    
+    // Add Home
+    const homeLi = document.createElement('li');
+    homeLi.innerHTML = `<button style="background: none; border: none; color: #4285f4; cursor: pointer; padding: 0;" data-id="root">Root</button>`;
+    breadcrumbContainer.appendChild(homeLi);
+
+    if (currentFolderId === 'root') return;
+
+    // Build trail
+    const trail = [];
+    let curr = allNodes.find(n => n.id === currentFolderId);
+    while (curr && curr.parent !== 'root') {
+      trail.unshift(curr);
+      curr = allNodes.find(n => n.id === curr.parent);
+    }
+    if (curr && curr.parent === 'root') trail.unshift(curr);
+
+    trail.forEach((item, idx) => {
+      const sep = document.createElement('li');
+      sep.innerText = '/';
+      breadcrumbContainer.appendChild(sep);
+
+      const li = document.createElement('li');
+      if (idx === trail.length - 1) {
+        li.innerHTML = `<span style="color: var(--text-color); font-weight: 500;">${item.name}</span>`;
+      } else {
+        li.innerHTML = `<button style="background: none; border: none; color: #4285f4; cursor: pointer; padding: 0;" data-id="${item.id}">${item.name}</button>`;
+      }
+      breadcrumbContainer.appendChild(li);
+    });
+
+    // Add click listeners to breadcrumbs
+    breadcrumbContainer.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        currentFolderId = e.target.dataset.id;
+        renderBrowser();
+      });
+    });
+  }
+
+  function renderBrowser() {
+    renderBreadcrumbs();
+    container.innerHTML = '';
+    
+    const children = allNodes.filter(n => n.parent === currentFolderId)
+      .sort((a, b) => a.name.localeCompare(b.name, undefined, {numeric: true, sensitivity: 'base'}));
+    
+    if (children.length === 0) {
+      container.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--text-muted);">Empty folder</div>`;
+      return;
+    }
+
+    children.forEach(child => {
+      const el = document.createElement('div');
+      el.className = 'glass-panel flex justify-between items-center';
+      el.style.padding = '1rem';
+      
+      const icon = child.type === 'folder' ? '📁' : '📄';
+      
+      el.innerHTML = `
+        <div class="flex items-center gap-3 overflow-hidden" style="flex: 1;">
+          <span style="font-size: 1.5rem;">${icon}</span>
+          <div style="min-width: 0;">
+            <div style="font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: ${child.type === 'folder' ? 'pointer' : 'default'}; color: ${child.type === 'folder' ? '#4285f4' : 'var(--text-color)'};" class="item-name" data-id="${child.id}" data-type="${child.type}">${child.name}</div>
+            ${child.size ? `<div style="font-size: 0.8rem; color: var(--text-muted);">${child.size}</div>` : ''}
+          </div>
+        </div>
+        <button class="delete-btn" data-id="${child.id}" style="background: none; border: none; color: #ea4335; cursor: pointer; padding: 0.5rem; border-radius: 4px;">🗑️</button>
+      `;
+      
+      container.appendChild(el);
+    });
+
+    // Add folder navigation
+    container.querySelectorAll('.item-name[data-type="folder"]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        currentFolderId = e.target.dataset.id;
+        renderBrowser();
+      });
+    });
+
+    // Add delete handlers
+    container.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const targetBtn = e.currentTarget;
+        const id = targetBtn.dataset.id;
+        
+        if (!targetBtn.dataset.confirmed) {
+          targetBtn.dataset.confirmed = "true";
+          targetBtn.innerHTML = "Confirm 🗑️";
+          targetBtn.style.background = "#fce8e6";
+          targetBtn.style.color = "#d93025";
+          
+          setTimeout(() => {
+            if (!targetBtn.disabled) {
+              targetBtn.dataset.confirmed = "";
+              targetBtn.innerHTML = "🗑️";
+              targetBtn.style.background = "none";
+              targetBtn.style.color = "#ea4335";
+            }
+          }, 3000);
+          return;
+        }
+        
+        targetBtn.disabled = true;
+        targetBtn.style.opacity = '0.5';
+        targetBtn.innerHTML = "Deleting...";
+        
+        try {
+          const res = await fetch('/api/admin/files', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ id })
+          });
+          
+          if (!res.ok) {
+             throw new Error(`Server returned ${res.status}`);
+          }
+          
+          const data = await res.json();
+          
+          if (data.success) {
+            // Remove from local array
+            const toDelete = new Set([id]);
+            function collect(parentId) {
+              allNodes.filter(n => n.parent === parentId).forEach(n => {
+                toDelete.add(n.id);
+                collect(n.id);
+              });
+            }
+            collect(id);
+            
+            for (let i = allNodes.length - 1; i >= 0; i--) {
+              if (toDelete.has(allNodes[i].id)) allNodes.splice(i, 1);
+            }
+            
+            renderBrowser();
+          } else {
+            alert('Failed to delete: ' + data.error);
+            targetBtn.disabled = false;
+            targetBtn.style.opacity = '1';
+            targetBtn.innerHTML = "🗑️";
+            targetBtn.dataset.confirmed = "";
+          }
+        } catch (err) {
+          console.error('Delete error:', err);
+          alert('Error deleting file: ' + err.message);
+          targetBtn.disabled = false;
+          targetBtn.style.opacity = '1';
+          targetBtn.innerHTML = "🗑️";
+          targetBtn.dataset.confirmed = "";
+        }
+      });
+    });
+  }
+
+  // Handle Add Submit
+  addForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(addForm);
+    let rawId = formData.get('id').trim();
+    
+    // Auto-extract ID if user pastes full URL
+    const driveMatch = rawId.match(/[-\w]{25,}/);
+    if (driveMatch) {
+      rawId = driveMatch[0];
+    }
+
+    const payload = {
+      id: rawId,
+      type: formData.get('type'),
+      name: formData.get('name'),
+      parent: currentFolderId,
+      size: formData.get('size'),
+    };
+    
+    // Auto-generate URL
+    if (payload.type === 'file') {
+      payload.url = `https://drive.google.com/file/d/${payload.id}/view?usp=drivesdk`;
+      payload.mimeType = "application/pdf"; // Default fallback
+    } else {
+      payload.url = `https://drive.google.com/drive/folders/${payload.id}`;
+    }
+
+    try {
+      const res = await fetch('/api/admin/files', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      
+      if (data.success) {
+        payload.addedAt = Date.now();
+        allNodes.push(payload);
+        addModal.close();
+        addForm.reset();
+        renderBrowser();
+      } else {
+        alert('Failed to add: ' + data.error);
+      }
+    } catch (err) {
+      alert('Error saving');
+    }
+  });
+
+  // Initial render
+  renderBrowser();
+</script>
