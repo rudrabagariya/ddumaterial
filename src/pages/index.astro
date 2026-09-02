@@ -1,12 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getRootFolders, getNodeById } from '../lib/files';
+import { getRootFolders, getNodeById, isFallbackMode } from '../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable } from '../db/schema';
 import { desc, eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
 
 const user = Astro.locals.user;
+const fallback = isFallbackMode();
 const db = drizzle(env.DB as any);
 
 const rootFolders = await getRootFolders(env.DB as any);
@@ -33,7 +34,7 @@ const avatar = user?.avatarUrl || defaultAvatar;
 
 <Layout title="DDU MATERIAL - Home">
   <div class="container">
-    {user ? (
+    {(user || fallback) ? (
       <>
         <div class="mb-8">
           <h2 class="h2 mb-4" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
