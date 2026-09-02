@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getNodeById, buildBreadcrumbs } from '../../lib/files';
+import { getNodeById, buildBreadcrumbs, isFallbackMode } from '../../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { recentlyViewedTable, commentsTable, userTable } from '../../db/schema';
 import { and, eq, desc } from 'drizzle-orm';
@@ -15,49 +15,54 @@ if (!file || file.type !== 'file') {
 }
 
 const user = Astro.locals.user;
-if (!user) {
+if (!user && !isFallbackMode()) {
   return Astro.redirect('/');
 }
 
 const db = drizzle(env.DB as any);
 
 if (user) {
-  if (Astro.request.method === "POST") {
-    const data = await Astro.request.formData();
-    const content = data.get("content");
-    if (typeof content === "string" && content.trim() !== "") {
-      await db.insert(commentsTable).values({
+  try {
+    if (Astro.request.method === "POST") {
+      const data = await Astro.request.formData();
+      const content = data.get("content");
+      if (typeof content === "string" && content.trim() !== "") {
+        await db.insert(commentsTable).values({
+          id: generateIdFromEntropySize(10),
+          userId: user.id,
+          fileId: id,
+          content: content.trim(),
+          createdAt: Date.now()
+        });
+      }
+    } else {
+      // Record view history on GET
+      await db.delete(recentlyViewedTable).where(and(eq(recentlyViewedTable.userId, user.id), eq(recentlyViewedTable.fileId, id)));
+      await db.insert(recentlyViewedTable).values({
         id: generateIdFromEntropySize(10),
         userId: user.id,
         fileId: id,
-        content: content.trim(),
-        createdAt: Date.now()
+        viewedAt: Date.now()
       });
     }
-  } else {
-    // Record view history on GET
-    await db.delete(recentlyViewedTable).where(and(eq(recentlyViewedTable.userId, user.id), eq(recentlyViewedTable.fileId, id)));
-    await db.insert(recentlyViewedTable).values({
-      id: generateIdFromEntropySize(10),
-      userId: user.id,
-      fileId: id,
-      viewedAt: Date.now()
-    });
-  }
+  } catch { /* D1 unavailable, skip tracking/comments */ }
 }
 
-const comments = await db.select({
-  id: commentsTable.id,
-  content: commentsTable.content,
-  createdAt: commentsTable.createdAt,
-  userName: userTable.name,
-  userAvatar: userTable.avatarUrl
-})
-.from(commentsTable)
-.innerJoin(userTable, eq(commentsTable.userId, userTable.id))
-.where(eq(commentsTable.fileId, id))
-.orderBy(desc(commentsTable.createdAt))
-.all();
+let comments: any[] = [];
+try {
+  comments = await db.select({
+    id: commentsTable.id,
+    content: commentsTable.content,
+    createdAt: commentsTable.createdAt,
+    userName: userTable.name,
+    userAvatar: userTable.avatarUrl
+  })
+  .from(commentsTable)
+  .innerJoin(userTable, eq(commentsTable.userId, userTable.id))
+  .where(eq(commentsTable.fileId, id))
+  .orderBy(desc(commentsTable.createdAt))
+  .all();
+} catch { /* D1 unavailable, skip comments */ }
 
 const breadcrumbs = await buildBreadcrumbs(env.DB as any, file.parent);
 

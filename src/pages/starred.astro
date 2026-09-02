@@ -12,17 +12,22 @@ if (!user) {
 }
 
 const db = drizzle(env.DB as any);
-const starredEntries = await db.select()
-  .from(starredTable)
-  .where(eq(starredTable.userId, user.id))
-  .orderBy(desc(starredTable.starredAt))
-  .all();
+let starredFileIds = new Set();
+let starredFiles: any[] = [];
 
-const starredFileIds = new Set(starredEntries.map(s => s.fileId));
-const files = await Promise.all(
-  starredEntries.map(entry => getNodeById(env.DB as any, entry.fileId))
-);
-const starredFiles = files.filter(Boolean);
+try {
+  const starredEntries = await db.select()
+    .from(starredTable)
+    .where(eq(starredTable.userId, user.id))
+    .orderBy(desc(starredTable.starredAt))
+    .all();
+
+  starredFileIds = new Set(starredEntries.map(s => s.fileId));
+  const files = await Promise.all(
+    starredEntries.map(entry => getNodeById(env.DB as any, entry.fileId))
+  );
+  starredFiles = files.filter(Boolean);
+} catch { /* D1 unavailable */ }
 
 const getDownloadUrl = (url) => {
   const match = url?.match(/file\/d\/([a-zA-Z0-9_-]+)/);

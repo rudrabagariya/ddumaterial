@@ -13,17 +13,19 @@ const rootFolders = await getRootFolders(env.DB as any);
 
 let recentFiles: any[] = [];
 if (user) {
-  const history = await db.select()
-    .from(recentlyViewedTable)
-    .where(eq(recentlyViewedTable.userId, user.id))
-    .orderBy(desc(recentlyViewedTable.viewedAt))
-    .limit(4)
-    .all();
-    
-  const files = await Promise.all(
-    history.map(h => getNodeById(env.DB as any, h.fileId))
-  );
-  recentFiles = files.filter(Boolean);
+  try {
+    const history = await db.select()
+      .from(recentlyViewedTable)
+      .where(eq(recentlyViewedTable.userId, user.id))
+      .orderBy(desc(recentlyViewedTable.viewedAt))
+      .limit(4)
+      .all();
+      
+    const files = await Promise.all(
+      history.map(h => getNodeById(env.DB as any, h.fileId))
+    );
+    recentFiles = files.filter(Boolean);
+  } catch { /* D1 unavailable, skip recently viewed */ }
 }
 const defaultAvatar = user ? `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=4285f4&color=fff&size=128` : '';
 const avatar = user?.avatarUrl || defaultAvatar;

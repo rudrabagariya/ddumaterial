@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getAllNodes } from '../lib/files';
+import { getAllNodes, isFallbackMode } from '../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { starredTable, searchQueriesTable } from '../db/schema';
 import { eq } from 'drizzle-orm';
@@ -8,7 +8,7 @@ import { env } from 'cloudflare:workers';
 import { generateIdFromEntropySize } from 'lucia';
 
 const user = Astro.locals.user;
-if (!user) {
+if (!user && !isFallbackMode()) {
   return Astro.redirect('/');
 }
 
@@ -61,12 +61,14 @@ const childFiles = results.filter(n => n.type === 'file');
 
 let starredFileIds = new Set();
 if (user) {
-  const db = drizzle(env.DB as any);
-  const starred = await db.select({ fileId: starredTable.fileId })
-    .from(starredTable)
-    .where(eq(starredTable.userId, user.id))
-    .all();
-  starredFileIds = new Set(starred.map(s => s.fileId));
+  try {
+    const db = drizzle(env.DB as any);
+    const starred = await db.select({ fileId: starredTable.fileId })
+      .from(starredTable)
+      .where(eq(starredTable.userId, user.id))
+      .all();
+    starredFileIds = new Set(starred.map(s => s.fileId));
+  } catch { /* D1 unavailable */ }
 }
 
 const getDownloadUrl = (url) => {

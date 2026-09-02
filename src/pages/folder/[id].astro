@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getNodeById, getChildren, buildBreadcrumbs, getAllChildFiles } from '../../lib/files';
+import { getNodeById, getChildren, buildBreadcrumbs, getAllChildFiles, isFallbackMode } from '../../lib/files';
 import { drizzle } from 'drizzle-orm/d1';
 import { starredTable } from '../../db/schema';
 import { eq } from 'drizzle-orm';
@@ -8,7 +8,9 @@ import { env } from 'cloudflare:workers';
 
 const { id } = Astro.params;
 const user = Astro.locals.user;
-if (!user) {
+
+// Only redirect if NOT in fallback mode (fallback = open access)
+if (!user && !isFallbackMode()) {
   return Astro.redirect('/');
 }
 
@@ -16,11 +18,13 @@ const db = drizzle(env.DB as any);
 
 let starredFileIds = new Set();
 if (user) {
-  const starred = await db.select({ fileId: starredTable.fileId })
-    .from(starredTable)
-    .where(eq(starredTable.userId, user.id))
-    .all();
-  starredFileIds = new Set(starred.map(s => s.fileId));
+  try {
+    const starred = await db.select({ fileId: starredTable.fileId })
+      .from(starredTable)
+      .where(eq(starredTable.userId, user.id))
+      .all();
+    starredFileIds = new Set(starred.map(s => s.fileId));
+  } catch { /* D1 unavailable, skip starred */ }
 }
 
 const folder = await getNodeById(env.DB as any, id!);
