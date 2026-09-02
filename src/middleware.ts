@@ -17,29 +17,11 @@ export const onRequest = defineMiddleware(async (context, next) => {
 		}
 		
 		const lucia = initializeLucia(env.DB as any);
-
-		// D1 health check — runs on EVERY request regardless of cookies.
-		// This is a zero-row read that reliably detects rate limiting.
-		try {
-			await env.DB.prepare("SELECT 1").first();
-		} catch {
-			// D1 is down — activate fallback mode for all visitors
-			console.warn("D1 health check failed — activating fallback mode");
-			setFallbackMode(true);
-			context.locals.user = null;
-			context.locals.session = null;
-			return await next();
-		}
 		
 		const sessionId = context.cookies.get(lucia.sessionCookieName)?.value ?? null;
 		if (!sessionId) {
 			context.locals.user = null;
 			context.locals.session = null;
-			const protectedPaths = ["/folder/", "/view/"];
-			const isProtected = protectedPaths.some(p => context.url.pathname.startsWith(p));
-			if (isProtected) {
-				return context.redirect("/");
-			}
 			return next();
 		}
 

@@ -8,13 +8,23 @@ import { env } from 'cloudflare:workers';
 
 const { id } = Astro.params;
 const user = Astro.locals.user;
+const db = drizzle(env.DB as any);
 
-// Auth check — middleware already set fallback mode if D1 is down
+// Load data FIRST — these queries scan real rows and will trigger fallback if D1 is down
+const folder = await getNodeById(env.DB as any, id!);
+
+if (!folder || folder.type !== 'folder') {
+  return Astro.redirect('/404');
+}
+
+const breadcrumbs = await buildBreadcrumbs(env.DB as any, folder.id);
+const children = await getChildren(env.DB as any, folder.id);
+
+// NOW check auth — by this point getChildren() has scanned many rows,
+// and if D1 is rate-limited it will have set fallbackMode = true
 if (!user && !isFallbackMode()) {
   return Astro.redirect('/');
 }
-
-const db = drizzle(env.DB as any);
 
 let starredFileIds = new Set();
 if (user) {
@@ -27,14 +37,6 @@ if (user) {
   } catch { /* D1 unavailable, skip starred */ }
 }
 
-const folder = await getNodeById(env.DB as any, id!);
-
-if (!folder || folder.type !== 'folder') {
-  return Astro.redirect('/404');
-}
-
-const breadcrumbs = await buildBreadcrumbs(env.DB as any, folder.id);
-const children = await getChildren(env.DB as any, folder.id);
 const childFolders = children.filter(n => n.type === 'folder');
 const childFiles = children.filter(n => n.type === 'file');
 
