@@ -49442,6 +49442,15 @@
       "url": "https://drive.google.com/drive/folders/1bpPJeZTkZGIugxL7eQ_g_Rj3m2aNTu5l"
     },
     {
+      "type": "file",
+      "id": "1EuIQfhRJMgmKRiPC5GV_DJY71Vrsa6nn",
+      "name": "SEM7_ALL_SESSIONAL_2025",
+      "parent": "1bpPJeZTkZGIugxL7eQ_g_Rj3m2aNTu5l",
+      "url": "https://drive.google.com/file/d/1EuIQfhRJMgmKRiPC5GV_DJY71Vrsa6nn/view?usp=drivesdk",
+      "size": "unknown",
+      "mimeType": "application/pdf"
+    },
+    {
       "type": "folder",
       "id": "1n2RAE_AGiMpAfx89Cw5Uv6wdXFakNns1",
       "name": "notes",
