@@ -15,6 +15,12 @@ if (!file || file.type !== 'file') {
 }
 
 const user = Astro.locals.user;
+
+// Auth check — middleware already set fallback mode if D1 is down
+if (!user && !isFallbackMode()) {
+  return Astro.redirect('/');
+}
+
 const db = drizzle(env.DB as any);
 
 if (user) {
@@ -61,11 +67,6 @@ try {
 } catch { /* D1 unavailable, skip comments */ }
 
 const breadcrumbs = await buildBreadcrumbs(env.DB as any, file.parent);
-
-// Now that all heavy queries have run and potentially triggered fallback mode, we check auth
-if (!user && !isFallbackMode()) {
-  return Astro.redirect('/');
-}
 
 // Automatically detect Google Drive file URLs and switch them to preview mode
 let embedUrl = file.url || '';

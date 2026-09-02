@@ -8,6 +8,12 @@ import { env } from 'cloudflare:workers';
 
 const { id } = Astro.params;
 const user = Astro.locals.user;
+
+// Auth check — middleware already set fallback mode if D1 is down
+if (!user && !isFallbackMode()) {
+  return Astro.redirect('/');
+}
+
 const db = drizzle(env.DB as any);
 
 let starredFileIds = new Set();
@@ -36,11 +42,6 @@ const childFiles = children.filter(n => n.type === 'file');
 const getChildFilesForZip = async (folderId: string) => {
   return await getAllChildFiles(env.DB as any, folderId);
 };
-
-// Now that all heavy queries (getChildren, etc) have run and potentially triggered fallback mode, we check auth
-if (!user && !isFallbackMode()) {
-  return Astro.redirect('/');
-}
 
 // Pre-fetch child files for each folder (for context menu ZIP)
 const folderChildFiles: Record<string, { id: string; name: string }[]> = {};

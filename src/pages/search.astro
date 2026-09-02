@@ -8,15 +8,17 @@ import { env } from 'cloudflare:workers';
 import { generateIdFromEntropySize } from 'lucia';
 
 const user = Astro.locals.user;
+
+// Auth check — middleware already set fallback mode if D1 is down
+if (!user && !isFallbackMode()) {
+  return Astro.redirect('/');
+}
+
 const query = Astro.url.searchParams.get('q') || '';
 const semFilter = Astro.url.searchParams.get('sem') || 'all';
 const searchQuery = query.toLowerCase();
 
 const allNodes = await getAllNodes(env.DB as any);
-
-if (!user && !isFallbackMode()) {
-  return Astro.redirect('/');
-}
 
 // Filter by semester if specified (find root folder, then get descendants)
 let targetNodes = allNodes;
