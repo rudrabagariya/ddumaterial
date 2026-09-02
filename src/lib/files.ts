@@ -88,7 +88,20 @@ export async function getNodeById(DB: any, id: string): Promise<FileNode | undef
     const results = await db.select().from(filesTable)
       .where(eq(filesTable.id, id))
       .all();
-    return results[0] as FileNode | undefined;
+      
+    if (results && results.length > 0) {
+      return results[0] as FileNode | undefined;
+    }
+    
+    // If D1 query succeeds but returns empty (maybe rate limit allows 0-row reads),
+    // check if the ID is a legacy JSON ID. If it is, force fallback mode!
+    const jsonNode = flatJsonNodes.find(n => n.id === id);
+    if (jsonNode) {
+      _fallbackMode = true;
+      return jsonNode;
+    }
+    
+    return undefined;
   } catch {
     _fallbackMode = true;
     return flatJsonNodes.find(n => n.id === id);
