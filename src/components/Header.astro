@@ -1,4 +1,5 @@
 ---
+import { isFallbackMode } from '../lib/files';
 const user = Astro.locals.user;
 const defaultAvatar = user ? `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=4285f4&color=fff&size=128` : '';
 const avatar = user?.avatarUrl || defaultAvatar;
@@ -58,9 +59,9 @@ const currentSem = Astro.url.searchParams.get('sem') || 'all';
             <button class="btn btn-outline" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Logout</button>
           </form>
         </div>
-      ) : (
+      ) : (!isFallbackMode() && (
         <a href="/api/auth/google" class="btn btn-primary" style="padding: 0.4rem 1rem; font-size: 0.9rem;">Login</a>
-      )}
+      ))}
     </div>
   </div>
 

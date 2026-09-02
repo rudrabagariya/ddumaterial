@@ -86,10 +86,20 @@ const avatar = user?.avatarUrl || defaultAvatar;
       <>
         <div class="glass-panel text-center" style="padding: 3rem 2rem; margin-top: 2rem;">
           <h1 class="h1 mb-4 text-gradient">Welcome to DDU MATERIAL</h1>
-          <p style="color: var(--text-muted); font-size: 1.15rem; max-width: 650px; margin: 0 auto 2rem auto; line-height: 1.7;">
+          <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
             Your one-stop platform for all Dharmsinh Desai University study resources. Access organized notes, previous year question papers, lab manuals, and more — completely free.
           </p>
-          <a href="/api/auth/google" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 2rem;">Login with Google to Get Started</a>
+          {!fallback && (
+            <a href="/api/auth/google" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.8rem 2rem; display: inline-flex; align-items: center; justify-content: center;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="margin-right: 0.5rem;" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22.5 12.0001C22.5 11.2335 22.4333 10.5001 22.3 9.8001H12.0001V13.9001H18.0667C17.8 15.3001 16.9667 16.5001 15.7334 17.3335V19.9335H19.3334C21.4667 17.9668 22.5 15.1001 22.5 12.0001Z" fill="#4285F4"/>
+                <path d="M12.0001 22.5C14.9334 22.5 17.4001 21.5333 19.3334 19.9333L15.7334 17.3333C14.7 18.0667 13.4334 18.5 12.0001 18.5C9.26673 18.5 6.96673 16.6667 6.1334 14.2H2.40006V16.9C4.30006 20.6667 8.00006 22.5 12.0001 22.5Z" fill="#34A853"/>
+                <path d="M6.13333 14.2001C5.93333 13.5667 5.8 12.8667 5.8 12.1667C5.8 11.4667 5.93333 10.7667 6.13333 10.1334V7.43341H2.4C1.56667 9.06674 1.13333 10.8667 1.13333 12.1667C1.13333 13.4667 1.56667 15.2667 2.4 16.9001L6.13333 14.2001Z" fill="#FBBC05"/>
+                <path d="M12.0001 5.83333C13.6001 5.83333 15.0334 6.36667 16.1667 7.43334L19.4667 4.13334C17.4 2.2 14.9334 1.13334 12.0001 1.13334C8.00006 1.13334 4.30006 3.66667 2.40006 7.43334L6.1334 10.1333C6.96673 7.66667 9.26673 5.83333 12.0001 5.83333Z" fill="#EA4335"/>
+              </svg>
+              Login with Google to Get Started
+            </a>
+          )}
         </div>
 
         <div style="margin-top: 2.5rem;">
