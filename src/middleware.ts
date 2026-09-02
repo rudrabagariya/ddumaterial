@@ -27,14 +27,27 @@ export const onRequest = defineMiddleware(async (context, next) => {
 			return next();
 		}
 
-		const { session, user } = await lucia.validateSession(sessionId);
-		if (session && session.fresh) {
-			const sessionCookie = lucia.createSessionCookie(session.id);
-			context.cookies.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
-		}
-		if (!session) {
-			const sessionCookie = lucia.createBlankSessionCookie();
-			context.cookies.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+		let session = null;
+		let user = null;
+		
+		try {
+			const result = await lucia.validateSession(sessionId);
+			session = result.session;
+			user = result.user;
+			
+			if (session && session.fresh) {
+				const sessionCookie = lucia.createSessionCookie(session.id);
+				context.cookies.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+			}
+			if (!session) {
+				const sessionCookie = lucia.createBlankSessionCookie();
+				context.cookies.set(sessionCookie.name, sessionCookie.value, sessionCookie.attributes);
+			}
+		} catch (dbError) {
+			console.error("Session validation failed (D1 may be rate-limited):", dbError);
+			// Gracefully degrade: treat user as logged out instead of crashing
+			session = null;
+			user = null;
 		}
 		
 		context.locals.session = session;
