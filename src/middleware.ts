@@ -8,11 +8,6 @@ export const onRequest = defineMiddleware(async (context, next) => {
 	setFallbackMode(false);
 
 	try {
-		// TEMPORARY: Simulate D1 failure on localhost to test the fallback banner!
-		if (context.url.hostname === 'localhost') {
-			throw new Error("Simulated D1 Rate Limit Error 7500 for testing");
-		}
-
 		if (!env || !env.DB) {
 			console.warn("Cloudflare runtime is not available!");
 			context.locals.user = null;
