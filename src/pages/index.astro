@@ -7,10 +7,13 @@ import { desc, eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
 
 const user = Astro.locals.user;
-const fallback = isFallbackMode();
 const db = drizzle(env.DB as any);
 
+// Data loading (these might fail and trigger fallback mode)
 const rootFolders = await getRootFolders(env.DB as any);
+
+// Capture fallback state AFTER data loading has attempted
+const fallback = isFallbackMode();
 
 let recentFiles: any[] = [];
 if (user) {

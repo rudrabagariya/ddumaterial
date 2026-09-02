@@ -8,12 +8,6 @@ import { env } from 'cloudflare:workers';
 
 const { id } = Astro.params;
 const user = Astro.locals.user;
-
-// Only redirect if NOT in fallback mode (fallback = open access)
-if (!user && !isFallbackMode()) {
-  return Astro.redirect('/');
-}
-
 const db = drizzle(env.DB as any);
 
 let starredFileIds = new Set();
@@ -28,6 +22,11 @@ if (user) {
 }
 
 const folder = await getNodeById(env.DB as any, id!);
+
+// Only redirect if NOT in fallback mode (fallback = open access)
+if (!user && !isFallbackMode()) {
+  return Astro.redirect('/');
+}
 
 if (!folder || folder.type !== 'folder') {
   return Astro.redirect('/404');

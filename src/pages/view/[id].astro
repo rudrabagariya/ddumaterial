@@ -15,6 +15,7 @@ if (!file || file.type !== 'file') {
 }
 
 const user = Astro.locals.user;
+// Only redirect if NOT in fallback mode (fallback = open access)
 if (!user && !isFallbackMode()) {
   return Astro.redirect('/');
 }

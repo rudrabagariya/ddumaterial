@@ -62,16 +62,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
 		context.locals.session = session;
 		context.locals.user = user;
 
-		// Route protection: redirect unauthenticated users away from content pages
-		// In fallback mode, allow everyone through (no login possible)
-		const protectedPaths = ["/folder/", "/view/"];
-		const isProtected = protectedPaths.some(p => context.url.pathname.startsWith(p));
-		if (isProtected && !context.locals.user) {
-			// If in fallback mode, allow access without login
-			if (!isFallbackMode()) {
-				return context.redirect("/");
-			}
-		}
+		// Route protection is now handled at the page level so we can test D1 availability first
 
 		return await next();
 	} catch (error) {
