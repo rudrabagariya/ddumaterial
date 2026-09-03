@@ -1,10 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { drizzle } from 'drizzle-orm/d1';
-import { searchQueriesTable, donationsTable, recentlyViewedTable, userTable, feedbackTable } from '../db/schema';
+import { searchQueriesTable, donationsTable, recentlyViewedTable, userTable, feedbackTable, filesTable } from '../db/schema';
 import { desc, count, sql, eq } from 'drizzle-orm';
 import { env } from 'cloudflare:workers';
-import { getAllNodes } from '../lib/files';
 
 const user = Astro.locals.user;
 const adminEmail = env.ADMIN_EMAIL; 
@@ -59,22 +58,21 @@ const registeredUsers = await db.select({
 .orderBy(desc(userTable.lastActiveAt))
 .all();
 
-// 4.5. Get Last Viewed File for Each User
+// 4.5. Get Last Viewed File for Each User (OPTIMIZED)
 const latestViews = await db.select({
   userId: recentlyViewedTable.userId,
-  fileId: recentlyViewedTable.fileId
+  fileId: recentlyViewedTable.fileId,
+  fileName: filesTable.name
 })
 .from(recentlyViewedTable)
+.leftJoin(filesTable, eq(recentlyViewedTable.fileId, filesTable.id))
 .orderBy(desc(recentlyViewedTable.viewedAt))
 .all();
-
-const allNodes = await getAllNodes(env.DB as any);
-const getFileName = (id: string) => allNodes.find(n => n.id === id)?.name || 'Unknown File';
 
 const lastViewedPerUser: Record<string, string> = {};
 for (const view of latestViews) {
   if (!lastViewedPerUser[view.userId]) {
-    lastViewedPerUser[view.userId] = getFileName(view.fileId);
+    lastViewedPerUser[view.userId] = view.fileName || 'Unknown File';
   }
 }
 
