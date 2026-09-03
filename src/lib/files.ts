@@ -149,21 +149,53 @@ export async function buildBreadcrumbs(DB: any, folderId: string): Promise<FileN
 
 /** Recursively get all child files of a folder (for ZIP downloads) */
 export async function getAllChildFiles(DB: any, folderId: string): Promise<{ id: string; name: string }[]> {
-  // In fallback mode this uses the JSON, otherwise tries D1
-  const allNodes = _fallbackMode ? flatJsonNodes : await getAllNodes(DB);
-  const result: { id: string; name: string }[] = [];
-  
-  function collect(parentId: string) {
-    const children = allNodes.filter(n => n.parent === parentId);
-    for (const child of children) {
-      if (child.type === 'file') {
-        result.push({ id: child.id, name: child.name });
-      } else {
-        collect(child.id);
+  if (_fallbackMode) {
+    const result: { id: string; name: string }[] = [];
+    function collect(parentId: string) {
+      const children = flatJsonNodes.filter(n => n.parent === parentId);
+      for (const child of children) {
+        if (child.type === 'file') {
+          result.push({ id: child.id, name: child.name });
+        } else {
+          collect(child.id);
+        }
       }
     }
+    collect(folderId);
+    return result;
   }
-  
-  collect(folderId);
-  return result;
+
+  try {
+    // Use recursive CTE to efficiently find all descendants without a full table scan
+    const query = `
+      WITH RECURSIVE descendants AS (
+        SELECT id, name, type, parent FROM files WHERE parent = ?
+        UNION ALL
+        SELECT f.id, f.name, f.type, f.parent FROM files f
+        INNER JOIN descendants d ON f.parent = d.id
+      )
+      SELECT id, name FROM descendants WHERE type = 'file';
+    `;
+    const stmt = DB.prepare(query).bind(folderId);
+    const { results } = await stmt.all();
+    return results as { id: string; name: string }[];
+  } catch (error) {
+    console.error('CTE failed, falling back to JSON:', error);
+    _fallbackMode = true;
+    
+    // Duplicated JSON logic to ensure it returns even if D1 fails mid-request
+    const result: { id: string; name: string }[] = [];
+    function collect(parentId: string) {
+      const children = flatJsonNodes.filter(n => n.parent === parentId);
+      for (const child of children) {
+        if (child.type === 'file') {
+          result.push({ id: child.id, name: child.name });
+        } else {
+          collect(child.id);
+        }
+      }
+    }
+    collect(folderId);
+    return result;
+  }
 }
